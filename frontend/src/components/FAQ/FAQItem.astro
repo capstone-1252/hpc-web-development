@@ -1,0 +1,19 @@
+---
+import { AccordionItem, AccordionContent, AccordionTrigger } from "@/components/starwind/accordion";
+const { question, answer } = Astro.props;
+
+interface Props {
+	question: string;
+	answer: string
+}
+---
+
+
+<AccordionItem value={ question }>
+	<AccordionTrigger>
+		{ question }
+	</AccordionTrigger>
+	<AccordionContent>
+		{ answer }
+	</AccordionContent>
+</AccordionItem >

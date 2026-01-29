@@ -1,0 +1,25 @@
+---
+title: Guide to the AHAS Website
+description: Get started building your docs site with Starlight.
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  image:
+    file: ../../assets/logo.png
+  actions:
+    - text: Get Started
+      link: ./guides/installation/
+      icon: right-arrow
+---
+
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+## Overview
+
+<CardGrid stagger>
+	<Card title="Cockpit CMS" icon="pencil">
+		Go to https://ahas.ca/cockpit to add content. Read the docs <a href="https://getcockpit.com/documentation/">Here</a>
+	</Card>
+	<Card title="Frontend built with astro" icon="document">
+		Read the Astro docs <a href="https://docs.astro.build/en/getting-started/">Here</a>
+	</Card>
+</CardGrid>

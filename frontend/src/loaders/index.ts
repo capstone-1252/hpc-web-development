@@ -1,0 +1,1 @@
+export { loadFAQs } from "./loadFAQs"
