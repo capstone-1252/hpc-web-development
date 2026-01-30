@@ -18,6 +18,9 @@ class CockpitAPI {
 
   constructor() {
     const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
+		if(!baseURL) {
+			console.error("No base URL")
+		}
 
     this.client = axios.create({
       baseURL,

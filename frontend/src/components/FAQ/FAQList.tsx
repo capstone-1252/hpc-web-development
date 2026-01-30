@@ -1,4 +1,3 @@
-// src/components/FAQ/FAQList.tsx
 import { useEffect, useState } from "react";
 import { FAQItem } from "./FAQItem";
 import { loadFAQs, type FAQ } from "@/loaders/loadFAQs";
@@ -11,11 +10,13 @@ export function FAQList() {
 
 	useEffect(() => {
 		const fetchData = async () => {
+			console.log("Fetching Data")
 			const data = await loadFAQs();
 			setFaqs(data);
 			setLoading(false);
 		};
 		fetchData();
+		console.log("Data, fetched")
 	}, []);
 
 	if (loading) return <p>Loading FAQs…</p>;
