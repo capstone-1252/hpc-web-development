@@ -13,14 +13,16 @@ const siteSettings = await cockpit.getSingleton("siteSettings")
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{ siteSettings.title }</title>
 	</head>
-	<body>
+	<body class="bg-gray-50 text-gray-900">
 		<Nav />
-		<main class="min-h-screen">
-			<slot />
+		<main class="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<slot />
+			</div>
 		</main>
 	</body>
 </html>
