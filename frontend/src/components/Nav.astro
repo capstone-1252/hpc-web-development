@@ -1,12 +1,80 @@
 
-<header class="w-screen p-6 bg-orange-200">
-	<nav class="">
-		<ul class="flex justify-center gap-5">
-			<li><a href="/about-us">About Us</a></li>
-			<li><a href="/services">Our Services</a></li>
-			<li><a href="/resources">Resources</a></li>
-			<li><a href="/events">Events</a></li>
-			<li><a href="/faq">FAQs</a></li>
-		</ul>
-	</nav>
+---
+const menuItems = [
+  { href: '/about-us', label: 'About Us' },
+  { href: '/services', label: 'Our Services' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/events', label: 'Events' },
+  { href: '/faq', label: 'FAQs' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/get-involved', label: 'Get Involved' }
+];
+---
+
+<header class="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center">
+          <img src="/favicon.svg" alt="Logo" class="h-8 w-8" />
+        </a>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex md:items-center md:space-x-8">
+        {menuItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button 
+          type="button"
+          id="mobile-menu-button"
+          class="text-gray-600 hover:text-gray-900 p-2 rounded-md"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+        {menuItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </nav>
 </header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
