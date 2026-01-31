@@ -12,12 +12,12 @@ const menuItems = [
 ---
 
 <header class="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href="/" class="flex items-center">
-          <img src="/favicon.svg" alt="Logo" class="h-8 w-8" />
+          <img src="/logo.png" alt="Logo" class="h-16 w-16" />
         </a>
       </div>
       
@@ -31,14 +31,21 @@ const menuItems = [
             {item.label}
           </a>
         ))}
+        <!-- Donate CTA -->
+        <a 
+          href="/donate" 
+          class="bg-[#e25002] hover:bg-[#c44301] text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors shadow-md hover:shadow-lg"
+        >
+          Donate Now
+        </a>
       </div>
       
       <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <div class="md:hidden border-solid">
         <button 
           type="button"
           id="mobile-menu-button"
-          class="text-gray-600 hover:text-gray-900 p-2 rounded-md"
+					class="text-gray-600 border-solid rounded-sm cursor-pointer hover:text-gray-900 p-2 rounded-md"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -61,6 +68,13 @@ const menuItems = [
             {item.label}
           </a>
         ))}
+        <!-- Mobile Donate CTA -->
+        <a 
+          href="/donate" 
+          class="bg-[#e25002] hover:bg-[#c44301] text-white block px-3 py-2 text-base font-semibold transition-colors rounded-lg text-center"
+        >
+          Donate Now
+        </a>
       </div>
     </div>
   </nav>
