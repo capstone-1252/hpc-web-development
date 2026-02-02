@@ -3,5 +3,238 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-	<main class="max-w-6xl mx-auto"></main>
+	<main class="bg-white">
+		<!-- Hero Section -->
+		<section class="relative bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+					<div class="text-center lg:text-left">
+						<h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#485a61] mb-4 lg:mb-6 leading-tight">
+							Saving Lives and Healing
+							<span class="text-[#19b8d7] block lg:inline">Alberta's Animals</span>
+						</h1>
+						<p class="text-lg sm:text-xl lg:text-2xl text-[#485a61] mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+							Alberta Helping Animals Society provides compassionate veterinary care, rescue services, 
+							and support for pets and their families throughout Alberta.
+						</p>
+						<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
+							<a 
+								href="/donate" 
+								class="bg-[#e25002] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+							>
+								Donate Now
+							</a>
+							<a 
+								href="/about-us" 
+								class="bg-white hover:bg-gray-50 text-[#485a61] border-2 border-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
+							>
+								Our Mission
+							</a>
+						</div>
+					</div>
+					<div class="bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] rounded-lg p-6 lg:p-8 text-center">
+						<div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#19b8d7] mb-2">5,000+</div>
+						<div class="text-lg lg:text-xl text-[#485a61] font-medium">Animals Saved</div>
+						<div class="text-sm lg:text-base text-[#485a61] opacity-80 mt-2">Since 2010 through our rescue programs</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Mission Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-12">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">
+						Our Mission
+					</h2>
+					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-3xl mx-auto leading-relaxed">
+						Alberta Helping Animals Society is dedicated to providing compassionate veterinary care, 
+						rescue services, and support for animals in need throughout Alberta.
+					</p>
+				</div>
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
+					<div class="text-center">
+						<div class="text-3xl sm:text-4xl font-bold text-[#19b8d7] mb-2">24/7</div>
+						<p class="text-sm sm:text-base text-[#485a61] font-medium">Emergency Care Available</p>
+					</div>
+					<div class="text-center">
+						<div class="text-3xl sm:text-4xl font-bold text-[#e25002] mb-2">15+</div>
+						<p class="text-sm sm:text-base text-[#485a61] font-medium">Years of Service</p>
+					</div>
+					<div class="text-center">
+						<div class="text-3xl sm:text-4xl font-bold text-[#fdb52b] mb-2">100%</div>
+						<p class="text-sm sm:text-base text-[#485a61] font-medium">Dedicated to Animals</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Overview Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-[#485a61] mb-8 lg:mb-12">
+					How We Help Alberta's Animals
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+					<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#e25002] bg-opacity-10 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
+							<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+							</svg>
+						</div>
+						<h3 class="text-lg lg:text-xl font-bold text-[#485a61] mb-3 lg:mb-4">Wellness Exams</h3>
+						<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-4">
+							Vet checkups
+						</p>
+						<a href="/services/emergency" class="text-[#e25002] font-semibold hover:text-[#c44301] transition-colors inline-flex items-center text-sm lg:text-base">
+							Learn more
+							<svg class="ml-2 w-3 h-3 lg:w-4 lg:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</div>
+					<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
+							<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+							</svg>
+						</div>
+						<h3 class="text-lg lg:text-xl font-bold text-[#485a61] mb-3 lg:mb-4">Vaccinations</h3>
+						<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-4">
+							Keep your pet up to date on their medications
+						</p>
+						<a href="/services/adoption" class="text-[#19b8d7] font-semibold hover:text-[#1596af] transition-colors inline-flex items-center text-sm lg:text-base">
+							View available pets
+							<svg class="ml-2 w-3 h-3 lg:w-4 lg:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</div>
+					<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#fdb52b] bg-opacity-20 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
+							<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#fdb52b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-lg lg:text-xl font-bold text-[#485a61] mb-3 lg:mb-4">Spay / Neuter</h3>
+						<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-4">
+							Low-cost spay/neuter, vaccinations, and wellness programs
+						</p>
+						<a href="/services/wellness" class="text-[#fdb52b] font-semibold hover:text-[#e6a426] transition-colors inline-flex items-center text-sm lg:text-base">
+							Book appointment
+							<svg class="ml-2 w-3 h-3 lg:w-4 lg:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Rescue Stories Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-[#485a61] mb-8 lg:mb-12">
+					Success Stories
+				</h2>
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+					<div class="bg-white rounded-lg shadow-lg p-4 lg:p-6 border border-gray-200">
+						<div class="flex items-start gap-3 lg:gap-4">
+							<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#e25002] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+								<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+								</svg>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-lg lg:text-xl font-bold text-[#485a61] mb-2">Buddy's Second Chance</h3>
+								<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-3">
+									"Found injured on the highway, Buddy needed emergency surgery. Thanks to AHAS, 
+									he recovered fully and now lives with a loving family who adores him."
+								</p>
+								<div class="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm">
+									<span class="text-[#485a61] font-semibold">Buddy</span>
+									<span class="text-[#485a61] opacity-70">•</span>
+									<span class="text-[#485a61] opacity-70">Rescued & Adopted 2023</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-4 lg:p-6 border border-gray-200">
+						<div class="flex items-start gap-3 lg:gap-4">
+							<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+								<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+								</svg>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-lg lg:text-xl font-bold text-[#485a61] mb-2">Luna's Journey Home</h3>
+								<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-3">
+									"Abandoned as a kitten, Luna received round-the-clock care at our shelter. 
+									Now she's thriving in her forever home and brings joy to her new family every day."
+								</p>
+								<div class="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm">
+									<span class="text-[#485a61] font-semibold">Luna</span>
+									<span class="text-[#485a61] opacity-70">•</span>
+									<span class="text-[#485a61] opacity-70">Rescued & Adopted 2024</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Impact Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee]">
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+					<div>
+						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#19b8d7] mb-2">5,000+</div>
+						<div class="text-sm sm:text-base text-[#485a61] font-medium">Animals Rescued</div>
+					</div>
+					<div>
+						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#e25002] mb-2">2,500+</div>
+						<div class="text-sm sm:text-base text-[#485a61] font-medium">Forever Homes</div>
+					</div>
+					<div>
+						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fdb52b] mb-2">10,000+</div>
+						<div class="text-sm sm:text-base text-[#485a61] font-medium">Medical Procedures</div>
+					</div>
+					<div>
+						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#485a61] mb-2">$2M+</div>
+						<div class="text-sm sm:text-base text-[#485a61] font-medium">in Care Provided</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Final CTA Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
+					Your Support Saves Lives
+				</h2>
+				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
+					Join us in our mission to protect and care for Alberta's animals. Your donation 
+					provides emergency medical care, shelter, and hope for animals in need.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
+					<a 
+						href="/donate" 
+						class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+					>
+						Donate Now
+					</a>
+					<a 
+						href="/get-involved" 
+						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
+					>
+						Get Involved
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
