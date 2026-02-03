@@ -1,145 +1,241 @@
 ---
-import { FAQList } from "@/components/FAQ/FAQList"
 import Layout from "@/layouts/Layout.astro"
+import { ServicesList } from "@/components/Services/ServicesList"
+import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
 ---
 
-<Layout title="Our Services - Hope Veterinary Clinic">
-	<main>
-		<section>
-			<h1>Our Services</h1>
-			<a href="./services/apply">
-				<button>Apply for Services</button>
-			</a>
-		</section>
-		<section>
-			<h2>Veterinary and Other Care</h2>
-
-			<p>AHAS Home Veterinary Services provides no-cost veterinary services in Edmonton to qualified clients who are not able to access regular veterinary care, including:</p>
-
-			<ul>
-				<li>Wellness Exams</li>
-				<li>Vaccinations</li>
-				<li>Internal and External Parasite Treatment</li>
-				<li>Radiography</li>
-				<li>Laboratory Analysis</li>
-				<li>Emergency grooming with sedation (we are NOT a grooming service)</li>
-				<li>Spay/neuter surgery (please apply to the PALS program at the Edmonton Humane Society for spay/neuter for dogs under seven years of age)</li>
-				<li>Dental Care (please note we have a very long wait for dental surgery)</li>
-				<li>Chronic illness support</li>
-				<li>Behaviour and Nutrition Counseling</li>
-				<li>Discussion and Support for Housing Concerns</li>
-				<li>Euthanasia</li>
-			</ul>
-
+<Layout title="Our Services - Alberta Helping Animals Society">
+	<main class="bg-white">
+		<!-- Hero Section -->
+		<section class="relative bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto text-center">
+				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#485a61] mb-6 lg:mb-8">Our Services</h1>
+				<p class="text-lg sm:text-xl lg:text-2xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed mb-8">
+					AHAS provides no-cost veterinary services in Edmonton to qualified clients who are unable to access regular veterinary care.
+				</p>
+				<a 
+					href="/services/apply" 
+					class="inline-block bg-[#e25002] hover:bg-[#c44301] text-white px-8 lg:px-10 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
+				>
+					Apply for Services
+				</a>
+			</div>
 		</section>
 
-		<section>
-			<h2>Requirements for Eligibility</h2>
-
-			<p>AHAS Home Veterinary Services provides basic veterinary care to people living with a very low income in Edmonton.  Our policy is to ensure all patients are spayed/neutered as long as they are healthy; we will not see your pets if you will not spay/neuter them.</p>
-
-			<h2>Low Income Cut-Off for 2025 (until June) is:</h2>
-
-			<table class="">
-				<tr>
-					<th>
-						Household
-					</th>
-					<th>
-						Income
-					</th>
-				</tr>
-				<tr>
-					<td>
-						One person in household
-					</td>   
-					<td>
-						\$30,523
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Two family members in household
-					</td>
-					<td>
-						\$38,002
-					</td>
-				</tr>
-				<tr><td>Three family members in household</td>     <td>\$46,720</td></tr>
-				<tr><td>Four family members in household</td>        <td>\$56,724</td></tr>
-			</table>
+		<!-- Services Overview -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-12">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Veterinary and Other Care</h2>
+					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed">
+						AHAS Home Veterinary Services provides no-cost veterinary services in Edmonton to qualified clients who are not able to access regular veterinary care, including:
+					</p>
+				</div>
+				
+				<ServicesList client:load />
+			</div>
 		</section>
 
-		<h2>Apply for Services here: Request our services</h2>
-
-		<p>PLEASE NOTE:  It may take a few days to get back to you but you will receive an email asking to send in qualifying information.  Please do not call or email us to see if we have received your application as it slows down our volunteers.</p>
-
-		<p>PLEASE NOTE:  We are not able to offer urgent services to new clients except under extraordinary circumstances.  If you have an urgent need, please contact an emergency clinic near you.</p>
-
-		<p>If you need spay/neuter services for a young, healthy dog, please apply to the PALS program at the Edmonton Humane Society:  https://www.edmontonhumanesociety.com/services/pals-spay-and-neuter-program/</p>
-
-		[[ Food Bank ]]
-
-		<h2>Nearby Pet Food Banks</h2>
-
-		<p>Veterinary costs aside, pet owners face the additional costs of keeping their furry friends well-fed, healthy and happy.</p>
-
-		If you are short of food and/or supplies, check out the following:
-		<ul>
-			<li>Inner City Pet Food Bank, Bissell Centre, 10527 – 96 Street, Wednesdays 10 – 12.</li>
-
-			<li>Bethel Gospel Chapel, 11461 – 95 Street, Mondays 3 – 5.</li>
-
-			<li>Parachutes for Pets Edmonton, 8108 Coronet Road.  Call 587-598-7723 or email edmonton@parachutesforpets.com to book a time to pick up food.</li>
-
-			<li>Many groups on Facebook can help with food.  Search for “pet food bank” for help.</li>
-
-			<li>Edmonton Food Bank may have some food and supplies as well</li>
-		</ul>
-		<p>We have some food as well.  You can also check out our “After Hours Pet Food Bank” box in our parking lot behind the clinic</p>
-
-
-		<h2>How Can You Help?</h2>
-
-		<p>Take your food donation to Bissell Centre, 10527 – 96 Street NW, Monday – Friday 9 – 12 or 1 – 4</p>
-
-		<p>We can also accept small amounts of food and supplies.  Drop off at the clinic, 12701 – 119 Street NW, Monday- Friday 10- 4</p>
-
-		<section>
-			<h2>Veterinary Services</h2>
-			<!-- vet services -->
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</section>
-		<section>
-			<h2>Pet Food Banks</h2>
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
+		<!-- Eligibility Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-12">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Requirements for Eligibility</h2>
+					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed">
+						AHAS Home Veterinary Services provides basic veterinary care to people living with a very low income in Edmonton. 
+						Our policy is to ensure all patients are spayed/neutered as long as they are healthy; we will not see your pets if you will not spay/neuter them.
+					</p>
+				</div>
+				
+				<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200">
+					<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-6 text-center">Low Income Cut-Off for 2025 (until June)</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-[#e8f4f7]">
+									<th class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-left text-sm lg:text-base font-semibold text-[#485a61]">Household Size</th>
+									<th class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-left text-sm lg:text-base font-semibold text-[#485a61]">Annual Income</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="hover:bg-gray-50">
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base text-[#485a61]">One person</td>
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base font-semibold text-[#19b8d7]">$30,523</td>
+								</tr>
+								<tr class="hover:bg-gray-50">
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base text-[#485a61]">Two people</td>
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base font-semibold text-[#19b8d7]">$38,002</td>
+								</tr>
+								<tr class="hover:bg-gray-50">
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base text-[#485a61]">Three people</td>
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base font-semibold text-[#19b8d7]">$46,720</td>
+								</tr>
+								<tr class="hover:bg-gray-50">
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base text-[#485a61]">Four people</td>
+									<td class="border border-gray-300 px-4 lg:px-6 py-3 lg:py-4 text-sm lg:text-base font-semibold text-[#19b8d7]">$56,724</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</section>
 
-		<section>
-			<h2>Helping Owners</h2>
-			<ul>
-				<li>Housing Assistance</li>
-				<li>Mental Health Services</li>
-				<li>Addiction Services</li>
-			</ul>
+		<!-- Application Process Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-12">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Apply for Services</h2>
+				</div>
+				
+				<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200 mb-8">
+					<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+						<div class="flex">
+							<div class="flex-shrink-0">
+								<svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+									<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+								</svg>
+							</div>
+							<div class="ml-3">
+								<p class="text-sm text-yellow-700">
+									<strong>Important Note:</strong> It may take a few days to get back to you. You will receive an email asking to send in qualifying information. 
+									Please do not call or email us to check on your application status as it slows down our volunteers.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+						<div class="flex">
+							<div class="flex-shrink-0">
+								<svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l1.293 1.293a1 1 0 001.414-1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l-1.293 1.293a1 1 0 00-1.414 1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+								</svg>
+							</div>
+							<div class="ml-3">
+								<p class="text-sm text-red-700">
+									<strong>Emergency Care:</strong> We are not able to offer urgent services to new clients except under extraordinary circumstances. 
+									If you have an urgent need, please contact an emergency clinic near you.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="text-center">
+						<a 
+							href="/services/apply" 
+							class="inline-block bg-[#e25002] hover:bg-[#c44301] text-white px-8 lg:px-10 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
+						>
+							Request Our Services
+						</a>
+					</div>
+					
+					<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200">
+						<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-4">Spay/Neuter Services</h3>
+						<p class="text-lg text-[#485a61] opacity-80 leading-relaxed">
+							If you need spay/neuter services for a young, healthy dog, please apply to the PALS program at the Edmonton Humane Society:
+						</p>
+						<a 
+							href="https://www.edmontonhumanesociety.com/services/pals-spay-and-neuter-program/" 
+							target="_blank" 
+							rel="noopener noreferrer"
+							class="inline-block mt-4 text-[#19b8d7] font-semibold hover:text-[#1596af] transition-colors"
+						>
+							PALS Spay and Neuter Program →
+						</a>
+					</div>
+				</div>
+			</div>
 		</section>
-		<h2>FAQ</h2>
+
+		<!-- Pet Food Bank Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-12">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Pet Food Banks</h2>
+					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed">
+						Veterinary costs aside, pet owners face the additional costs of keeping their furry friends well-fed, healthy and happy.
+						If you are short of food and/or supplies, check out the following resources:
+					</p>
+				</div>
+
+				<FoodBanksList client:load />
+
+				<div class="text-center mt-8">
+					<p class="text-[#485a61] opacity-80">
+						We have some food as well. You can also check out our "After Hours Pet Food Bank" box in our parking lot behind the clinic
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- How to Help Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-12">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">How Can You Help?</h2>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+					<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#e25002] bg-opacity-10 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
+							<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-4">Food Donations</h3>
+						<p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-4">
+							Take your food donation to Bissell Centre:
+						</p>
+						<p class="text-lg font-semibold text-[#e25002]">
+							10527 – 96 Street NW, Monday – Friday 9 AM – 12 PM or 1 PM – 4 PM
+						</p>
+					</div>
+
+					<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
+							<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+							</svg>
+						</div>
+						<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-4">AHAS Donations</h3>
+						<p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-4">
+							We can also accept small amounts of food and supplies:
+						</p>
+						<p class="text-lg font-semibold text-[#19b8d7]">
+							Drop off at the clinic, 12701 – 119 Street NW, Monday - Friday 10 AM - 4 PM
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
+					Ready to Get Help for Your Pet?
+				</h2>
+				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
+					If you're experiencing financial hardship and need veterinary care for your pet, 
+					we're here to help. Apply for our services today.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
+					<a 
+						href="/services/apply" 
+						class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+					>
+						Apply for Services
+					</a>
+					<a 
+						href="/contact" 
+						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
+					>
+						Contact Us
+					</a>
+				</div>
+			</div>
+		</section>
 	</main>
 </Layout>
