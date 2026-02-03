@@ -1,88 +1,83 @@
 import axios, {type AxiosInstance, type AxiosRequestConfig } from "axios";
 
 interface CockpitOptions {
-  filter?: Record<string, any>;
-  sort?: Record<string, number>;
-  limit?: number;
-  skip?: number;
-  populate?: number;
+	filter?: Record<string, any>;
+	sort?: Record<string, number>;
+	limit?: number;
+	skip?: number;
+	populate?: number;
 }
 
 interface CockpitResponse<T = any> {
-  data?: T;
-  error?: string;
+	data?: T;
+	error?: string;
 }
 
 class CockpitAPI {
-  private client: AxiosInstance;
+	private client: AxiosInstance;
 
-  constructor() {
-    const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
+	constructor() {
+		const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
 		if(!baseURL) {
 			console.error("No base URL")
 		}
 
-    this.client = axios.create({
-      baseURL,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
+		this.client = axios.create({
+			baseURL,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+	}
 
-  async request<T = any>(
-    endpoint: string,
-    config: AxiosRequestConfig = {}
-  ): Promise<T> {
-    try {
-      const response = await this.client.request<T>({
-        url: endpoint,
-        method: config.method ?? "GET",
-        ...config,
-      });
+	async request<T = any>(
+		endpoint: string,
+		config: AxiosRequestConfig = {}
+	): Promise<T> {
+		try {
+			const response = await this.client.request<T>({
+				url: endpoint,
+				method: config.method ?? "GET",
+				...config,
+			});
 
-      return response.data;
-    } catch (err: any) {
-      if (err.response) {
-        const { status, statusText, data } = err.response;
-        throw new Error(
-          data?.error || `HTTP ${status}: ${statusText}`
-        );
-      }
+			return response.data;
+		} catch (err: any) {
+			if (err.response) {
+				const { status, statusText, data } = err.response;
+				throw new Error(
+					data?.error || `HTTP ${status}: ${statusText} : ${data}`
+				);
+			}
 
-      throw err;
-    }
-  }
+			throw err;
+		}
+	}
 
-  async getItems<T = any>(
-    collection: string,
-    options: CockpitOptions = {}
-  ): Promise<T[]> {
-    return this.request<T[]>(`/content/items/${collection}`, {
-      params: options,
-      // Cockpit expects objects as JSON strings in query params
-      paramsSerializer: {
-        serialize: (params) =>
-          Object.entries(params)
-            .map(([key, value]) =>
-              `${key}=${encodeURIComponent(
-                typeof value === "object"
-                  ? JSON.stringify(value)
-                  : String(value)
-              )}`
-            )
-            .join("&"),
-      },
-    });
-  }
+	async getItems<T = any>(
+		collection: string,
+		options: CockpitOptions = {}
+	): Promise<T[]> {
+		const params: Record<string, any> = { ...options };
 
-  async getItem<T = any>(collection: string, id: string): Promise<T> {
-    return this.request<T>(`/content/item/${collection}/${id}`);
-  }
+		// Only JSON-stringify objects, not numbers like limit/skip
+		Object.keys(params).forEach((key) => {
+			if (typeof params[key] === "object") {
+				params[key] = JSON.stringify(params[key]);
+			}
+		});
 
-  async getSingleton<T = any>(singleton: string): Promise<T> {
-    return this.request<T>(`/content/item/${singleton}`);
-  }
+		return this.request<T[]>(`/content/items/${collection}`, { params });
+	}
+
+
+	async getItem<T = any>(collection: string, id: string): Promise<T> {
+		return this.request<T>(`/content/item/${collection}/${id}`);
+	}
+
+	async getSingleton<T = any>(singleton: string): Promise<T> {
+		return this.request<T>(`/content/item/${singleton}`);
+	}
 }
 
 export default new CockpitAPI();

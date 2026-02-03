@@ -19,7 +19,7 @@ export function FAQList() {
 		console.log("Data, fetched")
 	}, []);
 
-	if (loading) return <p>Loading FAQs…</p>;
+	if (loading) return <p className="max-w-sm mx-auto">Loading FAQs…</p>;
 	if (faqs.length === 0) return <p>No FAQs available.</p>;
 
 	return (
