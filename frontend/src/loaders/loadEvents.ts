@@ -1,5 +1,14 @@
 import cockpit from "@/lib/cockpit";
 
+export interface CockpitImage {
+  path: string;
+  title?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  meta?: Record<string, any>;
+}
+
 export type Event = {
   _id: string;
   title: string;
@@ -10,6 +19,7 @@ export type Event = {
   price: string;
   type: "upcoming" | "past";
   featured?: boolean;
+  image?: CockpitImage;
 };
 
 export async function loadEvents(type?: "upcoming" | "past"): Promise<Event[]> {
@@ -28,4 +38,11 @@ export async function loadEvent(id: string): Promise<Event | null> {
   } catch {
     return null;
   }
+}
+
+export function getImageUrl(image: CockpitImage | undefined): string {
+  if (!image?.path) return "";
+  
+  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
+  return `${baseURL}${image.path}`;
 }

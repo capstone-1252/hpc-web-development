@@ -1,10 +1,20 @@
 import cockpit from "@/lib/cockpit";
 
+export interface CockpitImage {
+  path: string;
+  title?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  meta?: Record<string, any>;
+}
+
 export type ServiceInfo = {
   _id: string;
-  title: string;
+  name: string;
   description: string;
-  icon: string;
+  icon?: string;
+  image?: CockpitImage;
   details?: string[];
 };
 
@@ -34,4 +44,11 @@ export async function loadEligibilityInfo(): Promise<EligibilityInfo | null> {
   } catch {
     return null;
   }
+}
+
+export function getImageUrl(image: CockpitImage | undefined): string {
+  if (!image?.path) return "";
+  
+  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
+  return `${baseURL}${image.path}`;
 }

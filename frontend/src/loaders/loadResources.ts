@@ -1,5 +1,14 @@
 import cockpit from "@/lib/cockpit";
 
+export interface CockpitImage {
+  path: string;
+  title?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  meta?: Record<string, any>;
+}
+
 export type Resource = {
   _id: string;
   title: string;
@@ -10,6 +19,7 @@ export type Resource = {
   file_name?: string;
   file_path?: string;
   icon?: string;
+  image?: CockpitImage;
   duration?: string;
   file_size?: string;
 };
@@ -30,4 +40,11 @@ export async function loadResource(id: string): Promise<Resource | null> {
   } catch {
     return null;
   }
+}
+
+export function getImageUrl(image: CockpitImage | undefined): string {
+  if (!image?.path) return "";
+  
+  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
+  return `${baseURL}${image.path}`;
 }
