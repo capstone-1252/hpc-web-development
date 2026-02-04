@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import { YouTube } from "astro-embed"
 ---
 
 <Layout>
@@ -48,16 +49,15 @@ import Layout from "../layouts/Layout.astro"
 					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">
 						Our Mission
 					</h2>
+					<div class="max-w-2xl mx-auto">
+						<YouTube  id="6RzUmbe-hk0"/>
+					</div>
 					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-3xl mx-auto leading-relaxed">
 						Alberta Helping Animals Society is dedicated to providing compassionate veterinary care, 
 						rescue services, and support for animals in need throughout Alberta.
 					</p>
 				</div>
-				<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
-					<div class="text-center">
-						<div class="text-3xl sm:text-4xl font-bold text-[#19b8d7] mb-2">24/7</div>
-						<p class="text-sm sm:text-base text-[#485a61] font-medium">Emergency Care Available</p>
-					</div>
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
 					<div class="text-center">
 						<div class="text-3xl sm:text-4xl font-bold text-[#e25002] mb-2">15+</div>
 						<p class="text-sm sm:text-base text-[#485a61] font-medium">Years of Service</p>

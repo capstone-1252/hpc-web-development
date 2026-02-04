@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { BoardSection } from "@/components/Board/BoardSection"
 ---
 
 <Layout>
@@ -127,72 +128,74 @@ import Layout from "@/layouts/Layout.astro"
 		</section>
 
 		<!-- Board Members Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-			<div class="max-w-6xl mx-auto">
-				<div class="text-center mb-8 lg:mb-12">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Our Board of Directors</h2>
-					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed mb-8">
-						The Alberta Helping Animals Society (AHAS) Board of Directors consists of non-remunerated volunteers. The Board is responsible for the management of affairs and policies, and provides an overall strategic direction for AHAS to ensure its continuing success.
-					</p>
-				</div>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-					<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-						<div class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-							<svg class="w-8 h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-[#485a61] mb-2">Connie Varnhagen</h3>
-						<p class="text-[#19b8d7] font-medium">President</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-						<div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-							<svg class="w-8 h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-[#485a61] mb-2">Elizabeth Bonkink</h3>
-						<p class="text-[#19b8d7] font-medium">Vice President</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-						<div class="w-16 h-16 bg-[#fdb52b] bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-							<svg class="w-8 h-8 text-[#fdb52b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-[#485a61] mb-2">Annie Marzullo</h3>
-						<p class="text-[#fdb52b] font-medium">Secretary</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-						<div class="w-16 h-16 bg-[#485a61] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-							<svg class="w-8 h-8 text-[#485a61]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-[#485a61] mb-2">Dawna Sole</h3>
-						<p class="text-[#485a61] font-medium">Treasurer</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-						<div class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-							<svg class="w-8 h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-[#485a61] mb-2">Dr. Stanley Varnhagen</h3>
-						<p class="text-[#e25002] font-medium">Director</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-						<div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-							<svg class="w-8 h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-[#485a61] mb-2">Dr. Savannah Howse-Smith</h3>
-						<p class="text-[#19b8d7] font-medium">Director</p>
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50"> -->
+		<!-- 	<div class="max-w-6xl mx-auto"> -->
+		<!-- 		<div class="text-center mb-8 lg:mb-12"> -->
+		<!-- 			<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Our Board of Directors</h2> -->
+		<!-- 			<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed mb-8"> -->
+		<!-- 				The Alberta Helping Animals Society (AHAS) Board of Directors consists of non-remunerated volunteers. The Board is responsible for the management of affairs and policies, and provides an overall strategic direction for AHAS to ensure its continuing success. -->
+		<!-- 			</p> -->
+		<!-- 		</div> -->
+		<!-- 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"> -->
+		<!-- 			<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center"> -->
+		<!-- 				<div class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"> -->
+		<!-- 					<svg class="w-8 h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+		<!-- 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /> -->
+		<!-- 					</svg> -->
+		<!-- 				</div> -->
+		<!-- 				<h3 class="text-lg font-bold text-[#485a61] mb-2">Connie Varnhagen</h3> -->
+		<!-- 				<p class="text-[#19b8d7] font-medium">President</p> -->
+		<!-- 			</div> -->
+		<!-- 			<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center"> -->
+		<!-- 				<div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"> -->
+		<!-- 					<svg class="w-8 h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+		<!-- 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /> -->
+		<!-- 					</svg> -->
+		<!-- 				</div> -->
+		<!-- 				<h3 class="text-lg font-bold text-[#485a61] mb-2">Elizabeth Bonkink</h3> -->
+		<!-- 				<p class="text-[#19b8d7] font-medium">Vice President</p> -->
+		<!-- 			</div> -->
+		<!-- 			<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center"> -->
+		<!-- 				<div class="w-16 h-16 bg-[#fdb52b] bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4"> -->
+		<!-- 					<svg class="w-8 h-8 text-[#fdb52b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+		<!-- 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /> -->
+		<!-- 					</svg> -->
+		<!-- 				</div> -->
+		<!-- 				<h3 class="text-lg font-bold text-[#485a61] mb-2">Annie Marzullo</h3> -->
+		<!-- 				<p class="text-[#fdb52b] font-medium">Secretary</p> -->
+		<!-- 			</div> -->
+		<!-- 			<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center"> -->
+		<!-- 				<div class="w-16 h-16 bg-[#485a61] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"> -->
+		<!-- 					<svg class="w-8 h-8 text-[#485a61]" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+		<!-- 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /> -->
+		<!-- 					</svg> -->
+		<!-- 				</div> -->
+		<!-- 				<h3 class="text-lg font-bold text-[#485a61] mb-2">Dawna Sole</h3> -->
+		<!-- 				<p class="text-[#485a61] font-medium">Treasurer</p> -->
+		<!-- 			</div> -->
+		<!-- 			<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center"> -->
+		<!-- 				<div class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"> -->
+		<!-- 					<svg class="w-8 h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+		<!-- 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /> -->
+		<!-- 					</svg> -->
+		<!-- 				</div> -->
+		<!-- 				<h3 class="text-lg font-bold text-[#485a61] mb-2">Dr. Stanley Varnhagen</h3> -->
+		<!-- 				<p class="text-[#e25002] font-medium">Director</p> -->
+		<!-- 			</div> -->
+		<!-- 			<div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center"> -->
+		<!-- 				<div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"> -->
+		<!-- 					<svg class="w-8 h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+		<!-- 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /> -->
+		<!-- 					</svg> -->
+		<!-- 				</div> -->
+		<!-- 				<h3 class="text-lg font-bold text-[#485a61] mb-2">Dr. Savannah Howse-Smith</h3> -->
+		<!-- 				<p class="text-[#19b8d7] font-medium">Director</p> -->
+		<!-- 			</div> -->
+		<!-- 		</div> -->
+		<!-- 	</div> -->
+		<!-- </section> -->
+		
+		<BoardSection client:load />
 
 		<!-- Contact Information Section -->
 		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
