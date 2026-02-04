@@ -33,6 +33,7 @@ export const BoardSection = () => {
 					<CardSkeleton showAvatar={true} />
 					<CardSkeleton showAvatar={true} />
 					<CardSkeleton showAvatar={true} />
+					<CardSkeleton showAvatar={true} />
 				</div>
 			</div>
 		</section>
