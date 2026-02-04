@@ -78,6 +78,26 @@ class CockpitAPI {
 	async getSingleton<T = any>(singleton: string): Promise<T> {
 		return this.request<T>(`/content/item/${singleton}`);
 	}
+
+	async getAssetUrl(assetId: string, options: { 
+		width?: number; 
+		height?: number; 
+		quality?: number; 
+		mode?: 'thumbnail' | 'bestFit' | 'resize' | 'fitToWidth' | 'fitToHeight';
+		mime?: 'auto' | 'gif' | 'jpeg' | 'png' | 'webp' | 'bmp';
+	} = {}): Promise<string> {
+		const params = new URLSearchParams();
+		if (options.mode) params.append('m', options.mode);
+		if (options.width) params.append('w', options.width.toString());
+		if (options.height) params.append('h', options.height.toString());
+		if (options.quality) params.append('q', options.quality.toString());
+		if (options.mime) params.append('mime', options.mime);
+		params.append('o', '1'); // Return binary image
+		
+		const paramString = params.toString();
+		const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
+		return `${baseURL}/assets/image/${assetId}${paramString ? '?' + paramString : ''}`;
+	}
 }
 
 export default new CockpitAPI();
