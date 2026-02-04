@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FAQItem } from "./FAQItem";
 import { loadFAQs, type FAQ } from "@/loaders/loadFAQs";
+import { ListSkeleton } from "../Skeleton";
 
 import { Accordion } from "@radix-ui/react-accordion";
 
@@ -19,14 +20,16 @@ export function FAQList() {
 		console.log("Data, fetched")
 	}, []);
 
-	if (loading) return <p className="max-w-sm mx-auto">Loading FAQs…</p>;
+	if (loading) return (
+		<ListSkeleton className="p-2"  />
+	)
 	if (faqs.length === 0) return <p>No FAQs available.</p>;
 
 	return (
 		<>
 			<Accordion type="multiple" className="max-w-[900px] mx-auto">
 				{faqs.map((faq, i) => (
-					<FAQItem key={i} question={faq.question} answer={faq.answer} />
+					<FAQItem key={i} faq={faq}/>
 				))}
 			</Accordion>
 		</>
