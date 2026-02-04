@@ -2,6 +2,7 @@ import { loadPartners, type Partner } from "@/loaders";
 import { useEffect, useState } from "react";
 
 import { PartnerLogo } from "./PartnerLogo";
+import { CardSkeleton, GridSkeleton } from "../Skeleton";
 
 export const PartnerList = () => {
 	const [partners, setPartners] = useState<Partner[]>([])
@@ -15,6 +16,17 @@ export const PartnerList = () => {
 		}
 		fetchData();
 	}, [])
+
+	if(loading) {
+		return (
+			<div className="grid grid-cols-4 max-w-lg mx-auto gap-2 max-h-[100px]">
+				<CardSkeleton lines={0} showImage />
+				<CardSkeleton lines={0} showImage />
+				<CardSkeleton lines={0} showImage />
+				<CardSkeleton lines={0} showImage />
+			</div>
+		)
+	}
 
 	return (
 		<>

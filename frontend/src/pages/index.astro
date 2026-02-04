@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import { YouTube } from "astro-embed"
+import { PartnerList } from "@/components/Partners/PartnerList.tsx"
 ---
 
 <Layout>
@@ -186,6 +187,16 @@ import { YouTube } from "astro-embed"
 			</div>
 		</section>
 
+		<!-- Partners -->
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+					Our Partners
+				</h2>
+				<PartnerList client:load />
+			</div>
+		</section>
+
 		<!-- Impact Section -->
 		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee]">
 			<div class="max-w-6xl mx-auto">
@@ -209,6 +220,7 @@ import { YouTube } from "astro-embed"
 				</div>
 			</div>
 		</section>
+
 
 		<!-- Final CTA Section -->
 		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
