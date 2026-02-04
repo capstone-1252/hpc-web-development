@@ -1,4 +1,4 @@
-import { loadFoodBanks, type FoodBank } from "@/loaders/loadFoodBanks";
+import { loadFoodBanks, type FoodBank, getImageUrl } from "@/loaders/loadFoodBanks";
 import { useEffect, useState } from "react";
 
 export function FoodBanksList() {
@@ -10,7 +10,7 @@ export function FoodBanksList() {
       try {
         const data = await loadFoodBanks();
         setFoodBanks(data);
-      } catch (error) {
+      </div> catch (error) {
         console.error("Failed to load food banks:", error);
       } finally {
         setLoading(false);
@@ -31,10 +31,20 @@ export function FoodBanksList() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       {foodBanks.map((foodBank) => (
         <div key={foodBank._id} className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-          <div className="w-12 h-12 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-            <svg className="w-6 h-6 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          {foodBank.image && (
+            <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+              <img 
+                src={getImageUrl(foodBank.image)} 
+                alt={foodBank.image.alt || foodBank.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="w-6 h-6 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-[#485a61] mb-3">{foodBank.name}</h3>

@@ -1,4 +1,4 @@
-import { loadEvents, type Event } from "@/loaders/loadEvents";
+import { loadEvents, type Event, getImageUrl } from "@/loaders/loadEvents";
 import { useEffect, useState } from "react";
 
 interface EventCardProps {
@@ -19,9 +19,19 @@ function EventCard({ event, variant = "upcoming" }: EventCardProps) {
   };
 
   const currentColor = colors[variant];
+  const imageUrl = event.image ? getImageUrl(event.image) : "";
 
   return (
     <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
+      {event.image && (
+        <div className="w-full h-48 sm:h-64 lg:h-72">
+          <img 
+            src={imageUrl} 
+            alt={event.image.alt || event.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <div className={`bg-gradient-to-r ${currentColor.bg} p-4 lg:p-6 ${currentColor.text}`}>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
           <span className="text-lg lg:text-xl font-bold">{event.title}</span>
