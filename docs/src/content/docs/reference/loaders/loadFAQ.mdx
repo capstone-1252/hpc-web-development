@@ -1,0 +1,20 @@
+---
+title: loadFAQ
+sidebar:
+  label: loadFAQ
+---
+
+## returns FAQ
+
+```ts
+export type FAQ = { 
+  question: string; 
+  answer: string;
+};
+
+export async function loadFAQs(): Promise<FAQ[]> {
+  const data = await cockpit.getItems("faq")
+  return data as FAQ[]
+}
+
+```
