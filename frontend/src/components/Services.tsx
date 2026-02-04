@@ -10,7 +10,6 @@ export const ServicesSection = () => {
 			const data = await loadServices()
 			setServices(data);
 			setLoading(false);
-			console.log(data)
 		}
 		fetchData();
 	})

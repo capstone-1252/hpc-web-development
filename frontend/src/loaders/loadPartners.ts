@@ -7,7 +7,6 @@ export interface Partner {
 
 export const loadPartners = async () => {
 	const res = await cockpit.getItems("partners");
-	console.log(res);
 
 	return res as Partner[];
 }

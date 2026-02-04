@@ -10,7 +10,6 @@ export const BoardSection = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await loadBoardMembers();
-			console.log(res)
 			setMembers(res)
 			setLoading(false)
 		}
