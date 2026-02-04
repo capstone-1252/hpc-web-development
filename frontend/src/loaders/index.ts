@@ -1,5 +1,6 @@
 export * from "./loadFAQs"
 export * from "./loadServices"
+export * from "./loadPartners"
 export * from "./loadEvents"
 export * from "./loadResources"
 export * from "./loadVolunteers"
