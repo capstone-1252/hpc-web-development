@@ -101,4 +101,10 @@ const imageRef = getImageUrl(member: BoardMemberResponse);
 
 ```
 
+# Cockpit Guide
+### How to use and add various content to Cockpit:
 
+- Use the common database table design to define the collections: [Reference from Microsoft](https://support.microsoft.com/en-us/office/database-design-basics-eb2159cf-1e30-401a-8084-bd4f9c9ca1f5) 
+- Refer to the official cockpit documentation on the concepts: [Cockpit Reference](https://getcockpit.com/documentation/core/concepts/content) 
+
+- To keep the content most organized, simply put.  Organize categories into collections, use the existing tables as examples.
