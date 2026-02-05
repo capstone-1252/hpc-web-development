@@ -1,6 +1,7 @@
 
 ---
 import Layout from "@/layouts/Layout.astro"
+import "@/styles/global.css"
 import { ResourcesList } from "@/components/Resources/ResourcesList"
 ---
 
@@ -29,11 +30,8 @@ import { ResourcesList } from "@/components/Resources/ResourcesList"
 				<h3 class="text-xl font-semibold text-[#485a61] mb-4">
 					Cat Care Learning Modules
 				</h3>
-				<p class="mb-4 text-[#485a61] opacity-80">
-					Click on a link, then select the arrow to start the module.
-				</p>
 
-				<ul class="list-disc list-inside space-y-2 mb-8 text-[#485a61]">
+				<ul class="list-none list-inside space-y-2 mb-8 text-[#485a61]">
 					<li>Preventing and Treating Diabetes in Your Cat</li>
 					<li>Nutrition and How to Feed Your Cat</li>
 					<li>The Catkins Diet: Feeding Your Overweight Cat on a Budget</li>
@@ -43,12 +41,22 @@ import { ResourcesList } from "@/components/Resources/ResourcesList"
 					Cat Care Learning Videos
 				</h3>
 
-				<ul class="list-disc list-inside space-y-2 mb-8 text-[#485a61]">
+				<ul class="list-none list-inside space-y-2 mb-8 text-[#485a61]">
 					<li>How to Pill a Cat</li>
 					<li>How to Trim Nails</li>
 					<li>Body Condition Score – Is Your Cat Overweight?</li>
-					<li>How to Make a Cone for Your Cat</li>
-					<li>How to Use an Insulin Pen</li>
+					<li><a 
+					href="https://www.youtube.com/watch?v=meEBLQUC-eM" 
+					style="color:#e25002; text-decoration:underline;" 
+					target="_blank" 
+					rel="noopener noreferrer" >
+					Video: How to make a cone for your cat!</a></li>
+					<li> <a 
+					href="https://www.youtube.com/watch?v=IjuB8E-CW-Y"
+					style="color:#e25002; text-decoration:underline;" 
+					target="_blank" 
+					rel="noopener noreferrer">
+					How to Use an Insulin Pen </a></li>
 					<li>How to Test Blood Glucose Using a Glucometer</li>
 					<li>How to Give Liquid Medication in the Mouth</li>
 					<li>How to Give Liquid Medication in the Cheek Pouch</li>
@@ -58,9 +66,17 @@ import { ResourcesList } from "@/components/Resources/ResourcesList"
 					Interactive Tool
 				</h3>
 
-				<p class="text-[#485a61] opacity-80">
-					Design a diet plan for your cat as part of the <strong>Catkins Diet</strong>.
-				</p>
+				<div class="mt-6">
+				<a
+					href="https://ahascatweightloss.netlify.app/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-md bg-[#e25002] px-6 py-3 font-semibold text-white transition hover:bg-[#c84302]"
+				>
+					Design a diet plan for your cat as part of the Catkins Diet
+				</a>
+			</div>
+
 			</div>
 		</section>
 
@@ -75,11 +91,7 @@ import { ResourcesList } from "@/components/Resources/ResourcesList"
 					Dog Care Learning Modules
 				</h3>
 
-				<p class="mb-4 text-[#485a61] opacity-80">
-					Click on a link, then select the arrow to start the module.
-				</p>
-
-				<ul class="list-disc list-inside space-y-2 mb-8 text-[#485a61]">
+				<ul class="list-none list-inside space-y-2 mb-8 text-[#485a61]">
 					<li>Dog Nutrition</li>
 				</ul>
 
@@ -87,7 +99,7 @@ import { ResourcesList } from "@/components/Resources/ResourcesList"
 					Dog Care Learning Videos
 				</h3>
 
-				<ul class="list-disc list-inside space-y-2 text-[#485a61]">
+				<ul class="list-none list-inside space-y-2 text-[#485a61]">
 					<li>Nail Trim</li>
 					<li>Body Condition Score – Is Your Dog Overweight?</li>
 				</ul>
