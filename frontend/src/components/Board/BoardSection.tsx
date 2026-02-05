@@ -1,7 +1,7 @@
 import { loadBoardMembers, type BoardMember } from "@/loaders/loadBoardMembers";
 import { useEffect, useState } from "react";
 import { BoardMemberCard } from "./BoardMemberCard";
-import { CardSkeleton } from "../Skeleton/Card";
+import { CardSkeleton } from "../Skeletons/CardSkeleton";
 
 export const BoardSection = () => {
 	const [members, setMembers] = useState<BoardMember[]>([])

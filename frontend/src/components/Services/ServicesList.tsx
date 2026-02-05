@@ -1,6 +1,6 @@
 import { loadServiceInfo, type ServiceInfo, getImageUrl } from "@/loaders/loadServices";
 import { useEffect, useState } from "react";
-import { CardSkeleton } from "../Skeleton/Card";
+import { CardSkeleton } from "../Skeleton/CardSkeleton";
 
 interface ServiceCardProps {
 	service: ServiceInfo;

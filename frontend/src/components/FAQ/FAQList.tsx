@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FAQItem } from "./FAQItem";
 import { loadFAQs, type FAQ } from "@/loaders/loadFAQs";
-import { ListSkeleton } from "../Skeleton/List";
+import { ListSkeleton } from "../Skeleton/ListSkeleton";
 
 import { Accordion } from "@radix-ui/react-accordion";
 

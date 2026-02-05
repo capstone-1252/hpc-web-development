@@ -2,7 +2,7 @@ import { loadPartners, type Partner } from "@/loaders";
 import { useEffect, useState } from "react";
 
 import { PartnerLogo } from "./PartnerLogo";
-import { CardSkeleton } from "../Skeleton/Card";
+import { CardSkeleton, } from "../Skeleton/CardSkeleton";
 
 export const PartnerList = () => {
 	const [partners, setPartners] = useState<Partner[]>([])
