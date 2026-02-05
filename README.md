@@ -1,43 +1,104 @@
-# Astro Starter Kit: Minimal
+# Project Setup
 
-```sh
-npm create astro@latest -- --template minimal
+## 1. Install the repo
+```bash
+git clone git@github.com:capstone-1252/hpc-web-development.git`
+## pull the most recent commit
+git pull origin main
+## Install depencencies
+cd hpc-web-development/frontent
+npm install
+```
+- Setting up an ssh key docs: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+## 2. Set up environment
+- Rename ./.env.example to .env
+
+## 3. Run the dev environme
+```bash
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Using the cockpit api:
 
-## 🚀 Project Structure
+## Using dynamic data from cockpit:
+- Because of how the astro build step prefetches content and outputs static html (we need to do this because of our hosting limitations), we need to include dynamic data using the client:load directive from astro [Reference](https://docs.astro.build/en/reference/directives-reference/#clientload)
+- This needs to be done in a react component to allow for the browser to render the content
+### Example Component
+```tsx
+// in a .astro file
+---
+import { MyComponent } from "@/components/MyComponent"
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+<MyComponent client:load />
+```
+### Fetching pattern
+- Use a useEffect to fetch the data and useState to store the data  
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```tsx
+// in a .tsx file (react component)
+import { useEffect, useState } from "react";
+// the loader function
+import loadData from "@/loaders/loadData";
+
+export const MyComponent = () => {
+    const [data, setData] = useState<Data[]>([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await loadData();
+
+            if(res) {
+                setData(res);
+            }
+        }
+        fetchData();
+    }, [])
+
+    return (
+        { data.map((item) => <p>{ item.field }</p>) }
+    )
+}
+
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- You can use the cockpit api anywhere on the frontend by importing it.
+```ts
+import cockpit from "@/lib/cockpit"
+```
+## Usage: 
+- to use the cockpit api make sure the .env is properly setup to use the public cockpit api ref
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```ts
+// getting a collection 
 
-Any static assets, like images, can be placed in the `public/` directory.
+const collection = await cockpit.getItems("<collection name>")
 
-## 🧞 Commands
+// example response from cockpit Board member:
+interface BoardMemberResponse {
+    name: string;
+    position: string;
+    // whatever the field name for the asset link
+    photo: CockpitImage;
+}
+// cockpit image data response
+interface CockpitImage {
+    path: string
+    //title of the asset
+    title: string
+}
+// getting and using an image using the api
+// first import the helper function:
 
-All commands are run from the root of the project, from a terminal:
+import { getImageUrl } from "@/loaders/loadBoardMembers";
+const imageRef = getImageUrl(member: BoardMemberResponse);
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```
+## Using an image in react:
+```tsx
+<img src={getImageUrl(member.photo)} />
 
-## 👀 Want to learn more?
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
