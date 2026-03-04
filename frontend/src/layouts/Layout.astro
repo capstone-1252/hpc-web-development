@@ -10,8 +10,44 @@ const siteSettings = await cockpit.getSingleton("siteSettings")
 ---
 
 <html lang="en">
+
 	<head>
+		<script is:inline data-category="analytics">
+		function updateConsents() {
+			gtag('consent', 'update', {
+				ad_storage: 'granted',
+				ad_user_data: 'granted',
+				ad_personalization: 'granted',
+				analytics_storage: 'granted',
+			});
+		}
+		</script>
+		{
+		import.meta.env.PROD && (
+		<!-- Google tag (gtag.js) -->
+		<script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+		<script is:inline type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("consent", "default", {
+			ad_storage: "denied",
+			ad_user_data: "denied",
+			ad_personalization: "denied",
+			analytics_storage: "denied",
+		});
+
+		gtag("config", "G-XXXXXXXXXX");
+		</script>
+		)
+		}
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" />
+		<script type="module" src="/src/scripts/cookieconsent-config.js"></script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />

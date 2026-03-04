@@ -121,3 +121,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.cc--darkmode {
+	#cc-main {
+		--cc-btn-primary-bg: #d1e9ee;
+		--cc-btn-secondary-bg: #4b766f;
+	}
+}
+
+.cc--lightmode {
+	#cc-main {
+		--cc-btn-primary-bg: #0099c1;
+		--cc-btn-secondary-bg: #ea5c05;
+
+		--cc-btn-primary-hover-bg: #3a5657;
+		--cc-btn-secondary-hover-bg: #F37427;
+	}
+}
