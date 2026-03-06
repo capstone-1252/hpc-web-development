@@ -1,7 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { Events as EventCalendar } from "@/components/Events"
 ---
 
 <Layout title="Events - Alberta Helping Animals Society">
-	<main class="bg-white"></main>
+	<main class="bg-white">
+		<EventCalendar client:load />
+	</main>
 </Layout>
