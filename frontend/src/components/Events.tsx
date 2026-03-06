@@ -1,5 +1,7 @@
-import { loadEvents, type CalendarEvent } from "@/loaders";
 import { useEffect, useState } from "react"
+import { Spinner } from "./ui/spinner";
+
+import { loadEvents, type CalendarEvent } from "@/loaders";
 import { EventCalendar } from "./event-calendar";
 import { toCalendarEvent } from "@/lib/utils";
 
@@ -20,7 +22,19 @@ export const Events = () => {
 		fetchData();
 	}, [])
 
-	if(loading){ return }
+	if(loading){ 
+		return (
+			<>
+				<div className="min-w-screen min-h-screen">
+					<div className="min-w-[900px] mx-auto">
+						<h2>Loading Events...</h2>
+						<Spinner />
+					</div>
+				</div>
+			</>
+		)
+	}
+
 
 	return <EventCalendar 
 		events={events}
