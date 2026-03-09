@@ -92,7 +92,7 @@ class CockpitAPI {
 		if (options.height) params.append('h', options.height.toString());
 		if (options.quality) params.append('q', options.quality.toString());
 		if (options.mime) params.append('mime', options.mime);
-		params.append('o', '1'); // Return binary image
+		params.append('o', '1');
 		
 		const paramString = params.toString();
 		const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
