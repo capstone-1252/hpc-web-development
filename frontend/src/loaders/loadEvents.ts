@@ -1,48 +1,39 @@
 import cockpit from "@/lib/cockpit";
 
-export interface CockpitImage {
-  path: string;
-  title?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  meta?: Record<string, any>;
-}
+type EventType = "Fundraiser" | "Seminar" | "Meetup" | "Other"
 
 export type Event = {
-  _id: string;
-  title: string;
-  description: string;
-  date: string;
-  time: string;
-  location: string;
-  price: string;
-  type: "upcoming" | "past";
-  featured?: boolean;
-  image?: CockpitImage;
-};
-
-export async function loadEvents(type?: "upcoming" | "past"): Promise<Event[]> {
-  const filter = type ? { type } : {};
-  const data = await cockpit.getItems("events", { 
-    filter,
-    sort: { date: -1 }
-  });
-  return data as Event[];
+	title: string
+	slug: string
+	longDescription: string
+	date: string
+	endDate?: string
+	location: string
+	type?: EventType
 }
 
-export async function loadEvent(id: string): Promise<Event | null> {
-  try {
-    const data = await cockpit.getItem("events", id);
-    return data as Event;
-  } catch {
-    return null;
-  }
+type EventColor =
+  | "sky"
+  | "amber"
+  | "violet"
+  | "rose"
+  | "emerald"
+  | "orange"
+
+export type CalendarEvent = {
+  id: string
+  title: string
+  description?: string
+  start: Date
+  end: Date
+  allDay?: boolean
+  color?: EventColor
+  location?: string
 }
 
-export function getImageUrl(image: CockpitImage | undefined): string {
-  if (!image?.path) return "";
-  
-  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
-  return `${baseURL}${image.path}`;
+export const loadEvents = async (): Promise<Event[]> => {
+	const events = await cockpit.getItems("events");
+	console.log(events)
+	return events
 }
+

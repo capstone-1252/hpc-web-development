@@ -1,48 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { EventsList } from "@/components/Events/EventsList"
+import { Events as EventCalendar } from "@/components/Events"
 ---
 
 <Layout title="Events - Alberta Helping Animals Society">
 	<main class="bg-white">
-		<!-- Hero Section -->
-		<section class="relative bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-7xl mx-auto text-center">
-				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#485a61] mb-6 lg:mb-8">Events</h1>
-				<p class="text-lg sm:text-xl lg:text-2xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed">
-					Join us at our upcoming events to support Alberta's animals and connect with our community.
-				</p>
-			</div>
-		</section>
-
-		<!-- Events List -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-6xl mx-auto">
-				<EventsList client:load />
-			</div>
-		</section>
-
-		<!-- Event Registration CTA -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
-					Stay Connected
-				</h2>
-				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed">
-					Sign up for our newsletter to receive updates about upcoming events, volunteer opportunities, and success stories from our community.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
-					<button class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
-						Subscribe to Newsletter
-					</button>
-					<a 
-						href="/contact" 
-						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
-					>
-						Contact Us
-					</a>
-				</div>
-			</div>
-		</section>
+		<div class="min-h-screen p-1 md:p-12">
+			<EventCalendar client:load />
+		</div>
 	</main>
 </Layout>

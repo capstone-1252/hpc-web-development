@@ -56,7 +56,7 @@ import Layout from "@/layouts/Layout.astro"
 					</p>
 				</div>
 				
-				<form class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200" action="">
+				<form class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200">
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 						<div>
 							<label for="name" class="block text-sm font-medium text-[#485a61] mb-2">Full Name *</label>
@@ -136,44 +136,16 @@ import Layout from "@/layouts/Layout.astro"
 			</div>
 		</section>
 
-		<!-- Clinic Location Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-6xl mx-auto">
-				<div class="bg-white p-6 lg:p-8 rounded-lg shadow-lg border border-gray-200">
-					<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#fdb52b] bg-opacity-20 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
-						<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#fdb52b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-						</svg>
-					</div>
-					<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-4">Clinic Location</h3>
-					<p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-4">
-						<span class="font-semibold">Address:</span> 12701 – 119 Street NW, Edmonton, AB<br>
-						<span class="font-semibold">Hours:</span> Monday - Friday, 10:00 AM - 4:00 PM<br>
-						<span class="font-semibold">After Hours:</span> Pet Food Bank available in our parking lot
-					</p>
-					<div class="bg-gray-100 rounded-lg p-4 lg:p-6 text-center">
-						<p class="text-[#485a61] mb-4">Map placeholder - Interactive map would be implemented here</p>
-						<div class="bg-[#e8f4f7] rounded-lg h-48 lg:h-64 flex items-center justify-center">
-							<svg class="w-16 h-16 lg:w-24 lg:h-24 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-							</svg>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<!-- Emergency Information Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--muted-blue)] text-black">
 			<div class="max-w-6xl mx-auto">
-				<div class="text-center text-white">
+				<div class="text-center">
 					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Emergency Information</h2>
 					<p class="text-lg lg:text-xl opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-4xl mx-auto">
 						If you are experiencing a pet emergency, please contact an emergency veterinary clinic immediately. 
 						AHAS is not able to offer urgent services to new clients except under extraordinary circumstances.
 					</p>
-					<div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 lg:p-8">
+					<div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 lg:p-8 text-black">
 						<p class="text-xl font-semibold mb-4">For Pet Emergencies:</p>
 						<p class="text-lg mb-2">Contact your nearest emergency veterinary clinic</p>
 						<p class="text-lg">Search online for "emergency vet near me" for immediate assistance</p>

@@ -21,13 +21,17 @@ export function FAQList() {
 	}, []);
 
 	if (loading) return (
-		<ListSkeleton className="p-2"  />
+		<>
+			<h2>Loading FAQs</h2>
+			<ListSkeleton className="p-2"  />
+		</>
 	)
 	if (faqs.length === 0) return <p>No FAQs available.</p>;
 
 	return (
 		<>
 			<Accordion type="multiple" className="max-w-[900px] mx-auto">
+				<h2>FAQs</h2>
 				{faqs.map((faq, i) => (
 					<FAQItem key={i} faq={faq}/>
 				))}
