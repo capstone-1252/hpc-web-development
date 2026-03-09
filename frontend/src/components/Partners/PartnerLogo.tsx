@@ -10,7 +10,9 @@ export const PartnerLogo = ({partner}: PartnerLogoProps) => {
 
 	useEffect(() => {
 		const fetchLogo = async () => {
-					const logo = await cockpit.getAssetUrl(partner.logo._id, { mode: "fitToHeight", width: 500, quality: 500 })
+					const logo = await cockpit.getAssetUrl(partner.logo._id, 
+				{ mode: "fitToHeight", width: 500, quality: 500 }
+			)
 			setLogoUrl(logo);
 		}
 		fetchLogo();
