@@ -1,6 +1,6 @@
 import axios, {type AxiosInstance, type AxiosRequestConfig } from "axios";
 
-interface CockpitOptions {
+export interface CockpitOptions {
 	filter?: Record<string, any>;
 	sort?: Record<string, number>;
 	limit?: number;
