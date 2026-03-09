@@ -6,7 +6,7 @@ interface AnnouncementProps {
 export const Announcement = ({ announcement }: AnnouncementProps) => {
 	return (
 		<div>
-			{ announcement.title }
+			{ announcement.content }
 		</div>
 	)
 }

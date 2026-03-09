@@ -1,6 +1,6 @@
-import cockpit from "@/lib/cockpit"
+import cockpit, { type CockpitItemData } from "@/lib/cockpit"
 
-export interface Announcement {
+export interface Announcement extends CockpitItemData {
 	title: string
 	content: string
 	event: any
