@@ -25,10 +25,10 @@ export const Events = () => {
 	if(loading){ 
 		return (
 			<>
-				<div className="min-w-screen min-h-screen">
-					<div className="min-w-[900px] mx-auto">
+				<div className="min-h-screen">
+					<div className="flex flex-col items-center justify-center">
 						<h2>Loading Events...</h2>
-						<Spinner />
+						<Spinner className="size-10" />
 					</div>
 				</div>
 			</>
