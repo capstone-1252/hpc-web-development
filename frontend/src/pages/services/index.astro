@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import { ServicesList } from "@/components/Services/ServicesList"
 import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
+import ExternalLinkIcon from "@/components/Icons/ExternalLinkIcon.astro"
 ---
 
 <Layout title="Our Services - Alberta Helping Animals Society">
@@ -35,10 +36,13 @@ import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
 		</section>
 
 		<!-- Food Bank Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-			<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Pet Food Banks</h2>
-			<p class="mb-4">Veterinary costs aside, pet owners face the additional costs of keeping their furry friends well-fed, healthy and happy.</p>
-			<FoodBanksList client:load />
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+			<div class="max-w-6xl mx-auto flex flex-col gap-3">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">Pet Food Banks</h2>
+				<p class="mb-4">Veterinary costs aside, pet owners face the additional costs of keeping their furry friends well-fed, healthy and happy.</p>
+				<FoodBanksList client:load />
+				<p class="my-2">Many groups on Facebook can help with food.  Search for “pet food bank” for help. Edmonton Food Bank may have some food and supplies as well. We have some food as well.  You can also check out our “After Hours Pet Food Bank” box in our parking lot behind the clinic.</p>
+			</div>
 		</section>
 
 		<!-- Quick Links Section -->
@@ -49,17 +53,17 @@ import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
 				</div>
 				
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-					<div class="text-center">
+					<div class="">
 						<a 
 							href="/services/apply" 
 							class="block bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
 						>
-							<div class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-lg flex items-center justify-center mx-auto mb-4">
-								<svg class="w-8 h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-								</svg>
+							<div class="flex items-center gap-3">
+								<ExternalLinkIcon /> 
+								<h3 class="text-xl font-bold text-[#485a61]">
+									Apply for Services
+								</h3>
 							</div>
-							<h3 class="text-xl font-bold text-[#485a61] mb-2">Apply for Services</h3>
 							<p class="text-[#485a61] opacity-80 text-sm">Complete our application for veterinary care</p>
 						</a>
 					</div>
@@ -69,12 +73,10 @@ import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
 							href="/resources" 
 							class="block bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
 						>
-							<div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center mx-auto mb-4">
-								<svg class="w-8 h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-								</svg>
+							<div class="flex items-center gap-3">
+								<ExternalLinkIcon /> 
+								<h3 class="text-xl font-bold text-[#485a61]">Moodle Learning Modules</h3>
 							</div>
-							<h3 class="text-xl font-bold text-[#485a61] mb-2">Pet Care Resources</h3>
 							<p class="text-[#485a61] opacity-80 text-sm">Guides and information for pet owners</p>
 						</a>
 					</div>
@@ -84,12 +86,10 @@ import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
 							href="/faq" 
 							class="block bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
 						>
-							<div class="w-16 h-16 bg-[#fdb52b] bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-								<svg class="w-8 h-8 text-[#fdb52b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg>
+							<div class="flex items-center gap-3">
+								<ExternalLinkIcon /> 
+								<h3 class="text-xl font-bold text-[#485a61]">FAQs</h3>
 							</div>
-							<h3 class="text-xl font-bold text-[#485a61] mb-2">Frequently Asked Questions</h3>
 							<p class="text-[#485a61] opacity-80 text-sm">Find answers to common questions</p>
 						</a>
 					</div>
