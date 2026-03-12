@@ -28,7 +28,7 @@ export function FoodBanksList() {
 	}
 
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+		<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 			{foodBanks.map((foodBank) => (
 				<div key={foodBank._id} className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
 					<div className="flex flex-col items-start gap-4">
