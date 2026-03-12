@@ -1,4 +1,4 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 
 export interface CockpitImage {
   path: string;
@@ -9,20 +9,21 @@ export interface CockpitImage {
   meta?: Record<string, any>;
 }
 
-export type FoodBank = {
-  _id: string;
+export interface FoodBank extends CockpitItemData {
   name: string;
-  address: string;
-  hours: string;
-  contact?: string;
-  description: string;
-  image?: CockpitImage;
+	phone?: string;
+	email?: string;
+	link?: string;
+  address?: string;
+  hours?: string;
+	appointmentOnly: boolean;
 };
 
 export async function loadFoodBanks(): Promise<FoodBank[]> {
-  const data = await cockpit.getItems("food_banks", {
-    sort: { name: 1 }
+  const data = await cockpit.getItems("foodbanks", {
+    sort: { name: 1 } // sorts alphanumerically
   });
+
   return data as FoodBank[];
 }
 
