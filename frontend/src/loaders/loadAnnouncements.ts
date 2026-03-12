@@ -11,9 +11,11 @@ const fetchAssociatedEvent = async (id: string) => {
 	return res
 }
 
-const thirtyDaysAgo = Math.floor(Date.now() / 1000) - (30 * 24 * 60 * 60) // 30 days
-// testing purposes
-// const oneDayAgo = Math.floor(Date.now() / 1000) - 86400;
+
+const getDaysAgo = (nDays: number) => {
+  const secondsInDay = 24 * 60 * 60;
+  return Math.floor(Date.now() / 1000) - (nDays * secondsInDay);
+}
 
 export const loadLatestAnnouncements = async () => {
 	// cockpit uses Mongo Query syntax: ref https://www.mongodb.com/docs/manual/reference/mql/query-predicates/
@@ -21,7 +23,7 @@ export const loadLatestAnnouncements = async () => {
 	// only fetch the most recent announcements
 	const query = {
 		_modified: {
-			$gte: thirtyDaysAgo
+			$gte: getDaysAgo(15)
 		}
 	}
 
