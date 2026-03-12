@@ -10,7 +10,7 @@ export function FoodBanksList() {
       try {
         const data = await loadFoodBanks();
         setFoodBanks(data);
-      </div> catch (error) {
+      } catch (error) {
         console.error("Failed to load food banks:", error);
       } finally {
         setLoading(false);
@@ -63,7 +63,8 @@ export function FoodBanksList() {
             )}
           </div>
         </div>
-      ))}
     </div>
-  );
+      ))}
+      </div>
+  )
 }

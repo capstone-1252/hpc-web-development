@@ -10,18 +10,19 @@ export interface CockpitImage {
 }
 
 export type SuccessStory = {
+    _id: string;
     image?: CockpitImage;
     description: string;
 };
 
-export async function loadFoodBanks(): Promise<SuccessStory[]> {
+export async function loadSuccessStories(): Promise<SuccessStory[]> {
   const data = await cockpit.getItems("success_story", {
     sort: { name: 1 }
   });
   return data as SuccessStory[];
 }
 
-export function getImageUrl(image: CockpitImage | undefined): string {
+export function getSuccessImageUrl(image: CockpitImage | undefined): string {
   if (!image?.path) return "";
   
   const baseURL = import.meta.env.PUBLIC_COCKPIT_API;

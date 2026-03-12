@@ -15,7 +15,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 		<section class="relative bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
 			<div class="max-w-7xl mx-auto">
 				<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-					<div class="text-center lg:text-left">
+					<div class="lg:text-left">
 						<h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight">
 							Saving Lives and Healing
 							<span class="text-[#19b8d7] block lg:inline">Alberta's Animals</span>
@@ -33,7 +33,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 							</a>
 							<a 
 								href="/about-us" 
-								class="bg-white hover:bg-gray-50 text-[#485a61] border-2 border-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
+								class="bg-white hover:bg-gray-50 text-(--dark-blue) border-2 border-(--dark-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors transform hover:scale-105 whitespace-nowrap"
 							>
 								Our Mission
 							</a>
@@ -48,20 +48,20 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 
 		<!-- Mission Section -->
 		<section class="pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-3xl mx-auto">
+			<div class="max-w-6xl mx-auto">
 				<div class="mb-8 lg:mb-12">
 					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
 						Our Mission
 					</h2>
 					<div class="mx-auto">
-						<YouTube  id="6RzUmbe-hk0"/>
+						<YouTube id="6RzUmbe-hk0" class="min-w-full"/>
 					</div>
-					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 mx-auto leading-relaxed">
+					<p class="text-lg lg:text-xl text-[#485a61] mx-auto leading-relaxed my-6">
 						Alberta Helping Animals Society is dedicated to providing compassionate veterinary care, 
 						rescue services, and support for animals in need throughout Alberta.
 					</p>
 				</div>
-				<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-3xl bg-(--dark-blue) text-white p-6 rounded-tl-[200px] rounded-r-[100px] ">
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-6xl bg-(--dark-blue) text-white p-6 rounded-tl-[200px] rounded-r-[100px] ">
 					<div class="text-center">
 						<div class="text-3xl sm:text-4xl font-bold mb-2">15+</div>
 						<p class="text-sm sm:text-base font-medium">Years of Service</p>
@@ -82,7 +82,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 		<section class="pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#fbfbfb]">
 			<div class="max-w-6xl mx-auto">
 				<div class="max-w-3xl mx-auto mb-4">
-					<div class=" max-w-[300px] md:max-w-lg bg-[#e6e6e6] rounded-b-[70px] p-5 px-6 mb-12">
+					<div class=" max-w-[300px] md:max-w-6xl bg-[#e6e6e6] rounded-b-[70px] p-5 px-6 mb-12">
 						<h2 class="text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-2 lg:mb-6 px-4">
 							How We Help Alberta's Animals
 						</h2>
@@ -137,11 +137,10 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 				</div>
 			</div>
 		</section>
-
 		<!-- Rescue Stories Section -->
 		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
 			<div class="max-w-6xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-[#485a61] mb-8 lg:mb-12">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-8 lg:mb-12">
 					Success Stories
 				</h2>
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
@@ -186,67 +185,48 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 			</div>
 		</section>
 
-		<!-- Partners -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-			<div class="text-center">
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-					Our Partners
-				</h2>
-				<PartnerList client:load />
-			</div>
-		</section>
 
 		<AnnouncementList client:load />
 
 		<!-- Impact Section -->
 		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee]">
 			<div class="max-w-6xl mx-auto">
-				<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
-					<div>
-						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#19b8d7] mb-2">5,000+</div>
-						<div class="text-sm sm:text-base text-[#485a61] font-medium">Animals Rescued</div>
+				<div class="grid grid-cols-1 xl:grid-cols-2 gap-[128px]">
+					<div class="bg-(--muted-blue) p-12 rounded-md">
+					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
+						Support Us
+					</h2>
+					<p class="text-lg sm:text-xl text-black opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
+						Join us in our mission to protect and care for Alberta's animals. Your donation 
+						provides emergency medical care, shelter, and hope for animals in need.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-12 lg:gap-12 justify-center">
+						<a 
+							href="/donate" 
+							class="bg-primary text-(--muted-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+						>
+							Donate Now
+						</a>
+						<a 
+							href="/get-involved" 
+								class="border-2 border-primary text-primary px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap transform hover:scale-105"
+						>
+							Get Involved
+						</a>
+						</div>
 					</div>
-					<div>
-						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#e25002] mb-2">2,500+</div>
-						<div class="text-sm sm:text-base text-[#485a61] font-medium">Forever Homes</div>
-					</div>
-					<div>
-						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fdb52b] mb-2">10,000+</div>
-						<div class="text-sm sm:text-base text-[#485a61] font-medium">Medical Procedures</div>
-					</div>
-					<div>
-						<div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#485a61] mb-2">$2M+</div>
-						<div class="text-sm sm:text-base text-[#485a61] font-medium">in Care Provided</div>
+					<div class="mx-auto">
+						<img src="/support-us.png" alt="">
 					</div>
 				</div>
 			</div>
 		</section>
-
-
-		<!-- Final CTA Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
-					Your Support Saves Lives
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+					Our Partners
 				</h2>
-				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
-					Join us in our mission to protect and care for Alberta's animals. Your donation 
-					provides emergency medical care, shelter, and hope for animals in need.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
-					<a 
-						href="/donate" 
-						class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
-					>
-						Donate Now
-					</a>
-					<a 
-						href="/get-involved" 
-						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
-					>
-						Get Involved
-					</a>
-				</div>
+				<PartnerList client:load />
 			</div>
 		</section>
 	</main>
