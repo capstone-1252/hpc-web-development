@@ -10,6 +10,7 @@ export interface CockpitImage {
 }
 
 
+
 export async function loadResources(): Promise<any[]> {
   const data = await cockpit.getItems("Resources")
   return data;
@@ -17,12 +18,12 @@ export async function loadResources(): Promise<any[]> {
 
 export async function loadResource(id: string): Promise<any | null> {
   try {
-    const data = await cockpit.getItem("resources", id);
+    const data = await cockpit.getItem("Resources", id);
     return data
   } catch {
     return null;
   }
-}
+
 
 export function getImageUrl(image: CockpitImage | undefined): string {
   if (!image?.path) return "";

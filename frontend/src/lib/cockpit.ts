@@ -1,6 +1,6 @@
 import axios, {type AxiosInstance, type AxiosRequestConfig } from "axios";
 
-interface CockpitOptions {
+export interface CockpitOptions {
 	filter?: Record<string, any>;
 	sort?: Record<string, number>;
 	limit?: number;
@@ -8,7 +8,18 @@ interface CockpitOptions {
 	populate?: number;
 }
 
-interface CockpitResponse<T = any> {
+// These fields are default metadata on all cockpit items
+export interface CockpitItemData {
+	_id: string
+	// modified and created time as unix time stamp
+	_modified: number
+	_created: number
+	_mby: string
+	_state: number
+	_cby: string
+}
+
+export interface CockpitResponse<T = any> {
 	data?: T;
 	error?: string;
 }
