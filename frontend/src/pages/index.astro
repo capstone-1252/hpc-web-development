@@ -186,10 +186,8 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 		</section>
 
 
-		<AnnouncementList client:load />
 
-		<!-- Impact Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee]">
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
 			<div class="max-w-6xl mx-auto">
 				<div class="grid grid-cols-1 xl:grid-cols-2 gap-[128px]">
 					<div class="bg-(--muted-blue) p-12 rounded-md">
@@ -228,6 +226,9 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 				</h2>
 				<PartnerList client:load />
 			</div>
+		</section>
+		<section>
+			<AnnouncementList client:load />
 		</section>
 	</main>
 </Layout>
