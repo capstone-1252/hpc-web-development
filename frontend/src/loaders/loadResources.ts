@@ -12,3 +12,4 @@ export async function loadResource(id: string): Promise<any | null> {
   } catch {
     return null;
   }
+}
