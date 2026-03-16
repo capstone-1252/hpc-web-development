@@ -1,13 +1,5 @@
 import cockpit from "@/lib/cockpit";
-
-export interface CockpitImage {
-  path: string;
-  title?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  meta?: Record<string, any>;
-}
+import type { AssetImage } from "./utils";
 
 export type VolunteerOpportunity = {
   _id: string;
@@ -18,7 +10,7 @@ export type VolunteerOpportunity = {
   skills_required?: string;
   training_required?: boolean;
   category: string;
-  image?: CockpitImage;
+  image?: AssetImage;
 };
 
 export async function loadVolunteerOpportunities(): Promise<VolunteerOpportunity[]> {
@@ -35,11 +27,4 @@ export async function loadVolunteerOpportunity(id: string): Promise<VolunteerOpp
   } catch {
     return null;
   }
-}
-
-export function getImageUrl(image: CockpitImage | undefined): string {
-  if (!image?.path) return "";
-  
-  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
-  return `${baseURL}${image.path}`;
 }

@@ -1,8 +1,8 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 
 type EventType = "Fundraiser" | "Seminar" | "Meetup" | "Other"
 
-export type Event = {
+export interface Event extends CockpitItemData {
 	title: string
 	slug: string
 	longDescription: string
@@ -11,7 +11,6 @@ export type Event = {
 	location: string
 	type?: EventType
 }
-
 type EventColor =
   | "sky"
   | "amber"
@@ -33,7 +32,6 @@ export type CalendarEvent = {
 
 export const loadEvents = async (): Promise<Event[]> => {
 	const events = await cockpit.getItems("events");
-	console.log(events)
 	return events
 }
 

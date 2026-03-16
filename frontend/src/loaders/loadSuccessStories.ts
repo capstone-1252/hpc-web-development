@@ -1,28 +1,12 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
+import type { AssetImage } from "./utils";
 
-export interface CockpitImage {
-  path: string;
-  title?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  meta?: Record<string, any>;
-}
-
-export type SuccessStory = {
-    _id: string;
-    image?: CockpitImage;
+export interface SuccessStory extends CockpitItemData {
+    image?: AssetImage;
     description: string;
 };
 
 export async function loadSuccessStories(): Promise<SuccessStory[]> {
   const data = await cockpit.getItems("successStories");
   return data as SuccessStory[];
-}
-
-export function getSuccessImageUrl(image: CockpitImage | undefined): string {
-  if (!image?.path) return "";
-  
-  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
-  return `${baseURL}${image.path}`;
 }

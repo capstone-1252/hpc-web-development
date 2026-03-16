@@ -1,28 +1,20 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
+import type { AssetImage } from "./utils";
 
-export interface CockpitImage {
-  path: string;
-  title?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  meta?: Record<string, any>;
-}
-
-export type ServiceInfo = {
+export interface Service extends CockpitItemData {
   _id: string;
   name: string;
   description: string;
   icon?: string;
-  image?: CockpitImage;
+  image?: AssetImage;
   details?: string[];
 };
 
-export async function loadServiceInfo(): Promise<ServiceInfo[]> {
-  const data = await cockpit.getItems("services", {
+export async function loadServiceInfo(): Promise<Service[]> {
+  const data = await cockpit.getItems<Service>("services", {
     sort: { title: 1 }
   });
-  return data as ServiceInfo[];
+  return data;
 }
 
 export type EligibilityInfo = {
@@ -44,11 +36,4 @@ export async function loadEligibilityInfo(): Promise<EligibilityInfo | null> {
   } catch {
     return null;
   }
-}
-
-export function getImageUrl(image: CockpitImage | undefined): string {
-  if (!image?.path) return "";
-  
-  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
-  return `${baseURL}${image.path}`;
 }

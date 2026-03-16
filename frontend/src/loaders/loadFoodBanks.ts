@@ -1,14 +1,5 @@
 import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 
-export interface CockpitImage {
-  path: string;
-  title?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  meta?: Record<string, any>;
-}
-
 export interface FoodBank extends CockpitItemData {
   name: string;
 	phone?: string;
@@ -25,11 +16,4 @@ export async function loadFoodBanks(): Promise<FoodBank[]> {
   });
 
   return data as FoodBank[];
-}
-
-export function getImageUrl(image: CockpitImage | undefined): string {
-  if (!image?.path) return "";
-  
-  const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
-  return `${baseURL}${image.path}`;
 }

@@ -1,6 +1,6 @@
-import cockpit from "@/lib/cockpit"
+import cockpit, { type CockpitItemData } from "@/lib/cockpit"
 
-export interface Partner {
+export interface Partner extends CockpitItemData {
 	name: string
 	logo: any
 }

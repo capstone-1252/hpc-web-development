@@ -1,5 +1,0 @@
-export * from "./loadFAQs"
-export * from "./loadServices"
-export * from "./loadPartners"
-export * from "./loadEvents"
-export { getImageUrl } from "./loadServices"

@@ -1,21 +1,11 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
+import type { AssetImage } from "./utils";
 
-export interface CockpitImage {
-  path: string;
-  title?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  meta?: Record<string, any>;
-  _id?: string; // Asset ID might be stored here
-}
-
-export type BoardMember = {
-  _id: string;
+export interface BoardMember extends CockpitItemData {
   name: string;
   position: string;
   bio?: string;
-  photo?: CockpitImage;
+  photo?: AssetImage;
 };
 
 export async function loadBoardMembers(): Promise<BoardMember[]> {
@@ -32,48 +22,4 @@ export async function loadBoardMember(id: string): Promise<BoardMember | null> {
   } catch {
     return null;
   }
-}
-
-export function getImageUrl(image: CockpitImage | undefined, width: number, height:number): string {
-  if (!image?.path) return "";
-  
-  let assetId = image._id;
-  
-  if (!assetId) {
-    const pathParts = image.path.split('/');
-    const filename = pathParts[pathParts.length - 1];
-    assetId = filename.split('-')[0]; 
-    if (!assetId.match(/^[a-f0-9]{24}$/i)) {
-      assetId = filename.split('.')[0];
-    }
-  }
-  
-  return `${import.meta.env.PUBLIC_COCKPIT_API}/assets/image/${assetId}?m=thumbnail&w=${width}&h=${height}&q=80&o=1`;
-}
-
-export async function getOptimizedImageUrl(image: CockpitImage | undefined, options: {
-  width?: number;
-  height?: number;
-  quality?: number;
-  mode?: 'thumbnail' | 'bestFit' | 'resize' | 'fitToWidth' | 'fitToHeight';
-} = {}): Promise<string> {
-  if (!image?.path) return "";
-  
-  let assetId = image._id;
-  
-  if (!assetId) {
-    const pathParts = image.path.split('/');
-    const filename = pathParts[pathParts.length - 1];
-    assetId = filename.split('-')[0];
-    if (!assetId.match(/^[a-f0-9]{24}$/i)) {
-      assetId = filename.split('.')[0];
-    }
-  }
-  
-  return await cockpit.getAssetUrl(assetId, {
-    width: options.width || 64,
-    height: options.height || 64,
-    quality: options.quality || 80,
-    mode: options.mode || 'thumbnail'
-  });
 }

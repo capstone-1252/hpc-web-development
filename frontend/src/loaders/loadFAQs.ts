@@ -1,6 +1,6 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 
-export type FAQ = { 
+export interface FAQ extends CockpitItemData { 
   question: string; 
   answer: string;
 };

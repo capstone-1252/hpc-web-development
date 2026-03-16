@@ -1,6 +1,6 @@
 import { loadSuccessStories, type SuccessStory } from "@/loaders/loadSuccessStories";
 import { useEffect, useState } from "react";
-import { getImageUrl } from "@/loaders/loadBoardMembers";
+import { getImageUrl } from "@/loaders/utils";
 
 interface StoryCardProps {
 	story: SuccessStory
