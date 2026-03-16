@@ -91,13 +91,13 @@ interface CockpitImage {
 // getting and using an image using the api
 // first import the helper function:
 
-import { getImageUrl } from "@/loaders/loadBoardMembers";
-const imageRef = getImageUrl(member: BoardMemberResponse);
+import { getImageUrl } from "@/loaders/utils";
+const imageRef = getImageUrl(member: BoardMemberResponse, width, height);
 
 ```
 ## Using an image in react:
 ```tsx
-<img src={getImageUrl(member.photo)} />
+<img src={getImageUrl(member.photo, width, height)} />
 
 ```
 
