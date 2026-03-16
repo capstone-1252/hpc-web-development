@@ -15,11 +15,11 @@ export async function loadBoardMembers(): Promise<BoardMember[]> {
   return data as BoardMember[];
 }
 
-export async function loadBoardMember(id: string): Promise<BoardMember | null> {
+export async function loadBoardMember(id: string): Promise<BoardMember> {
   try {
     const data = await cockpit.getItem("board", id);
     return data as BoardMember;
   } catch {
-    return null;
+    return {} as BoardMember
   }
 }

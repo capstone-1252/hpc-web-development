@@ -1,9 +1,9 @@
-import { loadServiceInfo, type ServiceInfo, getImageUrl } from "@/loaders/loadServices";
+import { loadServiceInfo, type Service} from "@/loaders/loadServices";
 import { useEffect, useState } from "react";
 import { CardSkeleton } from "../Skeleton/CardSkeleton";
 
 interface ServiceCardProps {
-	service: ServiceInfo;
+	service: Service;
 }
 
 function ServiceCard({ service }: ServiceCardProps) {
@@ -15,7 +15,7 @@ function ServiceCard({ service }: ServiceCardProps) {
 }
 
 export function ServicesList() {
-	const [services, setServices] = useState<ServiceInfo[]>([]);
+	const [services, setServices] = useState<Service[]>([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {

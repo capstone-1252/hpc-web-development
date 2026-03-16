@@ -1,11 +1,11 @@
 import type { BoardMember } from "@/loaders/loadBoardMembers"
-import { getImageUrl } from "@/loaders/loadBoardMembers"
+import { getImageUrl } from "@/loaders/utils"
 
 interface BoardMemberCardProps {
 	member: BoardMember
 }
 export const BoardMemberCard = ({ member }: BoardMemberCardProps) => {
-	console.log(getImageUrl(member.photo));
+	console.log(getImageUrl(member.photo, 64, 64));
 
 	return (
 
@@ -13,8 +13,8 @@ export const BoardMemberCard = ({ member }: BoardMemberCardProps) => {
 			<div className="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
 				{member.photo ? (
 					<img 
-						src={getImageUrl(member.photo)} 
-						alt={member.photo| member.name}
+						src={getImageUrl(member.photo, 64, 64)} 
+						alt={"Headshot of" + member.name}
 						className="w-full h-full object-cover"
 					/>
 				) : (
