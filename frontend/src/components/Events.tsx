@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "./ui/spinner";
 
-import { loadEvents, type CalendarEvent } from "@/loaders";
+import { loadEvents, type CalendarEvent } from "@/loaders/loadEvents";
 import { EventCalendar } from "./event-calendar";
 import { toCalendarEvent } from "@/lib/utils";
 
