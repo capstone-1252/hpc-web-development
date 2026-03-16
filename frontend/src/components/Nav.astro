@@ -3,9 +3,9 @@ const menuItems = [
 	{ href: '/about-us', label: 'About Us' },
 	{ href: '/services', label: 'Our Services' },
 	{ href: '/events', label: 'Events' },
-	{ href: '/faq', label: 'FAQs' },
+	{ href: '/resources', label: 'Animal Care Resources' },
+	{ href: '/get-involved', label: 'Get Involved' },
 	{ href: '/contact', label: 'Contact' },
-	{ href: '/get-involved', label: 'Get Involved' }
 ];
 ---
 
@@ -43,7 +43,7 @@ transform: scaleX(1);
 			</div>
 
 			<!-- Desktop Menu -->
-			<div class="hidden md:flex md:items-center md:space-x-8">
+			<div class="hidden lg:flex lg:items-center lg:space-x-8">
 				{menuItems.map((item) => (
 				<a 
 					href={item.href} 
@@ -52,7 +52,6 @@ transform: scaleX(1);
 					{item.label}
 				</a>
 				))}
-				<!-- Donate CTA -->
 				<a 
 					href="/donate" 
 					class="bg-[#e25002] hover:bg-[#c44301] text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors shadow-md"
@@ -62,7 +61,7 @@ transform: scaleX(1);
 			</div>
 
 			<!-- Mobile menu button -->
-			<div class="md:hidden">
+			<div class="lg:hidden">
 				<button 
 					type="button"
 					id="mobile-menu-button"
@@ -79,7 +78,7 @@ transform: scaleX(1);
 		</div>
 
 		<!-- Mobile menu -->
-		<div class="md:hidden hidden" id="mobile-menu">
+		<div class="lg:hidden hidden" id="mobile-menu">
 			<div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
 				{menuItems.map((item) => (
 				<a 
