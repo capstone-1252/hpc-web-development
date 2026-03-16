@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro"
 import { YouTube } from "astro-embed"
 import { PartnerList } from "@/components/Partners/PartnerList.tsx"
 import { AnnouncementList } from "@/components/Announcements/AnnouncementList"
+import { SuccessStoryList } from "@/components/SuccessStories/SuccessStoryList"
 import School from "@/components/Icons/School.astro"
 import Dog from "@/components/Icons/Dog.astro"
 import DogBowl from "@/components/Icons/DogBowl.astro"
@@ -143,45 +144,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-8 lg:mb-12">
 					Success Stories
 				</h2>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-					<div class="bg-white rounded-lg shadow-lg p-4 lg:p-6 border border-gray-200 h-full flex flex-col">
-						<div class="flex items-start gap-3 lg:gap-4">
-							<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#e25002] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
-								<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#e25002]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-								</svg>
-							</div>
-							<div class="flex-1">
-								<h3 class="text-lg lg:text-xl font-bold text-(--dark-blue) mb-2">Cats Orthopedic Surgery</h3>
-								<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-3">Yahoooo!  Wonderful bone saw!  This kitty will be pain free after major orthopaedic surgery!  Thanks to Dr Chris!</p>
-								<div class="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm">
-									<span class="text-[#485a61] font-semibold">Buddy</span>
-									<span class="text-[#485a61] opacity-70">•</span>
-									<span class="text-[#485a61] opacity-70">2024</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-4 lg:p-6 border border-gray-200 h-full flex flex-col">
-						<div class="flex items-start gap-3 lg:gap-4 flex-1">
-							<div class="w-12 h-12 lg:w-16 lg:h-16 bg-[#19b8d7] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
-								<svg class="w-6 h-6 lg:w-8 lg:h-8 text-[#19b8d7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg>
-							</div>
-							<div class="flex-1">
-								<h3 class="text-lg lg:text-xl font-bold text-(--dark-blue) mb-2">Community Support</h3>
-								<p class="text-sm lg:text-base text-[#485a61] opacity-80 mb-3">Some wonderful person just made a massive anonymous donation to AHAS through Canada Helps.  We can't seem to see who donates (grr, I know you all get tax receipts but I want to thank you personally).</p>
-								<div class="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm">
-									<span class="text-[#485a61] font-semibold">AHAS</span>
-									<span class="text-[#485a61] opacity-70">•</span>
-									<span class="text-[#485a61] opacity-70">2024</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<SuccessStoryList client:load />
 			</div>
 		</section>
 
@@ -191,26 +154,26 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 			<div class="max-w-6xl mx-auto">
 				<div class="grid grid-cols-1 xl:grid-cols-2 gap-[128px]">
 					<div class="bg-(--muted-blue) p-12 rounded-md">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-						Support Us
-					</h2>
-					<p class="text-lg sm:text-xl text-black opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
-						Join us in our mission to protect and care for Alberta's animals. Your donation 
-						provides emergency medical care, shelter, and hope for animals in need.
-					</p>
-					<div class="flex flex-col sm:flex-row gap-12 lg:gap-12 justify-center">
-						<a 
-							href="/donate" 
-							class="bg-primary text-(--muted-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
-						>
-							Donate Now
-						</a>
-						<a 
-							href="/get-involved" 
+						<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
+							Support Us
+						</h2>
+						<p class="text-lg sm:text-xl text-black opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
+							Join us in our mission to protect and care for Alberta's animals. Your donation 
+							provides emergency medical care, shelter, and hope for animals in need.
+						</p>
+						<div class="flex flex-col sm:flex-row gap-12 lg:gap-12 justify-center">
+							<a 
+								href="/donate" 
+								class="bg-primary text-(--muted-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+							>
+								Donate Now
+							</a>
+							<a 
+								href="/get-involved" 
 								class="border-2 border-primary text-primary px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors whitespace-nowrap transform hover:scale-105"
-						>
-							Get Involved
-						</a>
+							>
+								Get Involved
+							</a>
 						</div>
 					</div>
 					<div class="mx-auto">

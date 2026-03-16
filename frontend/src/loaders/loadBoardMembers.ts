@@ -34,25 +34,21 @@ export async function loadBoardMember(id: string): Promise<BoardMember | null> {
   }
 }
 
-export function getImageUrl(image: CockpitImage | undefined): string {
+export function getImageUrl(image: CockpitImage | undefined, width: number, height:number): string {
   if (!image?.path) return "";
   
-  // Try to get asset ID from _id field first, then extract from path as fallback
   let assetId = image._id;
   
   if (!assetId) {
-    // Extract asset ID from path (fallback)
-    // Path might be like "/storage/uploads/assetId-filename.ext"
     const pathParts = image.path.split('/');
     const filename = pathParts[pathParts.length - 1];
-    assetId = filename.split('-')[0]; // Get first part before dash
+    assetId = filename.split('-')[0]; 
     if (!assetId.match(/^[a-f0-9]{24}$/i)) {
-      // If not a valid MongoDB ObjectId, try without dash
       assetId = filename.split('.')[0];
     }
   }
   
-  return `${import.meta.env.PUBLIC_COCKPIT_API}/assets/image/${assetId}?m=thumbnail&w=64&h=64&q=80&o=1`;
+  return `${import.meta.env.PUBLIC_COCKPIT_API}/assets/image/${assetId}?m=thumbnail&w=${width}&h=${height}&q=80&o=1`;
 }
 
 export async function getOptimizedImageUrl(image: CockpitImage | undefined, options: {

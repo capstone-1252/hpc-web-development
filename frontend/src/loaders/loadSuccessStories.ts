@@ -16,9 +16,7 @@ export type SuccessStory = {
 };
 
 export async function loadSuccessStories(): Promise<SuccessStory[]> {
-  const data = await cockpit.getItems("success_story", {
-    sort: { name: 1 }
-  });
+  const data = await cockpit.getItems("successStories");
   return data as SuccessStory[];
 }
 
