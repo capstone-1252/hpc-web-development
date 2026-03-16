@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env: 
+      PUBLIC_COCKPIT_API: "https://test.ca/api"
 
     defaults:
       run:
