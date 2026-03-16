@@ -1,4 +1,4 @@
-import { loadPartners, type Partner } from "@/loaders";
+import { loadPartners, type Partner } from "@/loaders/loadPartners";
 import { useEffect, useState } from "react";
 
 import { PartnerLogo } from "./PartnerLogo";
