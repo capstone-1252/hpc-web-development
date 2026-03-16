@@ -19,19 +19,8 @@ export interface AssetImage {
 	_id: string
 }
 
-export function getImageUrl(image: AssetImage | undefined, width: number, height:number): string {
-	if (!image?.path) return "";
+export function getImageUrl(image: AssetImage, width: number, height:number): string {
+	const url = `${import.meta.env.PUBLIC_COCKPIT_API}/assets/image/${image._id}?m=thumbnail&w=${width}&h=${height}&q=80&o=1`;
 
-	let assetId = image._id;
-
-	if (!assetId) {
-		const pathParts = image.path.split('/');
-		const filename = pathParts[pathParts.length - 1];
-		assetId = filename.split('-')[0]; 
-		if (!assetId.match(/^[a-f0-9]{24}$/i)) {
-			assetId = filename.split('.')[0];
-		}
-	}
-
-	return `${import.meta.env.PUBLIC_COCKPIT_API}/assets/image/${assetId}?m=thumbnail&w=${width}&h=${height}&q=80&o=1`;
+	return url
 }
