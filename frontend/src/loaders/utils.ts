@@ -4,7 +4,7 @@ export interface AssetImage {
 	mime: string
 	type: string
 	description: string
-	tags: any[]
+	tags: string[]
 	size: number
 	colors: string[]
 	width: number

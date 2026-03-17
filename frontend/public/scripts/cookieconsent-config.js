@@ -3,6 +3,8 @@ import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookiecon
 // Enable dark mode
 document.documentElement.classList.add('cc--darkmode');
 
+
+// eslint-disable-next-line no-undef
 CookieConsent.run({
 	guiOptions: {
 		consentModal: {

@@ -1,8 +1,9 @@
 import cockpit, { type CockpitItemData } from "@/lib/cockpit"
+import type { AssetImage } from "./utils";
 
 export interface Partner extends CockpitItemData {
 	name: string
-	logo: any
+	logo: AssetImage
 }
 
 export const loadPartners = async () => {
