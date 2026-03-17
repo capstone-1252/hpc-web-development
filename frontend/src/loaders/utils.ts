@@ -1,4 +1,9 @@
 export interface AssetImage {
+	_id: string
+	_hash: string
+	_created: number
+	_modified: number
+	_cby: string
 	path: string;
 	title: string
 	mime: string
@@ -9,14 +14,9 @@ export interface AssetImage {
 	colors: string[]
 	width: number
 	height: number
-	_hash: string
-	_created: number
-	_modified: number
-	_cby: string
 	altText: string
 	thumbhash: string
 	folder: string
-	_id: string
 }
 
 export function getImageUrl(image: AssetImage, width: number, height:number): string {
