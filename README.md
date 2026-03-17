@@ -80,13 +80,28 @@ interface BoardMemberResponse {
     name: string;
     position: string;
     // whatever the field name for the asset link
-    photo: CockpitImage;
+    photo: AssetImage;
 }
-// cockpit image data response
-interface CockpitImage {
-    path: string
-    //title of the asset
-    title: string
+
+export interface AssetImage {
+	_id: string
+	_hash: string
+	_created: number
+	_modified: number
+	_cby: string
+	path: string;
+	title: string
+	mime: string
+	type: string
+	description: string
+	tags: any[]
+	size: number
+	colors: string[]
+	width: number
+	height: number
+	altText: string
+	thumbhash: string
+	folder: string
 }
 // getting and using an image using the api
 // first import the helper function:
