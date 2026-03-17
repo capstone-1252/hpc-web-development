@@ -1,15 +1,10 @@
-import cockpit from "@/lib/cockpit";
+import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 
-export async function loadResources(): Promise<any[]> {
-  const data = await cockpit.getItems("Resources")
-  return data;
+export interface Resource extends CockpitItemData {
+	name: string
 }
 
-export async function loadResource(id: string): Promise<any | null> {
-  try {
-    const data = await cockpit.getItem("Resources", id);
-    return data
-  } catch {
-    return null;
-  }
+export async function loadResources(): Promise<Resource[]> {
+	const data = await cockpit.getItems("Resources")
+	return data;
 }

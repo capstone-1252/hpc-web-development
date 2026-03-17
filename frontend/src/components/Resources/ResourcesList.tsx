@@ -1,12 +1,8 @@
-import { loadResources } from "@/loaders/loadResources";
+import { loadResources, type Resource } from "@/loaders/loadResources";
 import { useEffect, useState } from "react";
 
-interface ResourceCardProps {
-	resource: any;
-}
-
 export function ResourcesList() {
-	const [resources, setResources] = useState<any[]>([]);
+	const [resources, setResources] = useState<Resource[]>([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -36,7 +32,9 @@ export function ResourcesList() {
 			{ resources.map((resource) => {
 				return (
 					<>
-						{ resource["Animal Care"] }
+						{ 
+							resource
+						}
 					</>
 				)
 			}) }

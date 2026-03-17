@@ -1,9 +1,10 @@
 import cockpit, { type CockpitItemData, type CockpitOptions } from "@/lib/cockpit"
+import type { Event } from "./loadEvents"
 
 export interface Announcement extends CockpitItemData {
 	title: string
 	content: string
-	event: any
+	event: Event
 }
 
 const fetchAssociatedEvent = async (id: string) => {

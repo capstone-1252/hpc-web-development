@@ -49,6 +49,9 @@ export function SuccessStoryList() {
 		fetchData();
 	}, []);
 
+	if(loading) {
+		return <p>Loading...</p>
+	}
 
 	if (stories.length === 0) {
 		return <p>No stories available.</p>;
