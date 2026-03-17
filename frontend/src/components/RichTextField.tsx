@@ -1,14 +1,14 @@
-import DOMPurify from "dompurify"
+import DOMPurify from "dompurify";
 
 interface Props {
-	content: string
+  content: string;
 }
 export const RichText = ({ content }: Props) => {
-	return (
-		<div
-			dangerouslySetInnerHTML={{
-				__html: DOMPurify.sanitize(content)
-			}}
-		/>
-	)
-}
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(content),
+      }}
+    />
+  );
+};

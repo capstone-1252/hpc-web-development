@@ -8,11 +8,11 @@ export interface Service extends CockpitItemData {
   icon?: string;
   image?: AssetImage;
   details?: string[];
-};
+}
 
 export async function loadServiceInfo(): Promise<Service[]> {
   const data = await cockpit.getItems<Service>("services", {
-    sort: { title: 1 }
+    sort: { title: 1 },
   });
   return data;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ListSkeletonProps {
   className?: string;
@@ -8,15 +8,18 @@ interface ListSkeletonProps {
 }
 
 export const ListSkeleton: React.FC<ListSkeletonProps> = ({
-  className = '',
+  className = "",
   items = 5,
   showAvatar = false,
-  lines = 2
+  lines = 2,
 }) => {
   return (
     <div className={`space-y-4 ${className}`}>
       {Array.from({ length: items }).map((_, i) => (
-        <div key={i} className="animate-pulse border-b border-gray-200 pb-4 last:border-0">
+        <div
+          key={i}
+          className="animate-pulse border-b border-gray-200 pb-4 last:border-0"
+        >
           <div className="flex items-start space-x-3">
             {showAvatar && (
               <div className="rounded-full bg-gray-300 h-8 w-8 flex-shrink-0 mt-1"></div>

@@ -13,14 +13,18 @@ export type VolunteerOpportunity = {
   image?: AssetImage;
 };
 
-export async function loadVolunteerOpportunities(): Promise<VolunteerOpportunity[]> {
+export async function loadVolunteerOpportunities(): Promise<
+  VolunteerOpportunity[]
+> {
   const data = await cockpit.getItems("volunteer_opportunities", {
-    sort: { title: 1 }
+    sort: { title: 1 },
   });
   return data as VolunteerOpportunity[];
 }
 
-export async function loadVolunteerOpportunity(id: string): Promise<VolunteerOpportunity | null> {
+export async function loadVolunteerOpportunity(
+  id: string,
+): Promise<VolunteerOpportunity | null> {
   try {
     const data = await cockpit.getItem("volunteer_opportunities", id);
     return data as VolunteerOpportunity;
