@@ -1,5 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { BoardList } from "@/components/Board/BoardList"
+import { VolunteerList } from "@/components/Volunteer/VolunteerList"
+
 ---
 
 <Layout title="About Us - Alberta Helping Animals Society">
@@ -164,50 +167,7 @@ import Layout from "@/layouts/Layout.astro"
 						Our Volunteers
 					</h2>
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-					<!-- Volunteer Card 1 -->
-					<div class="bg-white rounded-2xl shadow-sm p-8 border border-border/50 hover:shadow-md transition-shadow">
-						<div class="w-[88px] h-[88px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto mb-5 overflow-hidden flex items-center justify-center">
-							<svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-normal text-dark-blue mb-2" style="font-family: 'Ubuntu', sans-serif;">
-							Coming Soon
-						</h3>
-						<p class="text-base text-primary font-medium">
-							Volunteer
-						</p>
-					</div>
-					<!-- Volunteer Card 2 -->
-					<div class="bg-white rounded-2xl shadow-sm p-8 border border-border/50 hover:shadow-md transition-shadow">
-						<div class="w-[88px] h-[88px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto mb-5 overflow-hidden flex items-center justify-center">
-							<svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-normal text-dark-blue mb-2" style="font-family: 'Ubuntu', sans-serif;">
-							Coming Soon
-						</h3>
-						<p class="text-base text-primary font-medium">
-							Volunteer
-						</p>
-					</div>
-					<!-- Volunteer Card 3 -->
-					<div class="bg-white rounded-2xl shadow-sm p-8 border border-border/50 hover:shadow-md transition-shadow">
-						<div class="w-[88px] h-[88px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto mb-5 overflow-hidden flex items-center justify-center">
-							<svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-normal text-dark-blue mb-2" style="font-family: 'Ubuntu', sans-serif;">
-							Coming Soon
-						</h3>
-						<p class="text-base text-primary font-medium">
-							Volunteer
-						</p>
-					</div>
-				</div>
+				<VolunteerList client:load />
 			</div>
 		</section>
 
@@ -223,50 +183,7 @@ import Layout from "@/layouts/Layout.astro"
 				<p class="text-lg text-foreground leading-relaxed mx-auto mb-12 ">
 					The Alberta Helping Animals Society (AHAS) Board of Directors consists of non-remunerated volunteers. The Board is responsible for the management of affairs and policies, and provides an overall strategic direction for AHAS to ensure its continuing success.
 				</p>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-					<!-- Board Member Card 1 -->
-					<div class="bg-muted-blue/40 rounded-2xl shadow-sm p-8 border border-border/50 hover:shadow-md transition-shadow">
-						<div class="w-[88px] h-[88px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto mb-5 overflow-hidden flex items-center justify-center">
-							<svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-normal text-dark-blue mb-2" style="font-family: 'Ubuntu', sans-serif;">
-							Coming Soon
-						</h3>
-						<p class="text-base text-primary font-medium">
-							Board Member
-						</p>
-					</div>
-					<!-- Board Member Card 2 -->
-					<div class="bg-muted-blue/40 rounded-2xl shadow-sm p-8 border border-border/50 hover:shadow-md transition-shadow">
-						<div class="w-[88px] h-[88px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto mb-5 overflow-hidden flex items-center justify-center">
-							<svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-normal text-dark-blue mb-2" style="font-family: 'Ubuntu', sans-serif;">
-							Coming Soon
-						</h3>
-						<p class="text-base text-primary font-medium">
-							Board Member
-						</p>
-					</div>
-					<!-- Board Member Card 3 -->
-					<div class="bg-muted-blue/40 rounded-2xl shadow-sm p-8 border border-border/50 hover:shadow-md transition-shadow">
-						<div class="w-[88px] h-[88px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto mb-5 overflow-hidden flex items-center justify-center">
-							<svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-normal text-dark-blue mb-2" style="font-family: 'Ubuntu', sans-serif;">
-							Coming Soon
-						</h3>
-						<p class="text-base text-primary font-medium">
-							Board Member
-						</p>
-					</div>
-				</div>
+				<BoardList client:load />
 			</div>
 		</section>
 
