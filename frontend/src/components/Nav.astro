@@ -1,7 +1,12 @@
 ---
 const menuItems = [
 	{ href: '/about-us', label: 'About Us' },
-	{ href: '/services', label: 'Our Services' },
+	{
+		label: 'Our Services',
+		children: [
+			{ href: '/services/apply', label: 'Apply for Services' },
+		],
+	},
 	{ href: '/events', label: 'Events' },
 	{ href: '/resources', label: 'Animal Care Resources' },
 	{
