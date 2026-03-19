@@ -3,6 +3,7 @@ const menuItems = [
 	{ href: '/about-us', label: 'About Us' },
 	{
 		label: 'Our Services',
+		href: '/services',
 		children: [
 			{ href: '/services/apply', label: 'Apply for Services' },
 		],
@@ -11,6 +12,7 @@ const menuItems = [
 	{ href: '/resources', label: 'Animal Care Resources' },
 	{
 		label: 'Get Involved',
+		href: '/get-involved',
 		children: [
 			{ href: '/volunteer-with-us', label: 'Volunteer With Us' },
 		],
@@ -44,7 +46,7 @@ const menuItems = [
 .dropdown-menu {
 	display: none;
 	position: absolute;
-	top: calc(100% + 0.5px);
+	top: 100%;
 	left: 0;
 	min-width: 11rem;
 	background: white;
@@ -53,6 +55,9 @@ const menuItems = [
 	box-shadow: 0 8px 24px rgba(0,0,0,0.10);
 	overflow: hidden;
 	z-index: 100;
+	/* Invisible bridge so hover doesn't break when moving from trigger to menu */
+	margin-top: 0;
+	padding-top: 2px;
 }
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
@@ -85,12 +90,19 @@ const menuItems = [
 				{menuItems.map((item) =>
 					item.children ? (
 						<div class="dropdown pl-2">
-							<button class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1">
-								{item.label}
-								<svg class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-								</svg>
-							</button>
+							<div class="flex items-center">
+								<a
+									href={item.href}
+									class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+								>
+									{item.label}
+								</a>
+								<span class="text-gray-400 py-2 pr-2 -ml-1">
+									<svg class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+									</svg>
+								</span>
+							</div>
 							<div class="dropdown-menu">
 								{item.children.map((child) => (
 									<a
@@ -143,16 +155,24 @@ const menuItems = [
 				{menuItems.map((item, i) =>
 					item.children ? (
 						<div>
-							<button
-								data-accordion={`accordion-${i}`}
-								class="accordion-trigger w-full flex justify-between items-center text-gray-600 hover:text-gray-900 px-3 py-2 text-base font-medium transition-colors"
-								aria-expanded="false"
-							>
-								{item.label}
-								<svg class="chevron w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-								</svg>
-							</button>
+							<div class="flex items-center justify-between">
+								<a
+									href={item.href}
+									class="text-gray-600 hover:text-gray-900 px-3 py-2 text-base font-medium transition-colors"
+								>
+									{item.label}
+								</a>
+								<button
+									data-accordion={`accordion-${i}`}
+									class="accordion-trigger p-2 text-gray-600 hover:text-gray-900 transition-colors"
+									aria-expanded="false"
+									aria-label={`Toggle ${item.label} submenu`}
+								>
+									<svg class="chevron w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+									</svg>
+								</button>
+							</div>
 							<div id={`accordion-${i}`} class="accordion-content pl-4 space-y-1">
 								{item.children.map((child) => (
 									<a
