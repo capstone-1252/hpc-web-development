@@ -16,9 +16,9 @@ function SuccessStoryCard({ story }: StoryCardProps) {
     <div className="group bg-white rounded-2xl shadow-md border border-border/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all h-full">
       {story.image && (
         <div className="relative h-[180px] sm:h-[200px] overflow-hidden">
-          <img 
-            src={imageUrl} 
-            alt={story.name || "Success story"} 
+          <img
+            src={imageUrl}
+            alt={story.name || "Success story"}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -58,7 +58,10 @@ export function SuccessStoryList() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="bg-gray-100 rounded-2xl h-[300px] animate-pulse" />
+          <div
+            key={i}
+            className="bg-gray-100 rounded-2xl h-[300px] animate-pulse"
+          />
         ))}
       </div>
     );

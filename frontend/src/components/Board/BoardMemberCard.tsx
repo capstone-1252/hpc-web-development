@@ -27,7 +27,9 @@ export const BoardMemberCard = ({ member }: BoardMemberCardProps) => {
           </div>
         )}
       </div>
-      <h3 className="text-xl font-semibold text-dark-blue mb-2">{member.name}</h3>
+      <h3 className="text-xl font-semibold text-dark-blue mb-2">
+        {member.name}
+      </h3>
       <p className="text-primary font-medium">{member.position}</p>
     </div>
   );
