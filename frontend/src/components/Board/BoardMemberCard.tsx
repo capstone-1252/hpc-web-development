@@ -5,10 +5,10 @@ interface BoardMemberCardProps {
   member: BoardMember;
 }
 export const BoardMemberCard = ({ member }: BoardMemberCardProps) => {
-	let imageUrl = ""
-	if (member.photo) {
-		imageUrl = getImageUrl(member.photo, 64, 64);
-	}
+  let imageUrl = "";
+  if (member.photo) {
+    imageUrl = getImageUrl(member.photo, 64, 64);
+  }
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">

@@ -5,10 +5,10 @@ interface VolunteerMemberProps {
   volunteer: Volunteer;
 }
 export const VolunteerCard = ({ volunteer }: VolunteerMemberProps) => {
-	let imageUrl = ""
-	if (volunteer.photo) {
-		imageUrl = getImageUrl(volunteer.photo, 64, 64);
-	}
+  let imageUrl = "";
+  if (volunteer.photo) {
+    imageUrl = getImageUrl(volunteer.photo, 64, 64);
+  }
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
@@ -27,7 +27,9 @@ export const VolunteerCard = ({ volunteer }: VolunteerMemberProps) => {
           </div>
         )}
       </div>
-      <h3 className="text-lg font-bold text-[#485a61] mb-2">{volunteer.name}</h3>
+      <h3 className="text-lg font-bold text-[#485a61] mb-2">
+        {volunteer.name}
+      </h3>
       <p className="text-[#19b8d7] font-medium">{volunteer.role}</p>
     </div>
   );
