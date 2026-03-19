@@ -4,37 +4,75 @@ const menuItems = [
 	{ href: '/services', label: 'Our Services' },
 	{ href: '/events', label: 'Events' },
 	{ href: '/resources', label: 'Animal Care Resources' },
-	{ href: '/get-involved', label: 'Get Involved' },
+	{
+		label: 'Get Involved',
+		children: [
+			{ href: '/volunteer-with-us', label: 'Volunteer With Us' },
+		],
+	},
 	{ href: '/contact', label: 'Contact' },
 ];
 ---
 
 <style>
 .nav-underline {
-position: relative;
+	position: relative;
 }
-
 .nav-underline::after {
-content: "";
-position: absolute;
-left: 0;
-bottom: -4px;
-width: 100%;
-height: 2px;
-background-color: #fdb52b;
-transform: scaleX(0);
-transform-origin: left;
-transition: transform 0.25s ease;
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 2px;
+	background-color: #fdb52b;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.25s ease;
+}
+.nav-underline:hover::after {
+	transform: scaleX(1);
 }
 
-.nav-underline:hover::after {
-transform: scaleX(1);
+/* Desktop dropdown */
+.dropdown { position: relative; }
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 0;
+	min-width: 11rem;
+	background: white;
+	border: 1px solid #f1f5f9;
+	border-radius: 0.75rem;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+	overflow: hidden;
+	z-index: 100;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+	display: block;
+}
+
+/* Mobile accordion */
+.accordion-content {
+	display: none;
+}
+.accordion-content.open {
+	display: block;
+}
+.chevron {
+	transition: transform 0.2s ease;
+}
+.chevron.rotated {
+	transform: rotate(180deg);
 }
 </style>
 
 <header class="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
 		<div class="flex justify-between items-center h-16">
+
 			<!-- Logo -->
 			<div class="flex-shrink-0">
 				<a href="/" class="flex items-center">
@@ -43,18 +81,40 @@ transform: scaleX(1);
 			</div>
 
 			<!-- Desktop Menu -->
-			<div class="hidden lg:flex lg:items-center lg:space-x-8">
-				{menuItems.map((item) => (
-				<a 
-					href={item.href} 
-					class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-				>
-					{item.label}
-				</a>
-				))}
-				<a 
-					href="/donate" 
-					class="bg-[#e25002] hover:bg-[#c44301] text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors shadow-md"
+			<div class="hidden lg:flex lg:items-center lg:space-x-5">
+				{menuItems.map((item) =>
+					item.children ? (
+						<div class="dropdown">
+							<button class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1">
+								{item.label}
+								<svg class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</button>
+							<div class="dropdown-menu">
+								{item.children.map((child) => (
+									<a
+										href={child.href}
+										class="block px-4 py-2.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-amber-50 transition-colors"
+									>
+										{child.label}
+									</a>
+								))}
+							</div>
+						</div>
+					) : (
+						<a
+							href={item.href}
+							class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+						>
+							{item.label}
+						</a>
+					)
+				)}
+
+				<a
+					href="/donate"
+					class="ml-4 bg-[#e25002] hover:bg-[#c44301] text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors shadow-md"
 				>
 					Donate Now
 				</a>
@@ -62,7 +122,7 @@ transform: scaleX(1);
 
 			<!-- Mobile menu button -->
 			<div class="lg:hidden">
-				<button 
+				<button
 					type="button"
 					id="mobile-menu-button"
 					class="text-gray-600 hover:text-gray-900 p-2 rounded-md"
@@ -77,20 +137,45 @@ transform: scaleX(1);
 			</div>
 		</div>
 
-		<!-- Mobile menu -->
+		<!-- Mobile Menu -->
 		<div class="lg:hidden hidden" id="mobile-menu">
 			<div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-				{menuItems.map((item) => (
-				<a 
-					href={item.href} 
-					class="nav-underline text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors"
-				>
-					{item.label}
-				</a>
-				))}
-				<!-- Mobile Donate CTA -->
-				<a 
-					href="/donate" 
+				{menuItems.map((item, i) =>
+					item.children ? (
+						<div>
+							<button
+								data-accordion={`accordion-${i}`}
+								class="accordion-trigger w-full flex justify-between items-center text-gray-600 hover:text-gray-900 px-3 py-2 text-base font-medium transition-colors"
+								aria-expanded="false"
+							>
+								{item.label}
+								<svg class="chevron w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</button>
+							<div id={`accordion-${i}`} class="accordion-content pl-4 space-y-1 mt-1">
+								{item.children.map((child) => (
+									<a
+										href={child.href}
+										class="block px-3 py-2 text-sm text-gray-500 hover:text-gray-900 hover:bg-amber-50 rounded-md transition-colors"
+									>
+										{child.label}
+									</a>
+								))}
+							</div>
+						</div>
+					) : (
+						<a
+							href={item.href}
+							class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 transition-colors"
+						>
+							{item.label}
+						</a>
+					)
+				)}
+
+				<a
+					href="/donate"
 					class="bg-[#e25002] hover:bg-[#c44301] text-white block px-3 py-2 text-base font-semibold transition-colors rounded-lg text-center mt-3"
 				>
 					Donate Now
@@ -101,15 +186,27 @@ transform: scaleX(1);
 </header>
 
 <script>
+// Mobile hamburger
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-if (mobileMenuButton && mobileMenu) {
-	mobileMenuButton.addEventListener('click', () => {
-		const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-		mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
-		mobileMenu.classList.toggle('hidden');
-	});
-}
-</script>
+mobileMenuButton?.addEventListener('click', () => {
+	const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+	mobileMenuButton.setAttribute('aria-expanded', String(!expanded));
+	mobileMenu?.classList.toggle('hidden');
+});
 
+// Mobile accordions
+document.querySelectorAll('.accordion-trigger').forEach((btn) => {
+	btn.addEventListener('click', () => {
+		const targetId = btn.getAttribute('data-accordion');
+		const content = document.getElementById(targetId);
+		const chevron = btn.querySelector('.chevron');
+		const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+		btn.setAttribute('aria-expanded', String(!expanded));
+		content?.classList.toggle('open');
+		chevron?.classList.toggle('rotated');
+	});
+});
+</script>
