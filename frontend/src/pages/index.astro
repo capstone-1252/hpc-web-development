@@ -16,32 +16,32 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 		<section class="relative bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
 			<div class="max-w-7xl mx-auto">
 				<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-					<div class="lg:text-left">
+					<div class="lg:text-left order-2 lg:order-1">
 						<h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight">
 							Saving Lives and Healing
 							<span class="text-[#19b8d7] block lg:inline">Alberta's Animals</span>
 						</h1>
-						<p class="text-2xl sm:text-xl lg:text-2xl text-[#485a61] mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+						<p class="text-lg sm:text-xl lg:text-xl text-[#485a61] mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
 							Alberta Helping Animals Society provides compassionate veterinary care, rescue services, 
 							and support for pets and their families throughout Alberta.
 						</p>
 						<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
 							<a 
 								href="/donate" 
-								class="bg-[#e25002] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors shadow-lg transform hover:scale-105 whitespace-nowrap"
+								class="bg-[#e25002] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
 							>
 								Donate Now
 							</a>
 							<a 
 								href="/about-us" 
-								class="bg-white hover:bg-gray-50 text-(--dark-blue) border-2 border-(--dark-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-colors transform hover:scale-105 whitespace-nowrap"
+								class="bg-white hover:bg-gray-50 text-(--dark-blue) border-2 border-(--dark-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:-translate-y-0.5 whitespace-nowrap"
 							>
 								Our Mission
 							</a>
 						</div>
 					</div>
-					<div class="">
-						<img src="/hero-image.png" alt="" class="mx-auto ">
+					<div class="order-1 lg:order-2">
+						<img src="/hero-image.png" alt="" class="w-full max-w-md lg:max-w-full mx-auto rounded-2xl shadow-xl">
 					</div>
 				</div>
 			</div>
@@ -50,29 +50,29 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 		<!-- Mission Section -->
 		<section class="pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
 			<div class="max-w-6xl mx-auto">
-				<div class="mb-8 lg:mb-12">
+				<div class="mb-8 lg:mb-12 text-center">
 					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
 						Our Mission
 					</h2>
-					<div class="mx-auto">
-						<YouTube id="6RzUmbe-hk0" class="min-w-full"/>
+					<div class="mx-auto mb-6">
+						<YouTube id="6RzUmbe-hk0" class="min-w-full rounded-xl shadow-lg"/>
 					</div>
-					<p class="text-lg lg:text-xl text-[#485a61] mx-auto leading-relaxed my-6">
+					<p class="text-lg lg:text-xl text-[#485a61] mx-auto leading-relaxed max-w-3xl">
 						Alberta Helping Animals Society is dedicated to providing compassionate veterinary care, 
 						rescue services, and support for animals in need throughout Alberta.
 					</p>
 				</div>
-				<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-6xl bg-(--dark-blue) text-white p-6 rounded-tl-[100px] md:rounded-tl-[200px] rounded-r-[25px] md:rounded-r-[100px] ">
-					<div class="text-center">
-						<div class="text-3xl sm:text-4xl font-bold mb-2">15+</div>
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto bg-(--dark-blue)/90 text-white p-6 lg:p-8 rounded-2xl">
+					<div class="text-center py-2">
+						<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">15+</div>
 						<p class="text-sm sm:text-base font-medium">Years of Service</p>
 					</div>
-					<div class="text-center">
-						<div class="text-3xl sm:text-4xl font-bold mb-2">$0</div>
+					<div class="text-center py-2 border-t sm:border-t-0 sm:border-l border-white/20">
+						<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">$0</div>
 						<p class="text-sm sm:text-base font-medium">Cost for Qualifying Individuals</p>
 					</div>
-					<div class="text-center">
-						<div class="text-3xl sm:text-4xl font-bold mb-2">100%</div>
+					<div class="text-center py-2 border-t sm:border-t-0 sm:border-l border-white/20">
+						<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">100%</div>
 						<p class="text-sm sm:text-base font-medium">Dedicated to Animals</p>
 					</div>
 				</div>

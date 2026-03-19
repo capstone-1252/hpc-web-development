@@ -11,8 +11,8 @@ export const VolunteerCard = ({ volunteer }: VolunteerMemberProps) => {
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-      <div className="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-lg border border-border/50 p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5 overflow-hidden ring-4 ring-primary/10">
         {volunteer.photo ? (
           <img
             src={imageUrl}
@@ -20,8 +20,8 @@ export const VolunteerCard = ({ volunteer }: VolunteerMemberProps) => {
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full bg-[#e25002] bg-opacity-20 rounded-full flex items-center justify-center">
-            <span className="text-[#e25002] text-xl font-bold">
+          <div className="w-full h-full bg-primary/20 rounded-full flex items-center justify-center">
+            <span className="text-primary text-3xl font-bold">
               {volunteer.name.charAt(0).toUpperCase()}
             </span>
           </div>
