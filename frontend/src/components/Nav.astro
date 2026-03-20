@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets"
+import Logo from "@/assets/logo.png"
+
 type NavItem = {
 	href: string;
 	label: string;
@@ -88,7 +91,7 @@ const menuItems: NavItem[] = [
 			<!-- Logo -->
 			<div class="flex-shrink-0">
 				<a href="/" class="flex items-center">
-					<img src="/logo.png" alt="Logo" class="h-16 w-16" />
+					<Image src={Logo} alt="Alberta Helping Animals Society Logo" class="h-16 w-16" format="avif" />
 				</a>
 			</div>
 

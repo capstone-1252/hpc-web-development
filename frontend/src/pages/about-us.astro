@@ -2,7 +2,10 @@
 import Layout from "@/layouts/Layout.astro"
 import { BoardList } from "@/components/Board/BoardList"
 import { VolunteerList } from "@/components/Volunteer/VolunteerList"
-
+import { Image } from "astro:assets"
+import aboutUsBanner from "@/assets/hero/about-us.png"
+import ourMissionImage from "@/assets/our-mission.jpg"
+import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 ---
 
 <Layout title="About Us - Alberta Helping Animals Society">
@@ -20,7 +23,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 						</p>
 					</div>
 					<div class="flex-shrink-0 w-full lg:w-1/2">
-						<img src="/hero/about-us.png" alt="" class="w-full h-[200px] sm:h-[250px] lg:h-[300px] object-cover">
+						<Image src={aboutUsBanner} alt="" class="w-full h-[200px] sm:h-[250px] lg:h-[300px] object-cover" format="avif" />
 					</div>
 				</div>
 			</div>
@@ -62,7 +65,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 								The Alberta Helping Animals Society (AHAS) is a registered non-profit organization providing accessible veterinary care for companion animals in Edmonton, Alberta. Our work focuses on supporting vulnerable individuals who rely on their pets for companionship, emotional support, and stability.
 							</p>
 						</div>
-						<img src="/our-mission.jpg" alt="" class="rounded-md shadow-md hover:shadow-lg transition-shadow">
+						<Image src={ourMissionImage} alt="" class="rounded-md shadow-md hover:shadow-lg transition-shadow" format="avif" />
 					</div>
 				</div>
 			</div>
@@ -77,7 +80,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 				</h2>
 				<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
 					<div class="w-full lg:w-1/2 h-[350px] lg:h-[450px] rounded-2xl overflow-hidden relative shadow-2xl flex-shrink-0">
-						<img src="/why-we-exist-750.jpg" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+						<Image src={whyWeExistImage} alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" format="avif" />
 					</div>
 					<div class="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700 flex-1">
 						<div class="space-y-4 pt-2">
