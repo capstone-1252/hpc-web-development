@@ -1,12 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro"
 import { YouTube } from "astro-embed"
+import { Image } from "astro:assets"
+
+import Layout from "../layouts/Layout.astro"
 import { PartnerList } from "@/components/Partners/PartnerList.tsx"
 import { AnnouncementList } from "@/components/Announcements/AnnouncementList"
 import { SuccessStoryList } from "@/components/SuccessStories/SuccessStoryList"
 import School from "@/components/Icons/School.astro"
 import Dog from "@/components/Icons/Dog.astro"
 import DogBowl from "@/components/Icons/DogBowl.astro"
+
+import heroImage from "@/assets/hero-image.png"
+import ourDedication from "@/assets/our-dedication.png"
+import supportUs from "@/assets/support-us.png"
 ---
 
 <Layout>
@@ -39,7 +45,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 						</div>
 					</div>
 					<div class="order-1 lg:order-2">
-						<img src="/hero-image.png" alt="Alberta Helping Animals Society Logo" class="max-w-md lg:max-w-full mx-auto">
+						<Image src={heroImage} alt="Helping Edmontons Vulnerable Animal Population" class="max-w-md lg:max-w-full mx-auto" format="avif"/>
 					</div>
 				</div>
 			</div>
@@ -153,7 +159,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 			<div class="max-w-6xl mx-auto">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 					<div class="mx-auto">
-						<img src="/our-dedication.png" alt="" class="w-full max-w-md rounded-2xl">
+						<Image src={ourDedication} alt="Connie with an adorable pug" class="w-full max-w-md rounded-2xl" format="avif" />
 					</div>
 					<div>
 						<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
@@ -202,7 +208,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 						</div>
 					</div>
 					<div class="mx-auto">
-						<img src="/support-us.png" alt="" class="w-full max-w-md rounded-2xl">
+						<Image src={supportUs} alt="Your Support Saves Lives" class="w-full max-w-md rounded-2xl" format="avif">
 					</div>
 				</div>
 			</div>
