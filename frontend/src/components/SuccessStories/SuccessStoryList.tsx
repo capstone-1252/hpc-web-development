@@ -17,9 +17,9 @@ function SuccessStoryCard({ story }: StoryCardProps) {
       <div className="flex flex-col sm:flex-row">
         {story.image && (
           <div className="relative w-full sm:w-1/3 h-[200px] sm:h-auto overflow-hidden flex-shrink-0">
-            <img 
-              src={imageUrl} 
-              alt={story.name || "Success story"} 
+            <img
+              src={imageUrl}
+              alt={story.name || "Success story"}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
