@@ -2,7 +2,10 @@
 import Layout from "@/layouts/Layout.astro"
 import { BoardList } from "@/components/Board/BoardList"
 import { VolunteerList } from "@/components/Volunteer/VolunteerList"
-
+import { Image } from "astro:assets"
+import aboutUsBanner from "@/assets/hero/about-us.png"
+import ourMissionImage from "@/assets/our-mission.jpg"
+import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 ---
 
 <Layout title="About Us - Alberta Helping Animals Society">
@@ -20,7 +23,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 						</p>
 					</div>
 					<div class="flex-shrink-0 w-full lg:w-1/2">
-						<img src="/hero/about-us.png" alt="" class="w-full h-[200px] sm:h-[250px] lg:h-[300px] object-cover">
+						<Image src={aboutUsBanner} alt="" class="w-full h-[200px] sm:h-[250px] lg:h-[300px] object-cover" format="avif" />
 					</div>
 				</div>
 			</div>
@@ -34,7 +37,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 					<div class="space-y-4 lg:space-y-6">
 						<div class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 hover:shadow-lg transition-shadow">
 							<span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Mission</span>
-							<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-dark-blue mb-4" style="font-family: 'Ubuntu', sans-serif;">
+							<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue mb-4" style="font-family: 'Ubuntu', sans-serif;">
 								Our Mission
 							</h2>
 							<p class="text-lg text-foreground leading-relaxed">
@@ -43,7 +46,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 						</div>
 						<div class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 hover:shadow-lg transition-shadow">
 							<span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Vision</span>
-							<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-dark-blue mb-4" style="font-family: 'Ubuntu', sans-serif;">
+							<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue mb-4" style="font-family: 'Ubuntu', sans-serif;">
 								Our Vision
 							</h2>
 							<p class="text-lg text-foreground leading-relaxed">
@@ -55,14 +58,14 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 					<div class="space-y-4 lg:space-y-6">
 						<div class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 lg:mt-10 lg:self-start hover:shadow-lg transition-shadow">
 							<span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Services</span>
-							<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-dark-blue mb-4" style="font-family: 'Ubuntu', sans-serif;">
+							<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue mb-4" style="font-family: 'Ubuntu', sans-serif;">
 								What We Do
 							</h2>
 							<p class="text-lg text-foreground leading-relaxed">
 								The Alberta Helping Animals Society (AHAS) is a registered non-profit organization providing accessible veterinary care for companion animals in Edmonton, Alberta. Our work focuses on supporting vulnerable individuals who rely on their pets for companionship, emotional support, and stability.
 							</p>
 						</div>
-						<img src="/our-mission.jpg" alt="" class="rounded-md shadow-md hover:shadow-lg transition-shadow">
+						<Image src={ourMissionImage} alt="" class="rounded-md shadow-md hover:shadow-lg transition-shadow" format="avif" />
 					</div>
 				</div>
 			</div>
@@ -72,12 +75,12 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 		<section class="py-12 sm:py-14 lg:py-16 px-6 sm:px-8 lg:px-10 bg-slate-900">
 			<div class="max-w-6xl mx-auto">
 				<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Story</span>
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal mb-6 text-white" style="font-family: 'Ubuntu', sans-serif;">
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal mb-6 text-white" style="font-family: 'Ubuntu', sans-serif;">
 					Why We Exist
 				</h2>
 				<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
 					<div class="w-full lg:w-1/2 h-[350px] lg:h-[450px] rounded-2xl overflow-hidden relative shadow-2xl flex-shrink-0">
-						<img src="/why-we-exist-750.jpg" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+						<Image src={whyWeExistImage} alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" format="avif" />
 					</div>
 					<div class="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700 flex-1">
 						<div class="space-y-4 pt-2">
@@ -108,7 +111,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 		<section class="py-8 sm:py-10 lg:py-12 px-6 sm:px-8 lg:px-10 bg-muted-blue/10">
 			<div class="max-w-5xl mx-auto">
 				<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Community</span>
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-dark-blue mb-6" style="font-family: 'Ubuntu', sans-serif;">
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue mb-6" style="font-family: 'Ubuntu', sans-serif;">
 					Who & How We Serve
 				</h2>
 				<p class="text-lg text-foreground leading-relaxed mx-auto mb-10">
@@ -127,9 +130,9 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
 								</svg>
 							</div>
-							<h2 class="text-xl sm:text-2xl font-normal text-dark-blue" style="font-family: 'Ubuntu', sans-serif;">
+							<h3 class="text-2xl sm:text-2xl font-normal text-dark-blue" style="font-family: 'Ubuntu', sans-serif;">
 								Community Support
-							</h2>
+							</h3>
 						</div>
 						<p class="text-lg text-foreground leading-relaxed mb-6">
 							Our services extend beyond veterinary care. We proudly support the Boyle Street Community Services Pet Food Bank with weekly donations of dog food, cat food, litter, and other pet supplies and provide food and supplies when we can from our own clinic.
@@ -143,9 +146,9 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
 								</svg>
 							</div>
-							<h2 class="text-xl sm:text-2xl font-normal text-dark-blue" style="font-family: 'Ubuntu', sans-serif;">
+							<h3 class="text-2xl sm:text-2xl font-normal text-dark-blue" style="font-family: 'Ubuntu', sans-serif;">
 								Veterinary Services
-							</h2>
+							</h3>
 						</div>
 						<p class="text-lg text-foreground leading-relaxed">
 							AHAS Home Veterinary Services provides no-cost veterinary and other services in Edmonton to vulnerable people who are unable to access regular veterinary care. We provide wellness exams, spay and neuter surgery, diagnosis and care for chronic illness, dentistry, palliative care, and end-of-life support.
@@ -160,7 +163,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 			<div class="max-w-5xl mx-auto">
 				<div class="mb-12">
 					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Team</span>
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-dark-blue" style="font-family: 'Ubuntu', sans-serif;">
+					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue" style="font-family: 'Ubuntu', sans-serif;">
 						Our Volunteers
 					</h2>
 				</div>
@@ -173,7 +176,7 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 			<div class="max-w-5xl mx-auto">
 				<div class="mb-6">
 					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Leadership</span>
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal text-dark-blue mb-6" style="font-family: 'Ubuntu', sans-serif;">
+					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue mb-6" style="font-family: 'Ubuntu', sans-serif;">
 						Our Board of Directors
 					</h2>
 				</div>
@@ -187,17 +190,17 @@ import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 		<!-- Call to Action -->
 		<section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-10 bg-gradient-to-br from-primary/10 to-primary/5">
 			<div class="max-w-4xl mx-auto ">
-				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-blue mb-6">
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-dark-blue mb-6">
 					Join Us in Making a Difference
 				</h2>
 				<p class="text-lg text-foreground leading-relaxed mb-10 mx-auto">
 					Whether you choose to donate, volunteer, or simply spread the word, every action helps us provide critical care to the animals and families who need it most.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a href="/donate" class="bg-destructive hover:bg-destructive/90 text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl">
+					<a href="/donate" class="bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap">
 						Donate Now
 					</a>
-					<a href="/get-involved" class="bg-white hover:bg-gray-50 text-dark-blue border-2 border-dark-blue px-10 py-4 rounded-xl text-lg font-semibold transition-all hover:bg-dark-blue hover:text-white">
+					<a href="/get-involved" class="bg-white hover:bg-gray-50 text-(--dark-blue) border-2 border-(--dark-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:-translate-y-0.5 whitespace-nowrap">
 						Get Involved
 					</a>
 				</div>
