@@ -16,217 +16,226 @@ import supportUs from "@/assets/support-us.png"
 ---
 
 <Layout>
-	<main class="bg-white">
-		<section class="relative bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-7xl mx-auto">
-				<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-					<div class="lg:text-left order-2 lg:order-1">
-						<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight">
-							Saving Lives and Healing
-							<span class="text-[#19b8d7] block lg:inline">Alberta's Animals</span>
-						</h1>
-						<p class="text-lg sm:text-xl text-[#485a61] mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-							Alberta Helping Animals Society provides compassionate veterinary care, rescue services, 
-							and support for pets and their families throughout Alberta.
-						</p>
-						<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 lg:justify-start">
-							<a 
-								href="/donate" 
-								class="bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-							>
-								Donate Now
-							</a>
-							<a 
-								href="/about-us" 
-								class="bg-white hover:bg-gray-50 text-(--dark-blue) border-2 border-(--dark-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:-translate-y-0.5 whitespace-nowrap"
-							>
-								Our Mission
-							</a>
-						</div>
-					</div>
-					<div class="order-1 lg:order-2">
-						<Image src={heroImage} alt="Helping Edmontons Vulnerable Animal Population" class="max-w-md lg:max-w-full mx-auto" format="avif"/>
-					</div>
+	<section class="bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      
+      <div class="order-0 lg:order-1 lg:text-left">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--dark-blue)] mb-4 lg:mb-6 leading-tight break-words">
+          Saving Lives and Healing
+          <span class="text-[#19b8d7] block lg:inline">Alberta's Animals</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-[#485a61] mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Alberta Helping Animals Society provides compassionate veterinary care, rescue services, 
+          and support for pets and their families throughout Alberta.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
+          <a 
+            href="/donate" 
+            class="bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap text-center"
+          >
+            Donate Now
+          </a>
+          <a 
+            href="/about-us" 
+            class="bg-white hover:bg-gray-50 text-[var(--dark-blue)] border-2 border-[var(--dark-blue)] px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:-translate-y-0.5 whitespace-nowrap text-center"
+          >
+            Our Mission
+          </a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="order-0 lg:order-2 w-full flex justify-center lg:justify-end">
+        <Image 
+          src={heroImage} 
+          alt="Helping Edmonton's Vulnerable Animal Population" 
+          class="w-full max-w-md lg:max-w-full rounded-xl" 
+          format="avif" 
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+	<!-- Mission Section -->
+	<section class="pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-8 lg:mb-12">
+				<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
+					Our Mission
+				</h2>
+				<div class="mx-auto mb-6">
+					<YouTube id="6RzUmbe-hk0" class="min-w-full rounded-xl shadow-lg"/>
+				</div>
+				<p class="text-lg text-[#485a61] leading-relaxed max-w-3xl mx-auto">
+					Alberta Helping Animals Society is dedicated to providing compassionate veterinary care, 
+					rescue services, and support for animals in need throughout Alberta.
+				</p>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto bg-(--dark-blue)/90 text-white p-6 lg:p-8 rounded-2xl mb-6">
+				<div class="text-center py-2">
+					<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">13+</div>
+					<p class="text-lg sm:text-base font-medium">Years of Service</p>
+				</div>
+				<div class="text-center py-2 border-t sm:border-t-0 sm:border-l border-white/20">
+					<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">$0</div>
+					<p class="text-lg sm:text-base font-medium">Cost for Qualifying Individuals</p>
+				</div>
+				<div class="text-center py-2 border-t sm:border-t-0 sm:border-l border-white/20">
+					<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">100%</div>
+					<p class="text-lg sm:text-base font-medium">Dedicated to Animals</p>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Mission Section -->
-		<section class="pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-6xl mx-auto">
-				<div class="mb-8 lg:mb-12">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-						Our Mission
-					</h2>
-					<div class="mx-auto mb-6">
-						<YouTube id="6RzUmbe-hk0" class="min-w-full rounded-xl shadow-lg"/>
+	<!-- Services Overview Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-8 lg:mb-10">
+				<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">What We Offer</span>
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4">
+					How We Help Alberta's Animals
+				</h2>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+				<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+					<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
+						<School />
 					</div>
-					<p class="text-lg text-[#485a61] leading-relaxed max-w-3xl mx-auto">
-						Alberta Helping Animals Society is dedicated to providing compassionate veterinary care, 
-						rescue services, and support for animals in need throughout Alberta.
+					<h3 class="text-lg lg:text-2xl font-bold text-(--dark-blue) mb-3">Learning</h3>
+					<p class="text-lg lg:text-base text-foreground/80 mb-4">
+						We provide free learning resources and seminars about nutrition, behavior, and other aspects of animal care.
 					</p>
+					<a href="https://learning.ahas.ca" target="_blank" class="mt-auto text-primary font-semibold hover:text-primary/80 transition-colors inline-flex items-center text-sm lg:text-base">
+						Visit Our Learning Modules
+						<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+						</svg>
+					</a>
 				</div>
-				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto bg-(--dark-blue)/90 text-white p-6 lg:p-8 rounded-2xl mb-6">
-					<div class="text-center py-2">
-						<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">13+</div>
-						<p class="text-lg sm:text-base font-medium">Years of Service</p>
+				<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+					<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
+						<Dog />
 					</div>
-					<div class="text-center py-2 border-t sm:border-t-0 sm:border-l border-white/20">
-						<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">$0</div>
-						<p class="text-lg sm:text-base font-medium">Cost for Qualifying Individuals</p>
+					<h3 class="text-lg lg:text-2xl font-bold text-(--dark-blue) mb-3">Veterinary Care</h3>
+					<p class="text-lg lg:text-base text-foreground/80 mb-4">
+						AHAS Home Veterinary Services provides no-cost veterinary services in Edmonton to qualified clients who are not able to access regular veterinary care.
+					</p>
+					<a href="https://learning.ahas.ca" class="mt-auto text-primary font-semibold hover:text-primary/80 transition-colors inline-flex items-center text-sm lg:text-base">
+						See our Services
+						<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+						</svg>
+					</a>
+				</div>
+				<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+					<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
+						<DogBowl />
 					</div>
-					<div class="text-center py-2 border-t sm:border-t-0 sm:border-l border-white/20">
-						<div class="text-3xl sm:text-4xl font-bold mb-2 text-primary">100%</div>
-						<p class="text-lg sm:text-base font-medium">Dedicated to Animals</p>
-					</div>
+					<h3 class="text-lg lg:text-2xl font-bold text-(--dark-blue) mb-3">Food & Supplies</h3>
+					<p class="text-lg lg:text-base text-foreground/80 mb-4">
+						AHAS helps keep pet owners costs down while keeping their furry friends well-fed, happy and healthy.
+					</p>
+					<a href="/services/wellness" class="mt-auto text-primary font-semibold hover:text-primary/80 transition-colors inline-flex items-center text-sm lg:text-base">
+						See Edmonton Food Banks
+						<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+						</svg>
+					</a>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
+	<!-- Success Stories Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-8 lg:mb-10">
+				<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">Community Impact</span>
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4">
+					Success Stories
+				</h2>
+			</div>
+			<SuccessStoryList client:load />
+		</div>
+	</section>
 
-		<!-- Services Overview Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-			<div class="max-w-6xl mx-auto">
-				<div class="mb-8 lg:mb-10">
-					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">What We Offer</span>
-					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4">
-						How We Help Alberta's Animals
-					</h2>
+	<!-- Our Dedication Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-(--muted-blue)">
+		<div class="max-w-6xl mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+				<div class="mx-auto">
+					<Image src={ourDedication} alt="Connie with an adorable pug" class="w-full max-w-md rounded-2xl" format="avif" />
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-					<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
-						<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
-							<School />
-						</div>
-						<h3 class="text-lg lg:text-2xl font-bold text-(--dark-blue) mb-3">Learning</h3>
-						<p class="text-lg lg:text-base text-foreground/80 mb-4">
-							We provide free learning resources and seminars about nutrition, behavior, and other aspects of animal care.
-						</p>
-						<a href="https://learning.ahas.ca" target="_blank" class="mt-auto text-primary font-semibold hover:text-primary/80 transition-colors inline-flex items-center text-sm lg:text-base">
-							Visit Our Learning Modules
-							<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-							</svg>
-						</a>
-					</div>
-					<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
-						<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
-							<Dog />
-						</div>
-						<h3 class="text-lg lg:text-2xl font-bold text-(--dark-blue) mb-3">Veterinary Care</h3>
-						<p class="text-lg lg:text-base text-foreground/80 mb-4">
-							AHAS Home Veterinary Services provides no-cost veterinary services in Edmonton to qualified clients who are not able to access regular veterinary care.
-						</p>
-						<a href="https://learning.ahas.ca" class="mt-auto text-primary font-semibold hover:text-primary/80 transition-colors inline-flex items-center text-sm lg:text-base">
-							See our Services
-							<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-							</svg>
-						</a>
-					</div>
-					<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
-						<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
-							<DogBowl />
-						</div>
-						<h3 class="text-lg lg:text-2xl font-bold text-(--dark-blue) mb-3">Food & Supplies</h3>
-						<p class="text-lg lg:text-base text-foreground/80 mb-4">
-							AHAS helps keep pet owners costs down while keeping their furry friends well-fed, happy and healthy.
-						</p>
-						<a href="/services/wellness" class="mt-auto text-primary font-semibold hover:text-primary/80 transition-colors inline-flex items-center text-sm lg:text-base">
-							See Edmonton Food Banks
-							<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-							</svg>
-						</a>
-					</div>
+				<div>
+					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
+						Our Dedication
+					</h2>
+					<p class="text-lg text-foreground/80 mb-6 lg:mb-8 leading-relaxed">
+						Since 2013, Alberta Helping Animals Society has been dedicated to creating opportunities for vulnerable people to access veterinary care and essential services for their companion animals. Our mission focuses on supporting those who rely on their pets for companionship, emotional support, and stability. We believe that ensuring the health and well-being of these animals is vital to the well-being of the people who love them.
+					</p>
+					<a 
+						href="/about-us" 
+						class="bg-primary text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap inline-block"
+					>
+						More About Us
+					</a>
 				</div>
 			</div>
-		</section>
-		<!-- Success Stories Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-6xl mx-auto">
-				<div class="mb-8 lg:mb-10">
-					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">Community Impact</span>
-					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4">
-						Success Stories
-					</h2>
-				</div>
-				<SuccessStoryList client:load />
-			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Our Dedication Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-(--muted-blue)">
-			<div class="max-w-6xl mx-auto">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-					<div class="mx-auto">
-						<Image src={ourDedication} alt="Connie with an adorable pug" class="w-full max-w-md rounded-2xl" format="avif" />
-					</div>
-					<div>
-						<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-							Our Dedication
-						</h2>
-						<p class="text-lg text-foreground/80 mb-6 lg:mb-8 leading-relaxed">
-							Since 2013, Alberta Helping Animals Society has been dedicated to creating opportunities for vulnerable people to access veterinary care and essential services for their companion animals. Our mission focuses on supporting those who rely on their pets for companionship, emotional support, and stability. We believe that ensuring the health and well-being of these animals is vital to the well-being of the people who love them.
-						</p>
+	<!-- Support Us Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-6xl mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+				<div class="bg-(--muted-blue) p-8 lg:p-12 rounded-2xl">
+					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">Get Involved</span>
+					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
+						Support Us
+					</h2>
+					<p class="text-lg text-foreground/80 mb-6 lg:mb-8 leading-relaxed">
+						Join us in our mission to protect and care for Alberta's animals. Your donation 
+						provides emergency medical care, shelter, and hope for animals in need.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 lg:justify-start">
 						<a 
-							href="/about-us" 
-							class="bg-primary text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap inline-block"
+							href="/donate" 
+							class="bg-primary text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
 						>
-							More About Us
+							Donate Now
+						</a>
+						<a 
+							href="/get-involved" 
+							class="border-2 border-primary text-primary px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:bg-primary hover:text-white whitespace-nowrap"
+						>
+							Get Involved
 						</a>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<!-- Support Us Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-6xl mx-auto">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-					<div class="bg-(--muted-blue) p-8 lg:p-12 rounded-2xl">
-						<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">Get Involved</span>
-						<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-							Support Us
-						</h2>
-						<p class="text-lg text-foreground/80 mb-6 lg:mb-8 leading-relaxed">
-							Join us in our mission to protect and care for Alberta's animals. Your donation 
-							provides emergency medical care, shelter, and hope for animals in need.
-						</p>
-						<div class="flex flex-col sm:flex-row gap-4 lg:justify-start">
-							<a 
-								href="/donate" 
-								class="bg-primary text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-							>
-								Donate Now
-							</a>
-							<a 
-								href="/get-involved" 
-								class="border-2 border-primary text-primary px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:bg-primary hover:text-white whitespace-nowrap"
-							>
-								Get Involved
-							</a>
-						</div>
-					</div>
-					<div class="mx-auto">
-						<Image src={supportUs} alt="Your Support Saves Lives" class="w-full max-w-md rounded-2xl" format="avif">
-					</div>
+				<div class="mx-auto">
+					<Image src={supportUs} alt="Your Support Saves Lives" class="w-full max-w-md rounded-2xl" format="avif">
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Partners Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-			<div class="max-w-6xl mx-auto">
-				<div class="mb-8">
-					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold mb-4">
-						Our Partners
-					</h2>
-				</div>
-				<PartnerList client:load />
+	<!-- Partners Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-8">
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold mb-4">
+					Our Partners
+				</h2>
 			</div>
-		</section>
-		<section>
-			<AnnouncementList client:load />
-		</section>
-	</main>
+			<PartnerList client:load />
+		</div>
+	</section>
+	<section>
+		<AnnouncementList client:load />
+	</section>
 </Layout>
