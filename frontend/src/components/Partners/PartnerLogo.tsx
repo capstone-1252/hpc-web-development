@@ -1,6 +1,5 @@
 import cockpit from "@/lib/cockpit";
 import type { Partner } from "@/loaders/loadPartners";
-import { getImageUrl } from "@/loaders/utils";
 import { useEffect, useState } from "react";
 
 interface PartnerLogoProps {
