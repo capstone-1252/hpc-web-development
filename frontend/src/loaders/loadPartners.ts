@@ -3,7 +3,7 @@ import type { AssetImage } from "./utils";
 
 export interface Partner extends CockpitItemData {
   name: string;
-	link: string;
+  link: string;
   logo: AssetImage;
 }
 
