@@ -1,5 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+// import { loadWeeklyHours } from "@/components/loaders/loadHours"
+// const hours = await loadWeeklyHours();
 ---
 
 <Layout title="Contact Us - Alberta Helping Animals Society">
@@ -19,16 +21,16 @@ import Layout from "@/layouts/Layout.astro"
 			<div class="max-w-4xl mx-auto">
 				<h2 class="text-3xl font-semibold text-gray-800 mb-6">Get in Touch</h2>
 				<!-- Container -->
-				<div class="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-0 relative">
+				<div class="flex flex-col lg:flex-row lg:items-start lg:gap-0 relative">
 
-					<div class="bg-[#15A1BD] opacity-80 p-6 lg:p-8 rounded-md shadow-lg border border-gray-200 lg:w-[60%] lg:z-10">
+					<div class="bg-[#15A1BD] opacity-80 p-6 lg:p-8 rounded-md shadow-lg border border-gray-200 lg:w-[60%]">
 						<h3 class="text-xl lg:text-2xl font-bold text-white mb-4">Have something to donate?</h3>
 						<p class="text-lg text-white leading-relaxed">
 							Please contact us by email: AlbertaHelpingAnimalsSociety@gmail.com</p>
 					</div>
 
-					<div class="bg-[#D1E9EE] p-6 lg:p-8 rounded-md shadow-lg border border-gray-200 lg:w-[60%] lg:-ml-24 lg:mt-32">
-						<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-4 text-left lg:text-right">Phone</h3>
+					<div class="bg-[#D1E9EE] p-6 lg:p-8 rounded-md shadow-lg border border-gray-200 lg:w-[60%] lg:-ml-24 lg:mt-32 ">
+						<h3 class="text-xl lg:text-2xl font-bold text-[#485a61] mb-4 text-right">Phone</h3>
 						<p class="text-lg text-[#485a61] opacity-80 leading-relaxed text-right">
 							<span class="font-semibold">587-338-8668</span><br>
 							Please leave a detailed message. It can take over a week to get back to you so please be patient!
@@ -38,129 +40,28 @@ import Layout from "@/layouts/Layout.astro"
 			</div>
 		</section>
 
+		<!-- TODO: Need to update this section to use cms hours -->
 		<section>
-			<!-- TODO: Need to update this section to use cms hours -->
-			<div class="max-w-6xl mx-auto p-4">
-				<h3 class="text-4xl text-(--dark-blue)">Hours for Appointments</h3>
-				<div class="lg:flex">
-					<ul>
-						<li>Monday: 10 a.m. - 4 p.m.</li>
-						<li>Tuesday: 10 a.m. - 4 p.m.</li>
-						<li>Wednesday: 10 a.m. - 4 p.m.</li>
-						<li>Thursday: 10 a.m. - 4 p.m.</li>
-						<li>Friday: 10 a.m. - 4 p.m.</li>
-						<li>Saturday: 10 a.m. - 4 p.m.</li>
-						<li>Sunday: Closed</li>
-					</ul>
-					<img src="" alt="">
+			<div class="flex flex-col lg:flex-row items-center justify-center 
+			gap-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+				<div class="bg-[#15A1BD] opacity-80 p-6 lg:p-8 rounded-md shadow-lg border border-gray-200 lg:w-[50%]">
+				<h3 class="text-4xl text-white mb-4">Hours for Operation</h3>
+				<ul class="text-white space-y-1">
+					<li>Monday: 10 a.m. - 4 p.m.</li>
+					<li>Tuesday: 10 a.m. - 4 p.m.</li>
+					<li>Wednesday: 10 a.m. - 4 p.m.</li>
+					<li>Thursday: 10 a.m. - 4 p.m.</li>
+					<li>Friday: 10 a.m. - 4 p.m.</li>
+					<li>Saturday: 10 a.m. - 4 p.m.</li>
+					<li>Sunday: Closed</li>
+				</ul>
 				</div>
-			</div>
-		</section>
-
-		<!-- Contact Form Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-			<div class="max-w-4xl mx-auto">
-				<div class="text-center mb-8 lg:mb-12">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">Send Us a Message</h2>
-					<p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-3xl mx-auto leading-relaxed">
-						Fill out the form below and we'll get back to you as soon as possible.
-					</p>
-				</div>
-
-				<form class="bg-white p-6 lg:p-8 rounded-md shadow-lg border border-gray-200">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-						<div>
-							<label for="name" class="block text-sm font-medium text-[#485a61] mb-2">Full Name *</label>
-							<input 
-								type="text" 
-								id="name" 
-								name="name" 
-								required
-								class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-								placeholder="John Doe"
-							>
-						</div>
-						<div>
-							<label for="email" class="block text-sm font-medium text-[#485a61] mb-2">Email Address *</label>
-							<input 
-								type="email" 
-								id="email" 
-								name="email" 
-								required
-								class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-								placeholder="john@example.com"
-							>
-						</div>
-					</div>
-
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-						<div>
-							<label for="phone" class="block text-sm font-medium text-[#485a61] mb-2">Phone Number</label>
-							<input 
-								type="tel" 
-								id="phone" 
-								name="phone"
-								class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-								placeholder="(587) 123-4567"
-							>
-						</div>
-						<div>
-							<label for="subject" class="block text-sm font-medium text-[#485a61] mb-2">Subject *</label>
-							<select 
-								id="subject" 
-								name="subject" 
-								required
-								class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-							>
-								<option value="">Select a topic</option>
-								<option value="general">General Inquiry</option>
-								<option value="volunteer">Volunteer Opportunities</option>
-								<option value="donation">Donations</option>
-								<option value="services">Veterinary Services</option>
-								<option value="partnership">Partnership Opportunities</option>
-								<option value="other">Other</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="mb-6">
-						<label for="message" class="block text-sm font-medium text-[#485a61] mb-2">Message *</label>
-						<textarea 
-							id="message" 
-							name="message" 
-							rows="6" 
-							required
-							class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors resize-none"
-							placeholder="Please tell us how we can help you..."
-						></textarea>
-					</div>
-
-					<div class="text-center">
-						<button 
-							type="submit" 
-							class="bg-[#e25002] hover:bg-[#c44301] text-white px-8 lg:px-10 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
-						>
-							Send Message
-						</button>
-					</div>
-				</form>
-			</div>
-		</section>
-
-		<!-- Emergency Information Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--muted-blue)] text-black">
-			<div class="max-w-6xl mx-auto">
-				<div class="text-center">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Emergency Information</h2>
-					<p class="text-lg lg:text-xl opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-4xl mx-auto">
-						If you are experiencing a pet emergency, please contact an emergency veterinary clinic immediately. 
-						AHAS is not able to offer urgent services to new clients except under extraordinary circumstances.
-					</p>
-					<div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-md p-6 lg:p-8 text-black">
-						<p class="text-xl font-semibold mb-4">For Pet Emergencies:</p>
-						<p class="text-lg mb-2">Contact your nearest emergency veterinary clinic</p>
-						<p class="text-lg">Search online for "emergency vet near me" for immediate assistance</p>
-					</div>
+				<div class="lg:w-[25%] m:w-[40%] sm:w-[40%] flex justify-center">
+				<img
+					src="/hero/connie-cat1.avif"
+					alt="Picture of Connie with a Cat"
+					class="w-full max-w-md h-auto object-cover rounded-md shadow-lg"
+				/>
 				</div>
 			</div>
 		</section>
