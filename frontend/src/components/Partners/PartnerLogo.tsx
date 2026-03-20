@@ -26,13 +26,13 @@ export const PartnerLogo = ({ partner }: PartnerLogoProps) => {
   return (
     <div className="flex items-center justify-center px-2">
       {logoUrl && (
-        <a href={partnerLink}>
-          <img
-            src={logoUrl}
-            alt={partner.name}
-            className="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition"
-          />
-        </a>
+				<a href={partnerLink} target={partnerLink != "#partners" ? "_blank" : ""}>
+					<img
+						src={logoUrl}
+						alt={partner.name}
+						className="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition"
+					/>
+				</a>
       )}
     </div>
   );
