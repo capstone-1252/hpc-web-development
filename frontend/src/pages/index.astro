@@ -76,9 +76,16 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 				</div>
 			</div>
 		</section>
+		<!-- Partners Section -->
+		<section class="sm:py-8 px-4 sm:px-6 lg:px-8 bg-slate-50">
+			<div class="max-w-[1440px] mx-auto">
+				<PartnerList client:load />
+			</div>
+		</section>
+		<section>
 
 		<!-- Services Overview Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+		<section class="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-slate-50">
 			<div class="max-w-6xl mx-auto">
 				<div class="mb-8 lg:mb-10">
 					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">What We Offer</span>
@@ -208,18 +215,7 @@ import DogBowl from "@/components/Icons/DogBowl.astro"
 			</div>
 		</section>
 
-		<!-- Partners Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-			<div class="max-w-6xl mx-auto">
-				<div class="mb-8">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-						Our Partners
-					</h2>
-				</div>
-				<PartnerList client:load />
-			</div>
-		</section>
-		<section>
+
 			<AnnouncementList client:load />
 		</section>
 	</main>
