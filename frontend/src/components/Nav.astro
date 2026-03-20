@@ -1,5 +1,11 @@
 ---
-const menuItems = [
+type NavItem = {
+	href: string;
+	label: string;
+	children?: NavItem[];
+}
+
+const menuItems: NavItem[] = [
 	{ href: '/about-us', label: 'About Us' },
 	{
 		label: 'Our Services',
