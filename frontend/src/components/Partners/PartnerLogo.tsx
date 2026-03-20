@@ -9,6 +9,7 @@ interface PartnerLogoProps {
 
 export const PartnerLogo = ({ partner }: PartnerLogoProps) => {
   const [logoUrl, setLogoUrl] = useState<string>();
+	const partnerLink = partner.link || "#partners"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,11 +26,13 @@ export const PartnerLogo = ({ partner }: PartnerLogoProps) => {
   return (
     <div className="flex items-center justify-center px-2">
       {logoUrl && (
-        <img
-          src={logoUrl}
-          alt={partner.name}
-          className="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition"
-        />
+				<a href={partnerLink}>
+					<img
+						src={logoUrl}
+						alt={partner.name}
+						className="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition"
+					/>
+				</a>
       )}
     </div>
   );

@@ -38,7 +38,7 @@ export const PartnerList = () => {
 	}
 
 	return (
-		<section className="py-16">
+		<section className="py-16" id="partners">
 			<div className="mb-10 max-w-6xl mx-auto">
 				<p className="text-sm uppercase font-bold tracking-wide text-primary mb-2">
 					Our Partners
