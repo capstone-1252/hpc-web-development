@@ -53,7 +53,7 @@ import ExternalLinkIcon from "@/components/Icons/ExternalLinkIcon.astro"
 				</div>
 				
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-					<div class="">
+					<div class="lg:text-center">
 						<a 
 							href="/services/apply" 
 							class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
@@ -68,7 +68,7 @@ import ExternalLinkIcon from "@/components/Icons/ExternalLinkIcon.astro"
 						</a>
 					</div>
 
-					<div class="text-center">
+					<div class="lg:text-center">
 						<a 
 							href="/resources" 
 							class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
@@ -81,16 +81,16 @@ import ExternalLinkIcon from "@/components/Icons/ExternalLinkIcon.astro"
 						</a>
 					</div>
 
-					<div class="text-center">
+					<div class="lg:text-center">
 						<a 
 							href="/faq" 
 							class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
 						>
-							<div class="flex items-center gap-3">
+							<div class="flex items-center sm:items-left gap-3">
 								<ExternalLinkIcon /> 
 								<h4 class="text-xl font-bold text-[#485a61]">FAQs</h4>
 							</div>
-							<p class="text-[#485a61] opacity-80 text-lg sm:text-sm">Find answers to common questions</p>
+							<p class="text-[#485a61] opacity-80 text-lg sm:text-sm sm:justify-center">Find answers to common questions</p>
 						</a>
 					</div>
 				</div>
@@ -98,25 +98,25 @@ import ExternalLinkIcon from "@/components/Icons/ExternalLinkIcon.astro"
 		</section>
 
 		<!-- CTA Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61]">
-			<div class="max-w-4xl mx-auto text-center">
+		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61] items-left">
+			<div class="max-w-4xl mx-auto">
 				<h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 lg:mb-6">
 					Ready to Get Help for Your Pet?
 				</h2>
-				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-3xl mx-auto">
+				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-1xl mx-auto">
 					If you're experiencing financial hardship and need veterinary care for your pet, 
 					we're here to help. Apply for our services today.
 				</p>
-				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
+				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-left">
 					<a 
 						href="/services/apply" 
-						class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+						class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap w-fit"
 					>
 						Apply for Services
 					</a>
 					<a 
 						href="/contact" 
-						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-6 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors whitespace-nowrap"
+						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-12 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors whitespace-nowrap w-fit"
 					>
 						Contact Us
 					</a>
