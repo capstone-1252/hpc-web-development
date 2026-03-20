@@ -5,62 +5,60 @@ import { PartnerLogo } from "./PartnerLogo";
 import { CardSkeleton } from "../Skeleton/CardSkeleton";
 
 export const PartnerList = () => {
-  const [partners, setPartners] = useState<Partner[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+	const [partners, setPartners] = useState<Partner[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await loadPartners();
-      setPartners(res);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+	useEffect(() => {
+		const fetchData = async () => {
+			const res = await loadPartners();
+			setPartners(res);
+			setLoading(false);
+		};
+		fetchData();
+	}, []);
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-4 max-w-lg mx-auto gap-2 max-h-[100px]">
-        <CardSkeleton lines={0} showImage />
-        <CardSkeleton lines={0} showImage />
-        <CardSkeleton lines={0} showImage />
-        <CardSkeleton lines={0} showImage />
-      </div>
-    );
-  }
+	if (loading) {
+		return (
+			<section className="py-16">
+				<div className="mb-10 px-4">
+					<p className="text-sm uppercase tracking-wide mb-2 text-primary">
+						Our Partners
+					</p>
+					<h2 className="text-2xl md:text-3xl font-semibold text-(--dark-blue)">
+						Trusted by organizations in our community
+					</h2>
+				</div>
+				<div className="grid grid-cols-2 md:grid-cols-3 justify-center gap-6 max-w-4xl mx-auto px-4">
+					{Array.from({ length: 6 }).map((_, i) => (
+						<CardSkeleton key={i} lines={0} showImage />
+					))}
+				</div>
+			</section>
+		);
+	}
 
-  return (
-    <>
-      <style>{`
-.marquee-inner {
-animation: marqueeScroll linear infinite;
-}
+	return (
+		<section className="py-16">
+			<div className="mb-10 max-w-6xl mx-auto">
+				<p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
+					Our Partners
+				</p>
+				<h2 className="text-2xl md:text-3xl font-semibold text-(--dark-blue)">
+					Trusted by organizations in our community
+				</h2>
+			</div>
 
-@keyframes marqueeScroll {
-0% {
-transform: translateX(0%);
-}
-
-100% {
-transform: translateX(-50%);
-}
-}
-`}</style>
-      <div className="overflow-hidden w-full relative max-w-5xl mx-auto select-none">
-        <div className="absolute left-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
-
-        <div
-          className="marquee-inner flex will-change-transform min-w-[200%]"
-          style={{ animationDuration: "15s" }}
-        >
-          <div className="flex">
-            {[...partners, ...partners].map((partner, idx) => (
-              <PartnerLogo partner={partner} key={idx} />
-            ))}
-          </div>
-        </div>
-
-        <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
-      </div>
-    </>
-  );
+			{/* Flex-wrap layout */}
+			<div className="flex flex-wrap justify-center gap-x-8 gap-y-10 px-4">
+				{partners.map((partner) => (
+					<div
+						key={partner._id}
+						className="flex opacity-60 hover:opacity-100 transition"
+					>
+						<PartnerLogo partner={partner} />
+					</div>
+				))}
+			</div>
+		</section>
+	);
 };
