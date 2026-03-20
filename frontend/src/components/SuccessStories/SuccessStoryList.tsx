@@ -10,7 +10,7 @@ interface StoryCardProps {
 }
 
 function SuccessStoryCard({ story }: StoryCardProps) {
-  const imageUrl = story.image ? getImageUrl(story.image, 600, 400) : "";
+  const imageUrl = story.image ? getImageUrl(story.image, 400, 300) : "";
 
   return (
     <div className="group bg-white rounded-2xl shadow-md border border-border/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all h-full">
@@ -23,14 +23,6 @@ function SuccessStoryCard({ story }: StoryCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
-      )}
-      <div className="p-5 sm:p-6">
-        <h3 className="text-lg font-semibold text-dark-blue mb-2 group-hover:text-primary transition-colors">
-          {story.name || "Our Success Story"}
-        </h3>
-        <p className="text-sm lg:text-base text-foreground/80 leading-relaxed line-clamp-3">
-          {story.description}
-        </p>
       </div>
     </div>
   );
