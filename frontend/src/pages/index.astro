@@ -149,23 +149,27 @@ import supportUs from "@/assets/support-us.png"
 					</a>
 				</div>
 			</div>
-		</section>
-		<!-- Partners Section -->
-		<section class="sm:py-8 px-4 sm:px-6 lg:px-8 bg-slate-50">
-			<div class="max-w-[1440px] mx-auto">
-				<PartnerList client:load />
+		</div>
+	</section>
+	<!-- Success Stories Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-8 lg:mb-10">
+				<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">Community Impact</span>
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4">
+					Success Stories
+				</h2>
 			</div>
-		</section>
-		<section>
+			<SuccessStoryList client:load />
+		</div>
+	</section>
 
-		<!-- Services Overview Section -->
-		<section class="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-slate-50">
-			<div class="max-w-6xl mx-auto">
-				<div class="mb-8 lg:mb-10">
-					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">What We Offer</span>
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4">
-						How We Help Alberta's Animals
-					</h2>
+	<!-- Our Dedication Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-(--muted-blue)">
+		<div class="max-w-6xl mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+				<div class="mx-auto">
+					<Image src={ourDedication} alt="Connie with an adorable pug" class="w-full max-w-md rounded-2xl" format="avif" />
 				</div>
 				<div>
 					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
@@ -220,8 +224,18 @@ import supportUs from "@/assets/support-us.png"
 		</div>
 	</section>
 
-
-			<AnnouncementList client:load />
-		</section>
-	</main>
+	<!-- Partners Section -->
+	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-8">
+				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold mb-4">
+					Our Partners
+				</h2>
+			</div>
+			<PartnerList client:load />
+		</div>
+	</section>
+	<section>
+		<AnnouncementList client:load />
+	</section>
 </Layout>
