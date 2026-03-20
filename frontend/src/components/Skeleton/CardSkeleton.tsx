@@ -17,7 +17,7 @@ export const CardSkeleton: React.FC<CardSkeletonProps> = ({
 }) => {
   return (
     <div
-      className={`animate-pulse rounded-lg border border-gray-200 p-4 ${className}`}
+      className={`animate-pulse rounded-md border border-gray-200 p-4 ${className}`}
     >
       {showAvatar && (
         <div className="flex items-center space-x-4 mb-4">

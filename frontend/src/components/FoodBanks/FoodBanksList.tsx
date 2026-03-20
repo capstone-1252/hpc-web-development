@@ -32,7 +32,7 @@ export function FoodBanksList() {
       {foodBanks.map((foodBank) => (
         <div
           key={foodBank._id}
-          className="bg-white p-6 rounded-lg shadow-lg border border-gray-200"
+          className="bg-white p-6 rounded-md shadow-lg border border-gray-200"
         >
           <div className="flex flex-col items-start gap-4">
             <h3 className="text-xl font-bold text-(--dark-blue) ">
@@ -64,7 +64,7 @@ export function FoodBanksList() {
                   <strong>Contact:</strong> {foodBank.email}
                 </p>
               )}
-              <p className="font-bold">
+              <p className="font-bold text-red-400">
                 {foodBank.appointmentOnly ? <p>Appointment Only</p> : ""}
               </p>
             </div>

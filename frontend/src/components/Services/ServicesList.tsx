@@ -8,7 +8,7 @@ interface ServiceCardProps {
 
 function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <div className="bg-(--muted-blue) p-2 rounded-lg">
+    <div className="bg-(--muted-blue) p-2 rounded-md">
       <h3 className="text-md font-bold text-(--dark-blue) text-center">
         {service.name}
       </h3>
