@@ -11,15 +11,15 @@ export const PartnerLogo = ({ partner }: PartnerLogoProps) => {
   const partnerLink = partner.link || "#partners";
 
   useEffect(() => {
-		const fetchData = async () => {
-			const logo = await cockpit.getAssetUrl(partner.logo._id, {
-				quality: 80,
-				height: 80,
-				mode: "fitToHeight"
-			})
-			setLogoUrl(logo);
-		}
-		fetchData()
+    const fetchData = async () => {
+      const logo = await cockpit.getAssetUrl(partner.logo._id, {
+        quality: 80,
+        height: 80,
+        mode: "fitToHeight",
+      });
+      setLogoUrl(logo);
+    };
+    fetchData();
   }, [partner.logo]);
 
   return (
