@@ -29,7 +29,7 @@ export const AnnouncementList = () => {
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#fbfbfb]">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 lg:mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-(--dark-blue)">
+          <h2 className="text-3xl lg:text-3xl font-bold text-(--dark-blue)">
             Latest Updates
           </h2>
         </div>
