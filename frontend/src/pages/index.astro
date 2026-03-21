@@ -17,11 +17,11 @@ import supportUs from "@/assets/support-us.png"
 
 <Layout>
 	<section class="bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-2xl lg:max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       
       <div class="order-0 lg:order-1 lg:text-left">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--dark-blue)] mb-4 lg:mb-6 leading-tight break-words">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight break-words">
           Saving Lives and Healing
           <span class="text-[#19b8d7] block lg:inline">Alberta's Animals</span>
         </h1>
@@ -102,7 +102,7 @@ import supportUs from "@/assets/support-us.png"
 					How We Help Alberta's Animals
 				</h2>
 			</div>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 				<div class="bg-white p-6 lg:p-8 rounded-2xl shadow-md border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
 					<div class="w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5">
 						<School />
@@ -164,14 +164,13 @@ import supportUs from "@/assets/support-us.png"
 		</div>
 	</section>
 
-	<!-- Our Dedication Section -->
 	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-(--muted-blue)">
 		<div class="max-w-6xl mx-auto">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 				<div class="mx-auto">
 					<Image src={ourDedication} alt="Connie with an adorable pug" class="w-full max-w-md rounded-2xl" format="avif" />
 				</div>
-				<div>
+				<div class="max-w-2xl lg:max-w-4xl mx-auto">
 					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
 						Our Dedication
 					</h2>
@@ -189,9 +188,8 @@ import supportUs from "@/assets/support-us.png"
 		</div>
 	</section>
 
-	<!-- Support Us Section -->
 	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-6xl mx-auto">
+		<div class="max-w-2xl lg:max-w-6xl mx-auto">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 				<div class="bg-(--muted-blue) p-8 lg:p-12 rounded-2xl">
 					<span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-2">Get Involved</span>
@@ -226,11 +224,8 @@ import supportUs from "@/assets/support-us.png"
 
 	<!-- Partners Section -->
 	<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-		<div class="max-w-6xl mx-auto">
+		<div class="max-w-2xl lg:max-w-6xl mx-auto">
 			<PartnerList client:load />
 		</div>
-	</section>
-	<section>
-		<AnnouncementList client:load />
 	</section>
 </Layout>
