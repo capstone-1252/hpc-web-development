@@ -1,35 +1,49 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { Events as EventCalendar } from "@/components/Events"
+import { Image } from "astro:assets"
+import eventsHeroImage from "@/assets/events-hero.avif"
 ---
-
 <Layout title="Events - Alberta Helping Animals Society">
-	<main class="bg-white">
-		<!-- Hero Section -->
-		<section class="relative bg-[#D1E9EE] py-12 sm:py-16 lg:py-20 overflow-hidden">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-				<h1 class=" text-[#485a61] text-4xl sm:text-4xl lg:text-4xl font-bold leading-tight mb-6">Fundraising Events</h1>
-				<p class="text-lg sm:text-xl lg:text-lg text-[#485a61] max-w-lg leading-relaxed">
-					We are looking for fundraising ideas (and a volunteer to help us with fundraising). If you have any ideas, please contact us at AlbertaHelpingAnimalsSociety@gmail.com
-				</p>
-			</div>
-		</section>
-
-		<section class="min-h-screen p-1 md:p-12">
-			<div class="max-w-6xl mx-auto">
-				<EventCalendar client:load />
-			</div>
-		</section>
-
-		<section>
-			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mt-8">Stay Connected</h2>
-				<p class="w-[928px] text-lg mt-2 mb-8">New events are added throughout the year. Check back often or follow us on Facebook to stay updated on upcoming fundraisers and community initiatives.</p>
-			</div>
-			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-(--dark-blue) mt-8">Why Your Support Matters</h2>
-				<p class="w-[928px] text-lg mt-2 mb-8">Every event on this calendar helps fund essential veterinary care, food, medical treatment, and emergency support for animals in need. Your participation directly impacts pets and families in our community.When you attend, sponsor, volunteer, or share our events, you help create real change</p>
-			</div>
-		</section>
-	</main>
+   <main class="bg-white">
+      <!-- HERO -->
+      <section class="bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+         <div class="max-w-2xl lg:max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+               <!-- Content -->
+               <div class="w-full lg:w-1/2">
+                  <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight break-words">
+                     Events
+                  </h1>
+                  <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">
+                     We are looking for fundraising ideas (and a volunteer to help us with fundraising). If you have any ideas, please contact us at AlbertaHelpingAnimalsSociety@gmail.com
+                  </p>
+               </div>
+               <!-- Image -->
+               <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                  <Image 
+                     src={eventsHeroImage} 
+                     alt="Hero Banner for Events Page"
+                     class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+                     />
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="min-h-screen p-1 md:p-12">
+         <div class="max-w-6xl mx-auto">
+            <EventCalendar client:load />
+         </div>
+      </section>
+      <section>
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Stay Connected</h2>
+            <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">New events are added throughout the year. Check back often or follow us on Facebook to stay updated on upcoming fundraisers and community initiatives.</p>
+         </div>
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Why Your Support Matters</h2>
+            <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">Every event on this calendar helps fund essential veterinary care, food, medical treatment, and emergency support for animals in need. Your participation directly impacts pets and families in our community.When you attend, sponsor, volunteer, or share our events, you help create real change</p>
+         </div>
+      </section>
+   </main>
 </Layout>
