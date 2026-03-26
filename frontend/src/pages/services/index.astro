@@ -3,125 +3,132 @@ import Layout from "@/layouts/Layout.astro"
 import { ServicesList } from "@/components/Services/ServicesList"
 import { FoodBanksList } from "@/components/FoodBanks/FoodBanksList"
 import ExternalLinkIcon from "@/components/Icons/ExternalLinkIcon.astro"
+import { Image } from "astro:assets"
+import ourServicesHeroImage from "@/assets/ourservices-hero.avif"
 ---
-
 <Layout title="Our Services - Alberta Helping Animals Society">
-	<main class="bg-white">
-		<!-- Hero Section -->
-		<section class="relative bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-			<div class="max-w-7xl mx-auto">
-				<h1 class="text-4xl sm:text-4xl lg:text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">Our Services</h1>
-				<p class="text-lg sm:text-lg text-[#485a61] opacity-80 max-w-4xl leading-relaxed mb-8">
-					AHAS provides no-cost veterinary services in Edmonton to qualified clients who are unable to access regular veterinary care.
-				</p>
-				<a 
-					href="/services/apply" 
-					class="bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-				>
-					Apply for Services
-				</a>
-			</div>
-		</section>
-
-		<!-- Services Overview -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-			<div class="mb-8 lg:mb-12">
-				<h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-[#485a61] mb-4 lg:mb-6">Veterinary and Other Care</h2>
-				<p class="text-base lg:text-lg text-[#2B2F3BCC] opacity-80 mx-auto leading-relaxed">
-					AHAS Home Veterinary Services provides basic veterinary care to people living with a very low income in Edmonton.  Our policy is to ensure all patients are spayed/neutered as long as they are healthy; we will not see your pets if you will not spay/neuter them.
-				</p>
-			</div>
-
-			<ServicesList client:load />
-		</section>
-
-		<!-- Food Bank Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
-			<div class="max-w-6xl mx-auto flex flex-col gap-3">
-				<h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">Pet Food Banks</h2>
-				<p class="mb-4">Veterinary costs aside, pet owners face the additional costs of keeping their furry friends well-fed, healthy and happy.</p>
-				<FoodBanksList client:load />
-				<p class="my-2 text-lg">Many groups on Facebook can help with food.  Search for “pet food bank” for help. Edmonton Food Bank may have some food and supplies as well. We have some food as well.  You can also check out our “After Hours Pet Food Bank” box in our parking lot behind the clinic.</p>
-			</div>
-		</section>
-
-		<!-- Quick Links Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-			<div class="max-w-6xl mx-auto">
-				<div class="text-center mb-8 lg:mb-12">
-					<h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-[#485a61] mb-4 lg:mb-6">Service Quick Links</h2>
-				</div>
-				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-					<div class="">
-						<a 
-							href="/services/apply" 
-							class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
-						>
-							<div class="flex items-center gap-3">
-								<ExternalLinkIcon /> 
-								<h4 class="text-xl font-bold text-[#485a61]">
-									Apply for Services
-								</h4>
-							</div>
-							<p class="text-black opacity-80 text-sm pl-3">Complete our application for veterinary care</p>
-						</a>
-					</div>
-
-					<div class="">
-						<a 
-							href="/resources" 
-							class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
-						>
-							<div class="flex items-center gap-3">
-								<ExternalLinkIcon /> 
-								<h4 class="text-xl font-bold text-[#485a61]">Moodle Learning Modules</h4>
-							</div>
-							<p class="text-[#485a61] opacity-80 text-sm pl-3">Guides and information for pet owners</p>
-						</a>
-					</div>
-
-					<div class="">
-						<a 
-							href="/faq" 
-							class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
-						>
-							<div class="flex items-center sm:items-left gap-3">
-								<ExternalLinkIcon /> 
-								<h4 class="text-xl font-bold text-[#485a61]">FAQs</h4>
-							</div>
-							<p class="text-[#485a61] opacity-80 text-sm pl-3">Find answers to common questions</p>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- CTA Section -->
-		<section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61] items-left">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 lg:mb-6">
-					Ready to Get Help for Your Pet?
-				</h2>
-				<p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-1xl mx-auto">
-					If you're experiencing financial hardship and need veterinary care for your pet, 
-					we're here to help. Apply for our services today.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-left">
-					<a 
-						href="/services/apply" 
-						class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap w-fit"
-					>
-						Apply for Services
-					</a>
-					<a 
-						href="/contact" 
-						class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-12 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors whitespace-nowrap w-fit"
-					>
-						Contact Us
-					</a>
-				</div>
-			</div>
-		</section>
-	</main>
+   <main class="bg-white">
+      <!-- Hero Section -->
+      <section class="relative bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+         <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+               <div class="max-w-2xl">
+                  <h1 class="text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">
+                     Our Services
+                  </h1>
+                  <p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-8">
+                     AHAS provides no-cost veterinary services in Edmonton to qualified clients who are unable to access regular veterinary care.
+                  </p>
+                  <a 
+                     href="/services/apply" 
+                     class="inline-block bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                     >
+                  Apply for Services
+                  </a>
+               </div>
+               <!-- Banner Image -->
+               <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
+                  <Image 
+                     src={ourServicesHeroImage} 
+                     alt="Hero Banner for Our Services Page"
+                     class="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[500px] h-auto"
+                     />
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Services Overview -->
+      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+         <div class="mb-8 lg:mb-12">
+            <h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-[#485a61] mb-4 lg:mb-6">Veterinary and Other Care</h2>
+            <p class="text-base lg:text-lg text-[#2B2F3BCC] opacity-80 mx-auto leading-relaxed">
+               AHAS Home Veterinary Services provides basic veterinary care to people living with a very low income in Edmonton.  Our policy is to ensure all patients are spayed/neutered as long as they are healthy; we will not see your pets if you will not spay/neuter them.
+            </p>
+         </div>
+         <ServicesList client:load />
+      </section>
+      <!-- Food Bank Section -->
+      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+         <div class="max-w-6xl mx-auto flex flex-col gap-3">
+            <h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">Pet Food Banks</h2>
+            <p class="mb-4">Veterinary costs aside, pet owners face the additional costs of keeping their furry friends well-fed, healthy and happy.</p>
+            <FoodBanksList client:load />
+            <p class="my-2 text-lg">Many groups on Facebook can help with food.  Search for “pet food bank” for help. Edmonton Food Bank may have some food and supplies as well. We have some food as well.  You can also check out our “After Hours Pet Food Bank” box in our parking lot behind the clinic.</p>
+         </div>
+      </section>
+      <!-- Quick Links Section -->
+      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+         <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-12">
+               <h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-[#485a61] mb-4 lg:mb-6">Service Quick Links</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+               <div class="">
+                  <a 
+                     href="/services/apply" 
+                     class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
+                     >
+                     <div class="flex items-center gap-3">
+                        <ExternalLinkIcon />
+                        <h4 class="text-xl font-bold text-[#485a61]">
+                           Apply for Services
+                        </h4>
+                     </div>
+                     <p class="text-black opacity-80 text-sm pl-3">Complete our application for veterinary care</p>
+                  </a>
+               </div>
+               <div class="">
+                  <a 
+                     href="/resources" 
+                     class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
+                     >
+                     <div class="flex items-center gap-3">
+                        <ExternalLinkIcon />
+                        <h4 class="text-xl font-bold text-[#485a61]">Moodle Learning Modules</h4>
+                     </div>
+                     <p class="text-[#485a61] opacity-80 text-sm pl-3">Guides and information for pet owners</p>
+                  </a>
+               </div>
+               <div class="">
+                  <a 
+                     href="/faq" 
+                     class="block bg-white p-6 rounded-md shadow-lg border border-gray-200 hover:shadow-xl transition-all hover:scale-105"
+                     >
+                     <div class="flex items-center sm:items-left gap-3">
+                        <ExternalLinkIcon />
+                        <h4 class="text-xl font-bold text-[#485a61]">FAQs</h4>
+                     </div>
+                     <p class="text-[#485a61] opacity-80 text-sm pl-3">Find answers to common questions</p>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#19b8d7] to-[#485a61] items-left">
+         <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 lg:mb-6">
+               Ready to Get Help for Your Pet?
+            </h2>
+            <p class="text-lg sm:text-xl text-white opacity-90 mb-6 lg:mb-8 leading-relaxed max-w-1xl mx-auto">
+               If you're experiencing financial hardship and need veterinary care for your pet, 
+               we're here to help. Apply for our services today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-left">
+               <a 
+                  href="/services/apply" 
+                  class="bg-white hover:bg-gray-100 text-[#19b8d7] px-6 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap w-fit"
+                  >
+               Apply for Services
+               </a>
+               <a 
+                  href="/contact" 
+                  class="border-2 border-white text-white hover:bg-white hover:text-[#485a61] px-12 lg:px-8 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors whitespace-nowrap w-fit"
+                  >
+               Contact Us
+               </a>
+            </div>
+         </div>
+      </section>
+   </main>
 </Layout>
