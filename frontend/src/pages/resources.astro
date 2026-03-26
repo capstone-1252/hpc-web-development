@@ -7,24 +7,17 @@ import resourcesHeroImage from "@/assets/resources-hero.avif"
 <Layout>
    <main class="bg-white">
       <!-- HERO -->
-      <section class="relative bg-[#D1E9EE] py-12 sm:py-16 lg:py-20 overflow-hidden h-[420px]">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-[265px]">
-            <!-- Background image -->
-            <img 
-                  src="/hero/resources-hero.png" 
-                  alt="Hero Banner for Resources Page" 
-                  class="absolute bottom-0 right-0 w-[700px] sm:w-[500px] md:w-[700px] lg:w-[1000px] 
-                  opacity-20 pointer-events-none select-none"
-               />
-            <!-- Content -->
-            <div class="relative z-10 pt-13">
-                  <h1 class="text-4xl sm:text-5xl lg:text-4xl font-bold leading-tight mb-6">
-                     <span class="text-black block">Animal Care Resources:</span>
-                     <span class="text-[#126F82] block">Cats and Dogs</span>
+      <section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+         <div class="max-w-2xl lg:max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+               <!-- Content -->
+               <div class="w-full lg:w-1/2">
+                  <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight break-words">
+                     Animal Care Resources
                   </h1>
+                  <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--hero-blue) mb-4 lg:mb-6 leading-tight break-words">Cats and Dogs</h2>
                   <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">
-                     Dedicated to creating opportunities for vulnerable people to access veterinary care and other 
-                     services for their companion animals.
+                     Dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
                   </p>
                </div>
                <!-- Image -->
@@ -32,7 +25,7 @@ import resourcesHeroImage from "@/assets/resources-hero.avif"
                   <Image 
                      src={resourcesHeroImage} 
                      alt="Hero Banner for Resources Page"
-                     class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none pointer-events-none select-none"
+                     class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
                      />
                </div>
             </div>
