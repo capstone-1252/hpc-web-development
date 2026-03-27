@@ -1,6 +1,25 @@
 import { isSameDay } from "date-fns";
 
-import type { CalendarEvent, EventColor } from "@/components/event-calendar";
+import type { CalendarEvent, EventColor, EventType } from "@/components/event-calendar";
+
+export const eventTypeToColor = (type?: EventType): EventColor => {
+  const colorMap: Record<EventType, EventColor> = {
+    Fundraiser: "emerald",
+    Seminar: "sky",
+    Meetup: "violet",
+    Other: "orange",
+  };
+  return type ? colorMap[type] : "sky";
+};
+
+export const colorToEventType: Record<EventColor, EventType> = {
+  sky: "Seminar",
+  amber: "Other",
+  violet: "Meetup",
+  rose: "Other",
+  emerald: "Fundraiser",
+  orange: "Other",
+};
 
 /**
  * Get the background color class for event indicator

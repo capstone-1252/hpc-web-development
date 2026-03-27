@@ -35,6 +35,7 @@ export type CalendarEvent = {
   end: Date;
   allDay?: boolean;
   color?: EventColor;
+  type?: EventType;
   location?: string;
 };
 

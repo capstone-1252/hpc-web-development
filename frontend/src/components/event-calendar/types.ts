@@ -8,8 +8,11 @@ export interface CalendarEvent {
   end: Date;
   allDay?: boolean;
   color?: EventColor;
+  type?: EventType;
   location?: string;
 }
+
+export type EventType = "Fundraiser" | "Seminar" | "Meetup" | "Other";
 
 export type EventColor =
   | "sky"

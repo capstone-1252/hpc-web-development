@@ -46,6 +46,7 @@ import {
   WeekCellsHeight,
   WeekView,
   getEventColorBgClass,
+  colorToEventType,
 } from "@/components/event-calendar";
 
 export interface EventCalendarProps {
@@ -325,6 +326,16 @@ export function EventCalendar({
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
+          <div className="hidden flex-wrap items-center gap-3 text-xs sm:flex">
+            {(["emerald", "sky", "violet", "orange"] as const).map((color) => (
+              <div key={color} className="flex items-center gap-1.5">
+                <div className={`h-2.5 w-2.5 rounded-full ${getEventColorBgClass(color)}`} />
+                <span className="text-muted-foreground capitalize">
+                  {colorToEventType[color]}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-1 flex-col">
@@ -381,6 +392,11 @@ export function EventCalendar({
                     className={`h-3 w-3 rounded-full ${getEventColorBgClass(popupEvent.color)}`}
                   />
                   <h3 className="text-lg font-semibold">{popupEvent.title}</h3>
+                  {popupEvent.type && (
+                    <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-medium">
+                      {popupEvent.type}
+                    </span>
+                  )}
                 </div>
 
                 {popupEvent.description && (
