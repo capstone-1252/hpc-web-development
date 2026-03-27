@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { RiCalendarCheckLine, RiMapPinLine, RiTimeLine } from "@remixicon/react";
+import {
+  RiCalendarCheckLine,
+  RiMapPinLine,
+  RiTimeLine,
+} from "@remixicon/react";
 import {
   addDays,
   addMonths,
@@ -378,7 +382,7 @@ export function EventCalendar({
                   />
                   <h3 className="text-lg font-semibold">{popupEvent.title}</h3>
                 </div>
-                
+
                 {popupEvent.description && (
                   <p className="text-sm text-muted-foreground">
                     {popupEvent.description}
