@@ -35,7 +35,7 @@ export const HomeGallerySection = () => {
 				<h2 className="text-3xl sm:text-3xl lg:text-3xl font-normal text-dark-blue mb-8" style={{ fontFamily: "'Ubuntu', sans-serif" }}>
 					Photo Gallery
 				</h2>
-				<PhotoGallery images={gallery?.photos || []} altPrefix="Home Gallery | " width={1200} height={800} />
+				<PhotoGallery images={gallery?.photos || []} altPrefix="Home Gallery | " width={1200} height={800} showDescription />
 			</div>
 		</section>
 	)
