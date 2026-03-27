@@ -7,7 +7,7 @@ import eventsHeroImage from "@/assets/events-hero.avif"
 <Layout title="Events - Alberta Helping Animals Society">
    <main class="bg-white">
       <!-- HERO -->
-      <section class="bg-(--primary) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
          <div class="max-w-2xl lg:max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row items-center gap-8">
                <!-- Content -->
@@ -19,7 +19,7 @@ import eventsHeroImage from "@/assets/events-hero.avif"
                      We are looking for fundraising ideas (and a volunteer to help us with fundraising). If you have any ideas, please contact us at AlbertaHelpingAnimalsSociety@gmail.com
                   </p>
                </div>
-               <!-- Image -->
+               <!-- Banner Image -->
                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
                   <Image 
                      src={eventsHeroImage} 
@@ -30,11 +30,17 @@ import eventsHeroImage from "@/assets/events-hero.avif"
             </div>
          </div>
       </section>
+
+      <!-- Event Calendar -->
       <section class="min-h-screen p-1 md:p-12">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Upcoming Events</h2>
+            <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">Join us at our upcoming events to support our mission and make a difference in the lives of animals in need. From fundraisers to community initiatives, there's something for everyone to get involved with. Check out our calendar below for details on our next events and how you can participate.</p>
          <div class="max-w-6xl mx-auto">
             <EventCalendar client:load />
          </div>
       </section>
+      <!-- Content -->
       <section>
          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Stay Connected</h2>
@@ -43,6 +49,17 @@ import eventsHeroImage from "@/assets/events-hero.avif"
          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Why Your Support Matters</h2>
             <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">Every event on this calendar helps fund essential veterinary care, food, medical treatment, and emergency support for animals in need. Your participation directly impacts pets and families in our community.When you attend, sponsor, volunteer, or share our events, you help create real change</p>
+         </div>
+      </section>
+
+      <!-- Events List -->
+      <section class="max-w-6xl mx-auto bg-[#D1E9EE] text-white text-lg py-2 rounded-md shadow-md mb-12">
+         <div class="px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-[var(--dark-blue)] mt-8">Events List</h2>
+
+            <p class="text-[var(--muted-foreground)] max-w-3xl text-lg mt-2 mb-8">
+               Explore our upcoming events below and find out how you can get involved. From fundraisers to community initiatives, there's something for everyone to support our mission and make a difference in the lives of animals in need.
+            </p>
          </div>
       </section>
    </main>

@@ -1,7 +1,32 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { Image } from "astro:assets"
+import getInvolvedHeroImage from "@/assets/getinvolved-hero.avif"
 ---
 
 <Layout title="Get Involved - Alberta Helping Animals Society">
 	<main class="bg-white"></main>
+	<!-- HERO -->
+   <section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+      <div class="max-w-2xl lg:max-w-7xl mx-auto">
+         <div class="flex flex-col lg:flex-row items-center gap-8">
+            <!-- Content -->
+            <div class="w-full lg:w-1/2">
+               <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight break-words">
+                  Get Involved with AHAS
+               </h1>
+               <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">Make a meaningful difference in the lives of animals in our community. Whether you choose to volunteer your time, donate to support essential care, or participate in our fundraising events, your involvement helps provide shelter, medical care, and second chances to animals in need. Every contribution — big or small — creates lasting impact.
+               </p>
+            </div>
+			<!-- Banner Image -->
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+               <Image 
+                  src={getInvolvedHeroImage} 
+                  alt="Hero Banner for Get Involved Page"
+                  class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+                  />
+            </div>
+         </div>
+      </div>
+   </section>
 </Layout>
