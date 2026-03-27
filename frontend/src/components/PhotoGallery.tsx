@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { AssetImage } from "@/loaders/utils"
 import { getImageUrl } from "@/loaders/utils"
 
-interface GalleryProps {
+interface PhotoGalleryProps {
 	images: AssetImage[]
 	altPrefix?: string
 	width?: number
@@ -11,13 +11,13 @@ interface GalleryProps {
 	displayOrder?: boolean
 }
 
-export const Gallery = ({
+export const PhotoGallery = ({
 	images,
 	altPrefix = "Image",
 	width = 1200,
 	height = 800,
 	displayOrder = false,
-}: GalleryProps) => {
+}: PhotoGalleryProps) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 
 	if (!images?.length) {

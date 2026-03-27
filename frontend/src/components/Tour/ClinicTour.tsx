@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Gallery } from "./Gallery"
+import { PhotoGallery } from "@/components/PhotoGallery"
 import { loadTour, type TourPhotos } from "@/loaders/loadTour"
 
 export const ClinicTour = () => {
@@ -54,7 +54,7 @@ export const ClinicTour = () => {
 					Clinic Tour
 				</h2>
 				{photos?.length ? (
-					<Gallery images={photos} altPrefix="Clinic photo" displayOrder />
+					<PhotoGallery images={photos} altPrefix="Clinic photo" displayOrder />
 				) : (
 					<p className="text-muted-foreground">No photos available.</p>
 				)}
