@@ -13,14 +13,14 @@ export const toCalendarEvent = (event: Event): CalendarEvent => {
     ? new Date(event.endDate)
     : new Date(start.getTime() + 60 * 60);
 
-	const color = eventTypeToColor(event.type)
+  const color = eventTypeToColor(event.type);
 
   return {
     id: event.slug,
     title: event.title,
     description: event.longDescription,
     start: start,
-		color: color,
+    color: color,
     end: end,
     location: event.location,
   };
