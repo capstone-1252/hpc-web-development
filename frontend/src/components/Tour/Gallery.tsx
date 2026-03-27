@@ -36,21 +36,19 @@ export const Gallery = ({
 	}
 
 	return (
-		<div className="relative">
-			<div className="overflow-hidden rounded-2xl shadow-xl">
-				<img
-					src={imageUrl}
-					alt={currentImage.altText || `${altPrefix} ${currentIndex + 1}`}
-					className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-				/>
-				{displayOrder && (
-					<div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
-						<span className="text-sm font-medium">
-							{currentIndex + 1} of {images.length}: {currentImage.description || "No description"}
-						</span>
-					</div>
-				)}
-			</div>
+		<div className="relative rounded-2xl shadow-xl overflow-hidden h-[300px] sm:h-[400px] lg:h-[500px]">
+			<img
+				src={imageUrl}
+				alt={currentImage.altText || `${altPrefix} ${currentIndex + 1}`}
+				className="w-full h-full object-cover"
+			/>
+			{displayOrder && (
+				<div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
+					<span className="text-sm font-medium">
+						{currentIndex + 1} of {images.length}: {currentImage.description || "No description"}
+					</span>
+				</div>
+			)}
 			{images.length > 1 && (
 				<>
 					<button
