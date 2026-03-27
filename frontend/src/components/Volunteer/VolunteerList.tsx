@@ -14,7 +14,7 @@ export const VolunteerList = () => {
       setLoading(false);
     };
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return (
