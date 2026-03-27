@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { RiCalendarCheckLine } from "@remixicon/react";
+import { RiCalendarCheckLine, RiMapPinLine, RiTimeLine } from "@remixicon/react";
 import {
   addDays,
   addMonths,
@@ -15,6 +15,7 @@ import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  XIcon,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -40,6 +41,7 @@ import {
   MonthView,
   WeekCellsHeight,
   WeekView,
+  getEventColorBgClass,
 } from "@/components/event-calendar";
 
 export interface EventCalendarProps {
@@ -65,6 +67,7 @@ export function EventCalendar({
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null,
   );
+  const [popupEvent, setPopupEvent] = useState<CalendarEvent | null>(null);
 
   // Add keyboard shortcuts for view switching
   useEffect(() => {
@@ -134,9 +137,12 @@ export function EventCalendar({
   };
 
   const handleEventSelect = (event: CalendarEvent) => {
-    console.log("Event selected:", event); // Debug log
-    setSelectedEvent(event);
-    setIsEventDialogOpen(true);
+    console.log("Event selected:", event);
+    setPopupEvent(event);
+  };
+
+  const handleClosePopup = () => {
+    setPopupEvent(null);
   };
 
   const handleEventSave = (event: CalendarEvent) => {
@@ -360,6 +366,61 @@ export function EventCalendar({
           readOnly={!!selectedEvent?.id}
         />
       </CalendarDndProvider>
+
+      {popupEvent && (
+        <div className="border-t bg-card p-4">
+          <div className="rounded-lg border bg-background p-4 shadow-sm">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex-1 space-y-3">
+                <div className="flex items-center gap-2">
+                  <div
+                    className={`h-3 w-3 rounded-full ${getEventColorBgClass(popupEvent.color)}`}
+                  />
+                  <h3 className="text-lg font-semibold">{popupEvent.title}</h3>
+                </div>
+                
+                {popupEvent.description && (
+                  <p className="text-sm text-muted-foreground">
+                    {popupEvent.description}
+                  </p>
+                )}
+
+                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1.5">
+                    <RiTimeLine size={16} />
+                    <span>
+                      {format(new Date(popupEvent.start), "MMM d, yyyy")}
+                      {!popupEvent.allDay && (
+                        <span>
+                          {" "}
+                          {format(new Date(popupEvent.start), "h:mm a")} -{" "}
+                          {format(new Date(popupEvent.end), "h:mm a")}
+                        </span>
+                      )}
+                      {popupEvent.allDay && <span> (All day)</span>}
+                    </span>
+                  </div>
+
+                  {popupEvent.location && (
+                    <div className="flex items-center gap-1.5">
+                      <RiMapPinLine size={16} />
+                      <span>{popupEvent.location}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <button
+                onClick={handleClosePopup}
+                className="text-muted-foreground hover:text-foreground rounded-full p-1 transition-colors"
+                aria-label="Close"
+              >
+                <XIcon className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
