@@ -59,6 +59,7 @@
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: #485a61;
+	--orange-primary: #e25002;
   --muted-orange: #ffb189;
   --muted-blue: #d6ecf1;
   --dark-blue: #004356;
@@ -69,10 +70,6 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: #19b8d7;
-  --chart-1: #19b8d7;
-  --chart-2: #485a61;
-  --chart-3: #e25002;
-  --chart-4: #fdb52b;
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: #485a61;
