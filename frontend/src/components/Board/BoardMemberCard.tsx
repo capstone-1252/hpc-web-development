@@ -30,7 +30,7 @@ export const BoardMemberCard = ({ member }: BoardMemberCardProps) => {
       <h3 className="text-xl font-semibold text-dark-blue mb-2">
         {member.name}
       </h3>
-      <p className="text-primary font-medium">{member.position}</p>
+      <p className="text-teal-700 font-medium">{member.position}</p>
     </div>
   );
 };

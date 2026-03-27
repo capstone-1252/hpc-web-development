@@ -30,7 +30,7 @@ export const VolunteerCard = ({ volunteer }: VolunteerMemberProps) => {
       <h3 className="text-lg font-bold text-[#485a61] mb-2">
         {volunteer.name}
       </h3>
-      <p className="text-[#19b8d7] font-medium">{volunteer.role}</p>
+      <p className="text-teal-700 font-medium">{volunteer.role}</p>
     </div>
   );
 };
