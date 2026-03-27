@@ -3,6 +3,30 @@ import { isSameDay } from "date-fns";
 import type { CalendarEvent, EventColor } from "@/components/event-calendar";
 
 /**
+ * Get the background color class for event indicator
+ */
+export function getEventColorBgClass(color?: EventColor | string): string {
+  const eventColor = color || "sky";
+
+  switch (eventColor) {
+    case "sky":
+      return "bg-sky-500";
+    case "amber":
+      return "bg-amber-500";
+    case "violet":
+      return "bg-violet-500";
+    case "rose":
+      return "bg-rose-500";
+    case "emerald":
+      return "bg-emerald-500";
+    case "orange":
+      return "bg-orange-500";
+    default:
+      return "bg-sky-500";
+  }
+}
+
+/**
  * Get CSS classes for event colors
  */
 export function getEventColorClasses(color?: EventColor | string): string {
