@@ -20,7 +20,7 @@ export const toCalendarEvent = (event: Event): CalendarEvent => {
     title: event.title,
     description: event.longDescription,
     start: start,
-		color: color,
+    color: color,
     type: event.type,
     end: end,
     location: event.location,

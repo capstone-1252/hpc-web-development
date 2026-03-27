@@ -329,7 +329,9 @@ export function EventCalendar({
           <div className="hidden flex-wrap items-center gap-3 text-xs sm:flex">
             {(["emerald", "sky", "violet", "orange"] as const).map((color) => (
               <div key={color} className="flex items-center gap-1.5">
-                <div className={`h-2.5 w-2.5 rounded-full ${getEventColorBgClass(color)}`} />
+                <div
+                  className={`h-2.5 w-2.5 rounded-full ${getEventColorBgClass(color)}`}
+                />
                 <span className="text-muted-foreground capitalize">
                   {colorToEventType[color]}
                 </span>

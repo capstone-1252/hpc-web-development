@@ -1,6 +1,10 @@
 import { isSameDay } from "date-fns";
 
-import type { CalendarEvent, EventColor, EventType } from "@/components/event-calendar";
+import type {
+  CalendarEvent,
+  EventColor,
+  EventType,
+} from "@/components/event-calendar";
 
 export const eventTypeToColor = (type?: EventType): EventColor => {
   const colorMap: Record<EventType, EventColor> = {

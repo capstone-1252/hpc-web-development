@@ -20,4 +20,9 @@ export * from "./hooks/use-current-time-indicator";
 export * from "./hooks/use-event-visibility";
 
 // Type exports
-export type { CalendarEvent, CalendarView, EventColor, EventType } from "./types";
+export type {
+  CalendarEvent,
+  CalendarView,
+  EventColor,
+  EventType,
+} from "./types";
