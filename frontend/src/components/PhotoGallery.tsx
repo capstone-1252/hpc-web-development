@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Spinner } from "@/components/ui/spinner"
 import type { AssetImage } from "@/loaders/utils"
 import { getImageUrl } from "@/loaders/utils"
 
@@ -9,6 +10,7 @@ interface PhotoGalleryProps {
 	width?: number
 	height?: number
 	displayOrder?: boolean
+	showDescription?: boolean
 }
 
 export const PhotoGallery = ({
@@ -17,8 +19,10 @@ export const PhotoGallery = ({
 	width = 1200,
 	height = 800,
 	displayOrder = false,
+	showDescription = false,
 }: PhotoGalleryProps) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
+	const [loading, setLoading] = useState(true)
 
 	if (!images?.length) {
 		return null
@@ -28,25 +32,47 @@ export const PhotoGallery = ({
 	const imageUrl = getImageUrl(currentImage, width, height)
 
 	const goToPrevious = () => {
+		setLoading(true)
 		setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
 	}
 
 	const goToNext = () => {
+		setLoading(true)
 		setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+	}
+
+	const handleImageLoad = () => {
+		setLoading(false)
+	}
+
+	const handleImageError = () => {
+		setLoading(false)
 	}
 
 	return (
 		<div className="relative rounded-2xl shadow-xl overflow-hidden h-[300px] sm:h-[400px] lg:h-[500px]">
+			{loading && (
+				<div className="absolute inset-0 flex items-center justify-center bg-muted">
+					<Spinner className="w-8 h-8" />
+				</div>
+			)}
 			<img
 				src={imageUrl}
 				alt={currentImage.altText || `${altPrefix} ${currentIndex + 1}`}
 				className="w-full h-full object-cover"
+				onLoad={handleImageLoad}
+				onError={handleImageError}
 			/>
 			{displayOrder && (
 				<div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
 					<span className="text-sm font-medium">
 						{currentIndex + 1} of {images.length}: {currentImage.description || "No description"}
 					</span>
+				</div>
+			)}
+			{showDescription && !displayOrder && currentImage.description && (
+				<div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
+					<span className="text-sm font-medium">{currentImage.description}</span>
 				</div>
 			)}
 			{images.length > 1 && (
@@ -69,7 +95,10 @@ export const PhotoGallery = ({
 						{images.map((_, index) => (
 							<button
 								key={index}
-								onClick={() => setCurrentIndex(index)}
+								onClick={() => {
+									setLoading(true)
+									setCurrentIndex(index)
+								}}
 								className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
 									index === currentIndex ? "bg-dark-blue" : "bg-dark-blue/30"
 								}`}
