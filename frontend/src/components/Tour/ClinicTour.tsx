@@ -63,7 +63,12 @@ export const ClinicTour = () => {
           Clinic Tour
         </h2>
         {photos?.length ? (
-          <PhotoGallery images={photos} altPrefix="Clinic photo" displayOrder showDescription />
+          <PhotoGallery
+            images={photos}
+            altPrefix="Clinic photo"
+            displayOrder
+            showDescription
+          />
         ) : (
           <p className="text-muted-foreground">No photos available.</p>
         )}
