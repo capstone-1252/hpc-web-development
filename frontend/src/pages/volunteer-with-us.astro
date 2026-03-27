@@ -1,27 +1,34 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { Image } from "astro:assets"
+import volunteerHeroImage from "@/assets/volunteer-hero.avif"
 ---
 
 <Layout title="Volunteer With Us - Alberta Helping Animals Society">
 	<main class="bg-white">
     <!-- Hero Banner -->
-    	<section class="bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-6 sm:px-8 lg:px-10">
-			<div class="max-w-7xl mx-auto">
-				<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-					<div class="flex-1 lg:text-left">
-						<h1 class="text-4xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-6 leading-tight" style="font-family: 'Ubuntu', sans-serif;">
-							Volunteer With Us
-						</h1>
-						<p class="text-lg sm:text-xl lg:text-lg text-[#485a61] text-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Our volunteers are what make the Alberta Helping Animals Society possible
-						</p>
-					</div>
-					<div class="flex-shrink-0 w-full lg:w-1/2">
-            <!-- image will go here -->
-					</div>
-				</div>
-			</div>
-		</section>
+    	<section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div class="max-w-2xl">
+              <h1 class="text-3xl sm:text-4xl lg:text-4xl font-bold text-(--dark-blue) mb-6 leading-tight" style="font-family: 'Ubuntu', sans-serif;">
+                Volunteer With Us
+              </h1>
+              <p class="text-lg text-[#485a61] leading-relaxed">
+                Our volunteers are what make the Alberta Helping Animals Society possible
+              </p>
+            </div>
+            <!-- Banner Image -->
+            <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
+              <Image 
+                src={volunteerHeroImage} 
+                alt="Hero Banner for Volunteer Page"
+                class="w-[260px] sm:w-[300px] md:w-[340px] lg:w-[400px] h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
     <!-- Volunteer Opportunities section -->
     <section class="min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-10 py-12 sm:py-16 lg:py-20">
@@ -38,7 +45,7 @@ import Layout from "@/layouts/Layout.astro"
           </div>
      
           <!-- Fundraising -->
-          <div class="card bg-[#15A1BD] rounded-xl p-6 flex flex-col gap-2">
+          <div class="card bg-[#0C5E6E] rounded-xl p-6 flex flex-col gap-2">
             <h3 class="text-2xl font-bold text-white text-right">Fundraising</h3>
             <p class="text-teal-100 text-lg text-right leading-relaxed">Help organize and run fundraising events that support animal rescue and care.</p>
           </div>
@@ -50,7 +57,7 @@ import Layout from "@/layouts/Layout.astro"
           </div>
      
           <!-- Driving -->
-          <div class="card bg-[#15A1BD] rounded-xl p-6 flex flex-col gap-2">
+          <div class="card bg-[#0C5E6E] rounded-xl p-6 flex flex-col gap-2">
             <h3 class="text-2xl font-bold text-white text-right">Driving</h3>
             <p class="text-teal-100 text-lg text-right leading-relaxed">Transport animals, supplies, or volunteers when needed.</p>
           </div>
@@ -62,7 +69,7 @@ import Layout from "@/layouts/Layout.astro"
           </div>
      
           <!-- Planning and/or Speaking -->
-          <div class="card bg-[#15A1BD] rounded-xl p-6 flex flex-col gap-2">
+          <div class="card bg-[#0C5E6E] rounded-xl p-6 flex flex-col gap-2">
             <h3 class="text-2xl font-bold text-white text-right">Planning and/or Speaking</h3>
             <p class="text-teal-100 text-lg text-right leading-relaxed">Represent the organization at community events, presentations, or information sessions.</p>
           </div>
@@ -74,7 +81,7 @@ import Layout from "@/layouts/Layout.astro"
           </div>
      
           <!-- Brochure Design -->
-          <div class="card bg-[#15A1BD] rounded-xl p-6 flex flex-col gap-2">
+          <div class="card bg-[#0C5E6E] rounded-xl p-6 flex flex-col gap-2">
             <h3 class="text-2xl font-bold text-white text-right">Brochure Design</h3>
             <p class="text-teal-100 text-lg text-right leading-relaxed">Assist in creating brochures and promotional materials for events and campaigns.</p>
           </div>

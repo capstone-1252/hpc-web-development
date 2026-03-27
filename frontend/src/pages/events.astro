@@ -2,90 +2,65 @@
 import Layout from "@/layouts/Layout.astro"
 import { Events as EventCalendar } from "@/components/Events"
 import { Image } from "astro:assets"
-import toyMaking from "@/assets/toy-making.jpg"
-import lemonadeEvent from "@/assets/lemonade-event.png"
+import eventsHeroImage from "@/assets/events-hero.avif"
 ---
+<Layout title="Events - Alberta Helping Animals Society">
+   <main class="bg-white">
+      <!-- HERO -->
+      <section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+         <div class="max-w-2xl lg:max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+               <!-- Content -->
+               <div class="w-full lg:w-1/2">
+                  <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight break-words">
+                     Events
+                  </h1>
+                  <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">
+                     We are looking for fundraising ideas (and a volunteer to help us with fundraising). If you have any ideas, please contact us at AlbertaHelpingAnimalsSociety@gmail.com
+                  </p>
+               </div>
+               <!-- Banner Image -->
+               <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                  <Image 
+                     src={eventsHeroImage} 
+                     alt="Hero Banner for Events Page"
+                     class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+                     />
+               </div>
+            </div>
+         </div>
+      </section>
 
-<Layout title="AHAS | Event Calendar">
-	<div class="bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-2xl lg:max-w-7xl mx-auto">
-			<div class="max-w-xl">
-				<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-					Community Events
-				</h1>
-				<p class="text-lg sm:text-xl text-[#485a61] leading-relaxed">
-					We are looking for fundraising ideas 
-					(and a volunteer to help us with fundraising). If you have any ideas, please contact us at <a href="mailto:AlbertaHelpingAnimalsSociety@gmail.com" class="text-[#19b8d7] hover:underline">AlbertaHelpingAnimalsSociety@gmail.com</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="min-h-screen p-2 md:p-6 lg:p-8">
-		<div class="max-w-7xl mx-auto">
-			<div class="flex flex-col xl:flex-row gap-4 lg:gap-8">
-				<div class="flex-1 min-w-0">
-					<EventCalendar client:load />
-				</div>
+      <!-- Event Calendar -->
+      <section class="min-h-screen p-1 md:p-12">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Upcoming Events</h2>
+            <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">Join us at our upcoming events to support our mission and make a difference in the lives of animals in need. From fundraisers to community initiatives, there's something for everyone to get involved with. Check out our calendar below for details on our next events and how you can participate.</p>
+         <div class="max-w-6xl mx-auto">
+            <EventCalendar client:load />
+         </div>
+      </section>
+      <!-- Content -->
+      <section>
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Stay Connected</h2>
+            <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">New events are added throughout the year. Check back often or follow us on Facebook to stay updated on upcoming fundraisers and community initiatives.</p>
+         </div>
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[var(--dark-blue)] mt-8">Why Your Support Matters</h2>
+            <p class="text-[var(--muted-foreground)] w-[928px] text-lg mt-2 mb-8">Every event on this calendar helps fund essential veterinary care, food, medical treatment, and emergency support for animals in need. Your participation directly impacts pets and families in our community.When you attend, sponsor, volunteer, or share our events, you help create real change</p>
+         </div>
+      </section>
 
-				<aside class="xl:w-[480px] shrink-0">
-					<div class="space-y-4 lg:space-y-6">
-						<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 lg:gap-6">
-							<div class="group relative overflow-hidden rounded-xl bg-muted shadow-md transition-shadow hover:shadow-lg">
-								<Image 
-									src={toyMaking} 
-									alt="Custom toy making event" 
-									class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
-									loading="lazy"
-									format="avif"
-								/>
-								<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100">
-									<div class="absolute bottom-0 left-0 right-0 p-3 text-white">
-										<p class="text-sm font-medium">Toy making event with community members</p>
-									</div>
-								</div>
-							</div>
-							<div class="group relative overflow-hidden rounded-xl bg-muted shadow-md transition-shadow hover:shadow-lg">
-								<Image 
-									src={lemonadeEvent} 
-									alt="Lemonade stand fundraiser event sign" 
-									class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
-									loading="lazy"
-									format="avif"
-								/>
-								<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100">
-									<div class="absolute bottom-0 left-0 right-0 p-3 text-white">
-										<p class="text-xs font-medium">Lemonade Stand Fundraiser</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</aside>
-			</div>
+      <!-- Events List -->
+      <section class="max-w-6xl mx-auto bg-[#D1E9EE] text-white text-lg py-2 rounded-md shadow-md mb-12">
+         <div class="px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-[var(--dark-blue)] mt-8">Events List</h2>
 
-
-			<section class="mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8">
-				<div class="max-w-4xl mx-auto">
-					<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-						Stay Connected
-					</h2>
-					<p class="text-lg text-[#485a61] leading-relaxed">
-						New events are added throughout the year. Check back often or follow us on Facebook to stay updated on upcoming fundraisers and community initiatives.
-					</p>
-				</div>
-			</section>
-
-			<section class="mt-8 lg:mt-12 px-4 sm:px-6 lg:px-8 pb-8">
-				<div class="max-w-4xl mx-auto bg-(--muted-blue) p-6 lg:p-8 rounded-2xl">
-					<h2 class="text-2xl sm:text-3xl font-bold text-(--dark-blue) mb-4 lg:mb-6">
-						Why Your Support Matters
-					</h2>
-					<p class="text-lg text-[#485a61] leading-relaxed">
-						Every event on this calendar helps fund essential veterinary care, food, medical treatment, and emergency support for animals in need. Your participation directly impacts pets and families in our community.
-						When you attend, sponsor, volunteer, or share our events, you help create real change
-					</p>
-				</div>
-			</section>
-		</div>
-	</div>
+            <p class="text-[var(--muted-foreground)] max-w-3xl text-lg mt-2 mb-8">
+               Explore our upcoming events below and find out how you can get involved. From fundraisers to community initiatives, there's something for everyone to support our mission and make a difference in the lives of animals in need.
+            </p>
+         </div>
+      </section>
+   </main>
 </Layout>
