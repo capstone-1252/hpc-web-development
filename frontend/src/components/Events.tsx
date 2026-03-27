@@ -24,14 +24,10 @@ export const Events = () => {
 
   if (loading) {
     return (
-      <>
-        <div className="min-h-screen">
-          <div className="flex flex-col items-center justify-center">
-            <h2>Loading Events...</h2>
-            <Spinner className="size-10" />
-          </div>
-        </div>
-      </>
+      <div className="min-h-[400px] md:min-h-[600px] flex flex-col items-center justify-center rounded-md border bg-card">
+        <Spinner className="size-10 mb-4" />
+        <p className="text-muted-foreground">Loading events...</p>
+      </div>
     );
   }
 

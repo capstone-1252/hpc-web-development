@@ -1,14 +1,74 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { Events as EventCalendar } from "@/components/Events"
+import { Image } from "astro:assets"
+import toyMaking from "@/assets/toy-making.jpg"
+import lemonadeEvent from "@/assets/lemonade-event.png"
 ---
 
-<Layout title="Events - Alberta Helping Animals Society">
-	<main class="bg-white">
-		<div class="min-h-screen p-1 md:p-12">
-			<div class="max-w-6xl mx-auto">
-				<EventCalendar client:load />
+<Layout title="AHAS | Event Calendar">
+	<div class="bg-(--muted-blue) p-6">
+		<div class="max-w-6xl mx-auto">
+			<div class="max-w-xl">
+				<h1 class="text-4xl">Community Events</h1>
+				<p>We are looking for fundraising ideas 
+					(and a volunteer to help us with fundraising).  If you have any ideas, please contact us at AlbertaHelpingAnimalsSociety@gmail.com</p>
 			</div>
 		</div>
-	</main>
+	</div>
+	<div class="min-h-screen p-2 md:p-6 lg:p-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex flex-col xl:flex-row gap-4 lg:gap-8">
+				<div class="flex-1 min-w-0">
+					<EventCalendar client:load />
+				</div>
+
+				<aside class="xl:w-[480px] shrink-0">
+					<div class="space-y-4 lg:space-y-6">
+						<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 lg:gap-6">
+							<div class="group relative overflow-hidden rounded-xl bg-muted shadow-md transition-shadow hover:shadow-lg">
+								<Image 
+									src={toyMaking} 
+									alt="Custom toy making event" 
+									class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+									loading="lazy"
+									format="avif"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100">
+									<div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+										<p class="text-sm font-medium">Toy making event with community members</p>
+									</div>
+								</div>
+							</div>
+							<div class="group relative overflow-hidden rounded-xl bg-muted shadow-md transition-shadow hover:shadow-lg">
+								<Image 
+									src={lemonadeEvent} 
+									alt="Lemonade stand fundraiser event sign" 
+									class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+									loading="lazy"
+									format="avif"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100">
+									<div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+										<p class="text-xs font-medium">Lemonade Stand Fundraiser</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+
+
+			<section>
+				<h2>Stay Connected</h2>
+				<p>New events are added throughout the year. Check back often or follow us on Facebook to stay updated on upcoming fundraisers and community initiatives.</p>
+			</section>
+			<section>
+				<h2>Why Your Support Matters</h2>
+				<p>Every event on this calendar helps fund essential veterinary care, food, medical treatment, and emergency support for animals in need. Your participation directly impacts pets and families in our community.
+					When you attend, sponsor, volunteer, or share our events, you help create real change</p>
+			</section>
+		</div>
+	</div>
 </Layout>
