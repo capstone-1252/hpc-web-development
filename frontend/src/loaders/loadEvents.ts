@@ -13,6 +13,20 @@ export interface Event extends CockpitItemData {
 }
 type EventColor = "sky" | "amber" | "violet" | "rose" | "emerald" | "orange";
 
+const colorMap: Record<EventType, EventColor> = {
+	Fundraiser: "emerald",
+	Seminar: "sky",
+	Meetup: "violet",
+	Other: "orange",
+}
+
+export const eventTypeToColor = (type?: EventType): EventColor => {
+	if (!type) return "sky"
+
+	return colorMap[type]
+}
+
+/** This is the type that has to be passed into the event calendar to properly render */
 export type CalendarEvent = {
   id: string;
   title: string;
