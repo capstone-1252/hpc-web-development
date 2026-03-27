@@ -8,6 +8,7 @@ interface GalleryProps {
 	altPrefix?: string
 	width?: number
 	height?: number
+	displayOrder?: boolean
 }
 
 export const Gallery = ({
@@ -15,6 +16,7 @@ export const Gallery = ({
 	altPrefix = "Image",
 	width = 1200,
 	height = 800,
+	displayOrder = false,
 }: GalleryProps) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -41,6 +43,13 @@ export const Gallery = ({
 					alt={currentImage.altText || `${altPrefix} ${currentIndex + 1}`}
 					className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
 				/>
+				{displayOrder && (
+					<div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
+						<span className="text-sm font-medium">
+							{currentIndex + 1} of {images.length}: {currentImage.description || "No description"}
+						</span>
+					</div>
+				)}
 			</div>
 			{images.length > 1 && (
 				<>

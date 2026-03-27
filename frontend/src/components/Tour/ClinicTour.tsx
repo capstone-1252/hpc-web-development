@@ -11,7 +11,6 @@ export const ClinicTour = () => {
 		const fetchData = async () => {
 			try {
 				const data = await loadTour()
-				console.log("Tour data:", data)
 				setPhotos(data?.photos ?? [])
 			} catch (e) {
 				setError(e instanceof Error ? e.message : "Failed to load")
@@ -55,7 +54,7 @@ export const ClinicTour = () => {
 					Clinic Tour
 				</h2>
 				{photos?.length ? (
-					<Gallery images={photos} altPrefix="Clinic photo" />
+					<Gallery images={photos} altPrefix="Clinic photo" displayOrder />
 				) : (
 					<p className="text-muted-foreground">No photos available.</p>
 				)}
