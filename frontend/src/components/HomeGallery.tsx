@@ -45,7 +45,7 @@ export const HomeGallerySection = () => {
           images={gallery?.photos || []}
           altPrefix="Home Gallery | "
           width={1200}
-          height={800}
+          height={1200}
           showDescription
         />
       </div>

@@ -50,7 +50,7 @@ export const PhotoGallery = ({
   };
 
   return (
-    <div className="relative rounded-2xl shadow-xl overflow-hidden h-[300px] sm:h-[400px] lg:h-[500px]">
+    <div className="relative rounded-2xl shadow-xl overflow-hidden h-[500px] sm:h-[600px] lg:h-[700px]">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-muted">
           <Spinner className="w-8 h-8" />
@@ -65,10 +65,12 @@ export const PhotoGallery = ({
       />
       {displayOrder && (
         <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
-          <span className="text-sm font-medium">
-            {currentIndex + 1} of {images.length}:{" "}
-            {currentImage.description || "No description"}
-          </span>
+					{showDescription && (
+						<span className="text-sm font-medium">
+							{currentIndex + 1} of {images.length}:{" "}
+							{currentImage.description || "" }
+						</span>
+					)}
         </div>
       )}
       {showDescription && !displayOrder && currentImage.description && (
