@@ -65,12 +65,12 @@ export const PhotoGallery = ({
       />
       {displayOrder && (
         <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
-					{showDescription && (
-						<span className="text-sm font-medium">
-							{currentIndex + 1} of {images.length}:{" "}
-							{currentImage.description || "" }
-						</span>
-					)}
+          {showDescription && (
+            <span className="text-sm font-medium">
+              {currentIndex + 1} of {images.length}:{" "}
+              {currentImage.description || ""}
+            </span>
+          )}
         </div>
       )}
       {showDescription && !displayOrder && currentImage.description && (
