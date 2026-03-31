@@ -43,7 +43,7 @@ export function FAQList() {
   return (
     <section className="max-w-[720px] mx-auto px-4 py-12">
       <div className="mb-10">
-        <h2 className="text-3xl font-bold tracking-tight text-(--dark-blue)">
+        <h2 className="text-3xl tracking-tight text-[#0C5E6E] font-bold">
           Frequently asked questions
         </h2>
         <p className="mt-2 text-slate-500 text-[15px]">
