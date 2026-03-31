@@ -46,9 +46,9 @@ export function FAQList() {
         <h2 className="text-3xl tracking-tight text-[#0C5E6E] font-bold">
           Frequently asked questions
         </h2>
-        <p className="mt-2 text-slate-500 text-[15px]">
-          Can't find what you're looking for?{" "}
-          <a href="/contact" className="text-sky-500 hover:text-sky-600 underline underline-offset-2 transition-colors">
+        <p className="mt-2 text-slate-500 text-lg">
+          Can't find what you're looking for?
+          <a href="/contact" className="text-sky-500 hover:text-sky-600 underline underline-offset-2 pl-1 transition-colors">
             Contact us
           </a>
           .
