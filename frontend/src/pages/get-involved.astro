@@ -2,10 +2,11 @@
 import Layout from "@/layouts/Layout.astro"
 import { Image } from "astro:assets"
 import getInvolvedHeroImage from "@/assets/getinvolved-hero.avif"
-import vetKarenLeah from "@/assets/vet-karen-leah.avif"
 import ahasVolunteers from "@/assets/ahas-volunteers.png"
 import atbCares from "@/assets/atb-cares.avif"
 import canadaHelps from "@/assets/canada-helps.avif"
+
+import DonateLink from "@/components/DonateLink.astro"
 ---
 
 <Layout title="Get Involved - Alberta Helping Animals Society">
@@ -48,22 +49,16 @@ import canadaHelps from "@/assets/canada-helps.avif"
 
       <!-- Partner Logos -->
       <div class="flex flex-wrap items-center gap-6 mb-14">
-        <a href="https://atb.benevity.org/community/cause/124-840715577RR0001" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 border border-gray-200 rounded-xl px-6 py-4 hover:border-[#0C5E6E] hover:shadow-sm transition-all duration-200 bg-white">
-         <Image
-              src={atbCares}
-              alt="ATB Cares"
-              class="h-10 w-auto"
-            />
-        </a>
-        <a href="https://canadahelps.org" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 border border-gray-200 rounded-xl px-6 py-4 hover:border-[#0C5E6E] hover:shadow-sm transition-all duration-200 bg-white">
-           <Image
-              src={canadaHelps}
-              alt="Donate through CanadaHelps.org"
-              class="h-10 w-auto"
-            />
-        </a>
+				<DonateLink 
+					imageSrc={atbCares} 
+					link="https://atb.benevity.org/community/cause/124-840715577RR0001" 
+					alt="ATB Cares Donation Link" 
+				/>
+				<DonateLink 
+					imageSrc={canadaHelps}
+					alt="Donate through CanadaHelps.org link"
+					link="https://canadahelps.org"
+				/>
       </div>
 
       <!-- Monetary Donations Card -->
