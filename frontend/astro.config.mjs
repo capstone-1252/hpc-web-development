@@ -10,9 +10,9 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://ahas.ca",
-	redirects: {
-		"/donate": "/get-involved"
-	},
+  redirects: {
+    "/donate": "/get-involved",
+  },
   integrations: [react(), partytown(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
