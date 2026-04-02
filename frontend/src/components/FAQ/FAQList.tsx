@@ -9,12 +9,10 @@ const FAQ_LIMIT = 10;
 export function FAQList() {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
-  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await loadFAQs();
-      setTotalCount(data.length);
       setFaqs(data.slice(0, FAQ_LIMIT));
       setLoading(false);
     };
