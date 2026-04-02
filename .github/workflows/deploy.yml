@@ -1,8 +1,8 @@
-name: Deploy to SKGOlD
+name: Deploy to SKGOLD
 on:
   push:
     branches:
-      - ftp-deploy
+      - main
 jobs:
   web-deploy:
     name: Deploy
