@@ -1,7 +1,11 @@
 ---
 import Logo from "@/assets/logo.png";
 import { Image } from "astro:assets"
+import DonateLink from "./DonateLink.astro";
+import { SocialLinks } from "./SocialLinks"
 
+import atbCares from "@/assets/atb-cares.avif"
+import canadaHelps from "@/assets/canada-helps.avif"
 
 const currentYear = new Date().getFullYear();
 const footerLinks = {
@@ -23,18 +27,20 @@ const footerLinks = {
 
 <footer class="bg-gray-900 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid md:grid-cols-3 gap-20">
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
       <!-- Organization Info -->
-      <div class="col-span-1">
-        <div class="flex items-center mb-4">
-					<a href="/">
-						<Image src={Logo} alt="Alberta helping animals logo" class="h-24 w-fit mr-3" format="avif" />
-					</a>
-        </div>
-        <p class="text-gray-300 leading-relaxed text-sm text-gray-400">
-					Alberta Helping Animals Society (AHAS) is a non-profit society, incorporated in Alberta and registered as a charity with the Canadian Revenue Agency.
+      <div class="col-span-2 lg:col-span-2">
+        <a href="/" class="inline-block mb-4">
+          <Image src={Logo} alt="Alberta helping animals logo" class="h-25 w-auto" format="avif" />
+        </a>
+        <p class="text-gray-400 leading-relaxed text-sm max-w-sm mb-6">
+          Alberta Helping Animals Society (AHAS) is a non-profit society, incorporated in Alberta and registered as a charity with the Canadian Revenue Agency.
         </p>
-
+        <div class="flex flex-wrap gap-4 mb-6">
+          <DonateLink imageSrc={atbCares} alt="" link="" />
+          <DonateLink imageSrc={canadaHelps} alt="" link="" />
+        </div>
+        <SocialLinks client:load />
       </div>
 
       <div>
@@ -42,10 +48,7 @@ const footerLinks = {
         <ul class="space-y-2">
           {footerLinks.organization.map((link) => (
             <li>
-              <a 
-                href={link.href} 
-                class="text-gray-300 hover:text-white transition-colors"
-              >
+              <a href={link.href} class="text-gray-300 hover:text-white transition-colors">
                 {link.label}
               </a>
             </li>
@@ -58,26 +61,25 @@ const footerLinks = {
         <ul class="space-y-2">
           {footerLinks.resources.map((link) => (
             <li>
-              <a 
-                href={link.href} 
-                class="text-gray-300 hover:text-white transition-colors"
-              >
+              <a href={link.href} class="text-gray-300 hover:text-white transition-colors">
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
       </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li>Phone: 587-338-8668</li>
+          <li>Email: AlbertaHelpingAnimalsSociety@gmail.com</li>
+          <li>Charitable Number: 840715577RR0001</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="flex flex-col md:flex-row gap-10 justify-center mt-10 max-w-full">
-      <p class="text-gray-300 leading-relaxed text-md text-white mb-4">Phone: 587-338-8668</p>
-      <p class="text-gray-300 leading-relaxed text-md text-white mb-4">Email: AlbertaHelpingAnimalsSociety@gmail.com</p>
-      <p class="text-gray-300 leading-relaxed text-md text-white mb-4">Charitable Number: 840715577RR0001</p>
-    </div>
-
-    <!-- Copyright -->
-    <div class="mt-8 pt-5 border-t border-gray-800 text-center text-gray-400">
+    <div class="mt-10 pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
       <p>&copy; {currentYear} Alberta Helping Animals Society. All rights reserved.</p>
     </div>
   </div>
