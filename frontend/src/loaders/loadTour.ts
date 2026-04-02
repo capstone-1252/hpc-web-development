@@ -2,10 +2,11 @@ import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 import type { AssetImage } from "./utils";
 
 export interface TourPhotos extends CockpitItemData {
-  photos: AssetImage[];
+  image: AssetImage;
+	description: string
 }
 
-export const loadTour = async (): Promise<TourPhotos> => {
-  const res = await cockpit.getSingleton<TourPhotos>("tour");
+export const loadTour = async (): Promise<TourPhotos[]> => {
+  const res = await cockpit.getItems<TourPhotos>("clinicTour");
   return res;
 };

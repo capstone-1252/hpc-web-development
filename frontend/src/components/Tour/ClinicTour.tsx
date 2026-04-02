@@ -3,7 +3,7 @@ import { PhotoGallery } from "@/components/PhotoGallery";
 import { loadTour, type TourPhotos } from "@/loaders/loadTour";
 
 export const ClinicTour = () => {
-  const [photos, setPhotos] = useState<TourPhotos["photos"]>([]);
+  const [photos, setPhotos] = useState<TourPhotos[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -11,7 +11,7 @@ export const ClinicTour = () => {
     const fetchData = async () => {
       try {
         const data = await loadTour();
-        setPhotos(data?.photos ?? []);
+        setPhotos(data || []);
       } catch (e) {
         setError(e instanceof Error ? e.message : "Failed to load");
       } finally {

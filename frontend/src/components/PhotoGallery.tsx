@@ -4,14 +4,40 @@ import { Spinner } from "@/components/ui/spinner";
 import type { AssetImage } from "@/loaders/utils";
 import { getImageUrl } from "@/loaders/utils";
 
-interface PhotoGalleryProps {
-  images: AssetImage[];
+export interface GalleryImage {
+  image: AssetImage;
+  alt?: string;
+  description?: string;
+}
+
+export interface PhotoGalleryProps {
+  images: GalleryImage[] | AssetImage[];
   altPrefix?: string;
   width?: number;
   height?: number;
   displayOrder?: boolean;
   showDescription?: boolean;
 }
+
+const isGalleryImage = (
+  img: GalleryImage | AssetImage,
+): img is GalleryImage => {
+  return "image" in img;
+};
+
+const getImageSrc = (img: GalleryImage | AssetImage): AssetImage => {
+  return isGalleryImage(img) ? img.image : img;
+};
+
+const getImageDescription = (
+  img: GalleryImage | AssetImage,
+): string | undefined => {
+  return isGalleryImage(img) ? img.description : undefined;
+};
+
+const getImageAlt = (img: GalleryImage | AssetImage): string | undefined => {
+  return isGalleryImage(img) ? img.alt : undefined;
+};
 
 export const PhotoGallery = ({
   images,
@@ -29,7 +55,10 @@ export const PhotoGallery = ({
   }
 
   const currentImage = images[currentIndex];
-  const imageUrl = getImageUrl(currentImage, width, height);
+  const imageSrc = getImageSrc(currentImage);
+  const imageDescription = getImageDescription(currentImage);
+  const imageAlt = getImageAlt(currentImage);
+  const imageUrl = getImageUrl(imageSrc, width, height);
 
   const goToPrevious = () => {
     setLoading(true);
@@ -58,7 +87,7 @@ export const PhotoGallery = ({
       )}
       <img
         src={imageUrl}
-        alt={currentImage.altText || `${altPrefix} ${currentIndex + 1}`}
+        alt={imageAlt || imageSrc.altText || `${altPrefix} ${currentIndex + 1}`}
         className="w-full h-full object-cover"
         onLoad={handleImageLoad}
         onError={handleImageError}
@@ -67,17 +96,14 @@ export const PhotoGallery = ({
         <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
           {showDescription && (
             <span className="text-sm font-medium">
-              {currentIndex + 1} of {images.length}:{" "}
-              {currentImage.description || ""}
+              {currentIndex + 1} of {images.length}: {imageDescription || ""}
             </span>
           )}
         </div>
       )}
-      {showDescription && !displayOrder && currentImage.description && (
+      {showDescription && !displayOrder && imageDescription && (
         <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white px-4 py-3">
-          <span className="text-sm font-medium">
-            {currentImage.description}
-          </span>
+          <span className="text-sm font-medium">{imageDescription}</span>
         </div>
       )}
       {images.length > 1 && (
