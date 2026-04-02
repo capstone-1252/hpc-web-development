@@ -76,7 +76,6 @@ export function FAQList() {
           <FAQItem key={i} faq={faq} index={i} />
         ))}
       </Accordion>
-      
     </section>
   );
 }
