@@ -1,4 +1,6 @@
 import { loadResources, type Resource } from "@/loaders/loadResources";
+import { ResourceSection } from "./ResourceSection";
+import { ResourcesSkeleton } from "@/components/Skeleton/ResourcesSkeleton";
 import { useEffect, useState } from "react";
 
 export function ResourcesList() {
@@ -7,31 +9,41 @@ export function ResourcesList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const data = await loadResources();
-        setResources(data);
-      } catch (error) {
-        console.error("Failed to load resources:", error);
-      } finally {
-        setLoading(false);
-      }
+      const data = await loadResources();
+      setResources(data);
+      setLoading(false);
     };
+
     fetchData();
   }, []);
 
   if (loading) {
-    return <p className="max-w-sm mx-auto">Loading resources...</p>;
+    return <ResourcesSkeleton />;
   }
 
   if (resources.length === 0) {
     return <p>No resources available.</p>;
   }
 
+  const categories = [...new Set(resources.map((r) => r.category))];
+
+  const groupedResources = categories.reduce(
+    (acc, category) => {
+      acc[category] = resources.filter((r) => r.category === category);
+      return acc;
+    },
+    {} as Record<string, Resource[]>,
+  );
+
   return (
-    <div className="space-y-12">
-      {resources.map((resource) => {
-        return <>{resource}</>;
-      })}
+    <div className="space-y-0">
+      {categories.map((category) => (
+        <ResourceSection
+          key={category}
+          title={category}
+          resources={groupedResources[category]}
+        />
+      ))}
     </div>
   );
 }
