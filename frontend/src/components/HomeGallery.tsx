@@ -14,7 +14,7 @@ export const HomeGallerySection = () => {
       setLoading(false);
     };
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return (
