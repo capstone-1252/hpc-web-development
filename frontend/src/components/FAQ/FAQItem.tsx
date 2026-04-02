@@ -22,10 +22,21 @@ export function FAQItem({ faq, index }: FAQItemProps) {
           <span className="faq-index flex-shrink-0 w-7 h-7 rounded-full bg-[#0C5E6E] text-white text-xs font-bold flex items-center justify-center group-hover:bg-sky-100 group-hover:text-sky-600 transition-colors duration-200">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="text-[#0C5E6E] text-[15px] leading-snug">{faq.question}</span>
+          <span className="text-[#0C5E6E] text-[15px] leading-snug">
+            {faq.question}
+          </span>
         </span>
         <span className="faq-chevron flex-shrink-0 w-8 h-8 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-400 transition-all duration-300 group-data-[state=open]:rotate-180 group-data-[state=open]:border-sky-200 group-data-[state=open]:text-sky-500 group-data-[state=open]:bg-sky-50">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M2 5l5 5 5-5" />
           </svg>
         </span>

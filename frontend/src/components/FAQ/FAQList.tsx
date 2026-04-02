@@ -32,8 +32,17 @@ export function FAQList() {
     return (
       <div className="max-w-[720px] mx-auto px-4 py-24 text-center">
         <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-slate-400">
-            <circle cx="12" cy="12" r="10" /><path d="M12 8v4m0 4h.01" />
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            className="text-slate-400"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4m0 4h.01" />
           </svg>
         </div>
         <p className="text-slate-500 text-sm font-medium">No FAQs available</p>
@@ -48,7 +57,10 @@ export function FAQList() {
         </h2>
         <p className="mt-2 text-slate-500 text-lg">
           Can't find what you're looking for?
-          <a href="/contact" className="text-sky-500 hover:text-sky-600 underline underline-offset-2 pl-1 transition-colors">
+          <a
+            href="/contact"
+            className="text-sky-500 hover:text-sky-600 underline underline-offset-2 pl-1 transition-colors"
+          >
             Contact us
           </a>
           .
