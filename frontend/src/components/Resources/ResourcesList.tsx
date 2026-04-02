@@ -1,37 +1,45 @@
 import { loadResources, type Resource } from "@/loaders/loadResources";
+import { ResourceSection } from "./ResourceSection";
 import { useEffect, useState } from "react";
 
 export function ResourcesList() {
-  const [resources, setResources] = useState<Resource[]>([]);
-  const [loading, setLoading] = useState(true);
+	const [resources, setResources] = useState<Resource[]>([]);
+	const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await loadResources();
-        setResources(data);
-      } catch (error) {
-        console.error("Failed to load resources:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await loadResources();
+			setResources(data);
+			setLoading(false);
+		};
 
-  if (loading) {
-    return <p className="max-w-sm mx-auto">Loading resources...</p>;
-  }
+		fetchData();
+	}, []);
 
-  if (resources.length === 0) {
-    return <p>No resources available.</p>;
-  }
+	if (loading) {
+		return <p className="max-w-sm mx-auto">Loading resources...</p>;
+	}
 
-  return (
-    <div className="space-y-12">
-      {resources.map((resource) => {
-        return <>{resource}</>;
-      })}
-    </div>
-  );
+	if (resources.length === 0) {
+		return <p>No resources available.</p>;
+	}
+
+	const categories = [...new Set(resources.map(r => r.category))];
+
+	const groupedResources = categories.reduce((acc, category) => {
+		acc[category] = resources.filter(r => r.category === category);
+		return acc;
+	}, {} as Record<string, Resource[]>); 
+
+	return (
+		<div className="space-y-0">
+			{categories.map((category) => (
+				<ResourceSection 
+					key={category}
+					title={category}
+					resources={groupedResources[category]}
+				/>
+			))}
+		</div>
+	);
 }
