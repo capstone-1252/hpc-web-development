@@ -1,5 +1,6 @@
 import { loadResources, type Resource } from "@/loaders/loadResources";
 import { ResourceSection } from "./ResourceSection";
+import { ResourcesSkeleton } from "@/components/Skeleton/ResourcesSkeleton";
 import { useEffect, useState } from "react";
 
 export function ResourcesList() {
@@ -17,7 +18,7 @@ export function ResourcesList() {
 	}, []);
 
 	if (loading) {
-		return <p className="max-w-sm mx-auto">Loading resources...</p>;
+		return <ResourcesSkeleton />;
 	}
 
 	if (resources.length === 0) {
