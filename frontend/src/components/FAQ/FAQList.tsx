@@ -4,14 +4,18 @@ import { loadFAQs, type FAQ } from "@/loaders/loadFAQs";
 import { ListSkeleton } from "../Skeleton/ListSkeleton";
 import { Accordion } from "@radix-ui/react-accordion";
 
+const FAQ_LIMIT = 10;
+
 export function FAQList() {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await loadFAQs();
-      setFaqs(data);
+      setTotalCount(data.length);
+      setFaqs(data.slice(0, FAQ_LIMIT));
       setLoading(false);
     };
     fetchData();
@@ -60,6 +64,7 @@ export function FAQList() {
           <FAQItem key={i} faq={faq} index={i} />
         ))}
       </Accordion>
+      
     </section>
   );
 }
