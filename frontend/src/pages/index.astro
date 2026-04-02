@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro"
 import { PartnerList } from "@/components/Partners/PartnerList.tsx"
 import { SuccessStoryList } from "@/components/SuccessStories/SuccessStoryList"
 import { HomeGallerySection } from "@/components/HomeGallery"
+import { FAQList } from "@/components/FAQ/FAQList"
 import School from "@/components/Icons/School.astro"
 import Dog from "@/components/Icons/Dog.astro"
 import DogBowl from "@/components/Icons/DogBowl.astro"
@@ -228,4 +229,10 @@ import supportUs from "@/assets/support-us.png"
 	<section>
 		<HomeGallerySection client:load />
 	</section>
+
+		<section class="max-w-6xl mx-auto pb-5">
+			<div>
+				<FAQList client:load />
+			</div>
+		</section>
 </Layout>
