@@ -31,7 +31,7 @@ class CockpitAPI {
   constructor() {
     const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
     if (!baseURL) {
-			throw new Error("No base URL")
+      throw new Error("No base URL");
     }
 
     this.client = axios.create({
@@ -79,7 +79,9 @@ class CockpitAPI {
       }
     });
 
-    return this.request<T[]>(`/content/items/${collection}?populate=1`, { params });
+    return this.request<T[]>(`/content/items/${collection}?populate=1`, {
+      params,
+    });
   }
 
   async getItem<T = any>(collection: string, id: string): Promise<T> {

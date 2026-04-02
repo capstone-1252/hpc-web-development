@@ -2,8 +2,8 @@ import cockpit, { type CockpitItemData } from "@/lib/cockpit";
 import type { AssetImage } from "./utils";
 
 export interface HomeGallery extends CockpitItemData {
-	image: AssetImage;
-	alt: string
+  image: AssetImage;
+  alt: string;
 }
 
 export const loadHomeGallery = async (): Promise<HomeGallery[]> => {
