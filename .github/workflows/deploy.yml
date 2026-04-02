@@ -30,6 +30,8 @@ jobs:
     - name: Build frontend
       run: npm run build
       working-directory: frontend
+      env: 
+        PUBLIC_COCKPIT_API: "https://ahas.ca/cockpit/api"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
