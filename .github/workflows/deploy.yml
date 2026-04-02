@@ -1,0 +1,22 @@
+name: Deploy to SKGOlD
+on:
+  push:
+    branches:
+      - ftp-deploy  # Trigger on push to the testing branch
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v4
+
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: staging.ahas.ca/  
+          
+
