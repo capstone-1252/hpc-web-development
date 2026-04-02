@@ -15,7 +15,7 @@ export const ResourcesSkeleton: React.FC<ResourcesSkeletonProps> = ({
         <section key={sectionIndex} className="py-12 sm:py-16 lg:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="h-9 bg-gray-300 rounded w-48 mb-6 animate-pulse"></div>
-            
+
             {Array.from({ length: 2 }).map((_, categoryIndex) => (
               <div key={categoryIndex} className="mb-10">
                 <div className="h-7 bg-gray-300 rounded w-64 mb-4 animate-pulse"></div>

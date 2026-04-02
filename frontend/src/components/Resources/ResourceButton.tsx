@@ -6,7 +6,7 @@ interface ResourceButtonProps {
 
 export function ResourceButton({ resource }: ResourceButtonProps) {
   const isExternal = resource.url?.startsWith("http");
-  
+
   return (
     <a
       href={resource.url || "#"}
