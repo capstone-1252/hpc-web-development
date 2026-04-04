@@ -37,6 +37,8 @@ function SuccessStoryCard({ story }: StoryCardProps) {
   );
 }
 
+const STORIES_LIMIT = 2;
+
 export function SuccessStoryList() {
   const [stories, setStories] = useState<SuccessStory[]>([]);
   const [loading, setLoading] = useState(true);
@@ -45,7 +47,7 @@ export function SuccessStoryList() {
     const fetchData = async () => {
       try {
         const data = await loadSuccessStories();
-        setStories(data);
+        setStories(data.slice(0, STORIES_LIMIT));
       } catch (error) {
         console.error("Failed to load stories:", error);
       } finally {
