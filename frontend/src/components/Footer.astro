@@ -22,13 +22,12 @@ const footerLinks = {
     { href: '/donate', label: 'Donate' }
   ],
 };
-
 ---
 
 <footer class="bg-gray-900 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
-      <!-- Organization Info -->
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-10">
+
       <div class="col-span-2 lg:col-span-2">
         <a href="/" class="inline-block mb-4">
           <Image src={Logo} alt="Alberta helping animals logo" class="h-25 w-auto" format="avif" />
@@ -43,7 +42,7 @@ const footerLinks = {
         <SocialLinks client:load />
       </div>
 
-      <div>
+      <div class="col-span-1">
         <h3 class="text-lg font-semibold mb-4">Organization</h3>
         <ul class="space-y-2">
           {footerLinks.organization.map((link) => (
@@ -56,7 +55,7 @@ const footerLinks = {
         </ul>
       </div>
 
-      <div>
+      <div class="col-span-1">
         <h3 class="text-lg font-semibold mb-4">Resources</h3>
         <ul class="space-y-2">
           {footerLinks.resources.map((link) => (
@@ -69,7 +68,7 @@ const footerLinks = {
         </ul>
       </div>
 
-      <div>
+      <div class="col-span-2 lg:col-span-1">
         <h3 class="text-lg font-semibold mb-4">Contact</h3>
         <ul class="space-y-2 text-gray-400 text-sm">
           <li>Phone: 587-338-8668</li>
@@ -77,6 +76,7 @@ const footerLinks = {
           <li>Charitable Number: 840715577RR0001</li>
         </ul>
       </div>
+
     </div>
 
     <div class="mt-10 pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
