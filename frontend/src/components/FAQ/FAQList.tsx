@@ -6,8 +6,9 @@ import { Accordion } from "@radix-ui/react-accordion";
 
 interface FAQListProps {
   limit: number | null;
+  isFaqPage?: boolean;
 }
-export function FAQList({ limit = null }: FAQListProps) {
+export function FAQList({ limit = null, isFaqPage = false }: FAQListProps) {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -75,7 +76,11 @@ export function FAQList({ limit = null }: FAQListProps) {
           <FAQItem key={i} faq={faq} index={i} />
         ))}
       </Accordion>
-			<a className="text-slate-500 underline text-sm" href="/faq">See All FAQs</a>
+      {!isFaqPage && (
+        <a className="text-slate-500 underline text-sm" href="/faq">
+          See All FAQs
+        </a>
+      )}
     </section>
   );
 }
