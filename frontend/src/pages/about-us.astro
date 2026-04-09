@@ -14,27 +14,28 @@ import Faq from "./faq.astro"
 <Layout title="About Us - Alberta Helping Animals Society">
 	<main class="bg-white">
 		<!-- Hero Section -->
-		<section class="bg-(--primary) py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
-			<div class="max-w-7xl mx-auto">
-				<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-					<div class="flex-1 lg:text-left">
-						<h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-6 mt-3 leading-tight" style="font-family: 'Ubuntu', sans-serif;">
-							About Alberta Helping Animals Society
-						</h1>
-						<p class="text-lg sm:text-xl text-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-							Dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
-						</p>
-					</div>
-					<div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-						<Image 
-							src={aboutUsBanner} 
-							alt="Hero Banner for About Us Page"
-							class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
+		<section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+      <div class="max-w-2xl md:max-w-5xl lg:max-w-7xl mx-auto">
+         <div class="flex flex-col lg:flex-row items-center gap-8 md:pl-3">
+            <!-- Content -->
+            <div class="w-full lg:w-1/2">
+               <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 mt-3 lg:mb-6 leading-tight break-words">
+                  About Alberta Helping Animals Society
+               </h1>
+               <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">Dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
+               </p>
+            </div>
+			<!-- Banner Image -->
+            <div class="w-full lg:w-1/2 flex lg:justify-end">
+               <Image 
+                  src={aboutUsBanner} 
+                  alt="Hero Banner for About Us Page"
+                  class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+                  />
+            </div>
+         </div>
+      </div>
+   </section>
 		<!-- Our Mission & What We Do Section -->
 		<section class="py-10 sm:py-12 lg:py-14 px-6 sm:px-8 lg:px-10 bg-gradient-to-b from-white to-muted-blue/20">
 			<div class="max-w-6xl mx-auto">
