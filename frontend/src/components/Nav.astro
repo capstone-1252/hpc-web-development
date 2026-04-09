@@ -78,10 +78,13 @@ const menuItems: NavItem[] = [
 
 /* Mobile accordion */
 .accordion-content {
-	display: none;
+  display: none;
 }
 .accordion-content.open {
-	display: block;
+  display: block;
+}
+.accordion-trigger .chevron.open {
+  transform: rotate(180deg);
 }
 
 </style>
@@ -163,22 +166,15 @@ const menuItems: NavItem[] = [
 				{menuItems.map((item, i) =>
 					item.children ? (
 						<div>
-							<div class="flex items-center justify-between">
-								<a
-									href={item.href}
-									class="text-gray-600 hover:text-gray-900 px-3 py-2 text-base font-medium transition-colors"
-								>
-									{item.label}
-								</a>
-								<button
-									data-accordion={`accordion-${i}`}
-									class="accordion-trigger p-2 text-gray-600 hover:text-gray-900 transition-colors"
-									aria-expanded="false"
-									aria-label={`Toggle ${item.label} submenu`}
-								>
-									<ChevronDown class="chevron w-4 h-4" />
-								</button>
-							</div>
+							<button
+								data-accordion={`accordion-${i}`}
+								class="accordion-trigger w-full flex items-center justify-between px-3 py-2 text-left text-gray-600 hover:text-gray-900 text-base font-medium transition-colors"
+								aria-expanded="false"
+								aria-label={`Toggle ${item.label} submenu`}
+							>
+								<span>{item.label}</span>
+								<ChevronDown class="chevron w-4 h-4 transition-transform" />
+							</button>
 							<div id={`accordion-${i}`} class="accordion-content pl-4 space-y-1">
 								{item.children.map((child) => (
 									<a
@@ -232,7 +228,7 @@ document.querySelectorAll('.accordion-trigger').forEach((btn) => {
 
 		btn.setAttribute('aria-expanded', String(!expanded));
 		content?.classList.toggle('open');
-		chevron?.classList.toggle('rotated');
+		chevron?.classList.toggle('open');
 	});
 });
 </script>
