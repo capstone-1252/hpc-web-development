@@ -32,22 +32,15 @@ import supportUs from "@/assets/support-us.png"
 				and support for pets and their families throughout Edmonton.
 				</p>
 
-        <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-start">
-          <a 
-            href="/get-involved" 
-            class="bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap justify-left w-fit"
-          >
-            Donate Now
-          </a>
-          <a 
-            href="/about-us" 
-            class="bg-white hover:bg-gray-50 text-[var(--dark-blue)] border-2 border-[var(--dark-blue)] px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:-translate-y-0.5 whitespace-nowrap justify-left w-fit"
-          >
-            Our Mission
-          </a>
-        </div>
-      </div>
+				<div class="order-0 lg:order-1 lg:text-left">
+					<h1 class="max-w-lg text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 lg:mb-6 leading-tight break-words">
+						Saving Lives and Healing
+						<span class="text-[#126F82] block lg:inline">Alberta's Animals</span>
+					</h1>
+					<p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+						Alberta Helping Animals Society provides compassionate veterinary care, rescue services, 
+						and support for pets and their families throughout Edmonton.
+					</p>
 
 			<!-- Banner Image -->
 			<div class="order-0 lg:order-2 w-full flex lg:justify-end">
@@ -225,9 +218,9 @@ import supportUs from "@/assets/support-us.png"
 		<HomeGallerySection client:load />
 	</section>
 
-		<section class="max-w-6xl mx-auto pb-5">
-			<div>
-				<FAQList client:load />
-			</div>
-		</section>
+	<section class="max-w-6xl mx-auto pb-5">
+		<div>
+			<FAQList limit={10} client:load />
+		</div>
+	</section>
 </Layout>
