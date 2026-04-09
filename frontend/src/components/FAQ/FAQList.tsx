@@ -5,7 +5,7 @@ import { ListSkeleton } from "../Skeleton/ListSkeleton";
 import { Accordion } from "@radix-ui/react-accordion";
 
 interface FAQListProps {
-	limit: number | null;
+  limit: number | null;
 }
 export function FAQList({ limit = null }: FAQListProps) {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
