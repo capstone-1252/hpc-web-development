@@ -1,401 +1,541 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import { Image } from "astro:assets"
-import applyForServicesHeroImage from "@/assets/applyforservices-hero.avif"
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import applyForServicesHeroImage from "@/assets/applyforservices-hero.avif";
 ---
+
 <Layout title="Apply for Services - Alberta Helping Animals Society">
-   <main class="bg-white">
-      <!-- Hero Section -->
-      <section class="relative bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
-               <div class="max-w-2xl">
-                  <h1 class="text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">
-                     Apply for Services
-                  </h1>
-                  <p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-8">
-                     Complete our application form to access no-cost veterinary services for qualifying low-income pet owners in Edmonton.
+  <main class="bg-white">
+    <!-- Hero Section -->
+    <section
+      class="relative bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between gap-10"
+        >
+          <div class="max-w-2xl">
+            <h1 class="text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">
+              Apply for Services
+            </h1>
+            <p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-8">
+              Complete our application form to access no-cost veterinary
+              services for qualifying low-income pet owners in Edmonton.
+            </p>
+          </div>
+          <!-- Banner Image -->
+          <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
+            <Image
+              src={applyForServicesHeroImage}
+              alt="Hero Banner for Apply for Services Page"
+              class="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[500px] h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Application Form Section -->
+    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white p-6 lg:p-8 rounded-md shadow-lg border border-gray-200"
+        >
+          <!-- Important Notices -->
+          <div class="space-y-4 mb-8">
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="h-5 w-5 text-yellow-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <p class="text-sm text-yellow-700">
+                    <strong>Please Note:</strong> It may take a few days to get back
+                    to you. You will receive an email asking to send in qualifying
+                    information. Please do not call or email us to check on your application
+                    status as it slows down our volunteers.
                   </p>
-               </div>
-               <!-- Banner Image -->
-               <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
-                  <Image 
-                     src={applyForServicesHeroImage} 
-                     alt="Hero Banner for Apply for Services Page"
-                     class="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[500px] h-auto"
-                     />
-               </div>
+                </div>
+              </div>
             </div>
-         </div>
-      </section>
-      <!-- Application Form Section -->
-      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-         <div class="max-w-4xl mx-auto">
-            <div class="bg-white p-6 lg:p-8 rounded-md shadow-lg border border-gray-200">
-               <!-- Important Notices -->
-               <div class="space-y-4 mb-8">
-                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                     <div class="flex">
-                        <div class="flex-shrink-0">
-                           <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                           </svg>
-                        </div>
-                        <div class="ml-3">
-                           <p class="text-sm text-yellow-700">
-                              <strong>Please Note:</strong> It may take a few days to get back to you. You will receive an email asking to send in qualifying information. Please do not call or email us to check on your application status as it slows down our volunteers.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="bg-red-50 border-l-4 border-red-400 p-4">
-                     <div class="flex">
-                        <div class="flex-shrink-0">
-                           <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                           </svg>
-                        </div>
-                        <div class="ml-3">
-                           <p class="text-sm text-red-700">
-                              <strong>Emergency Services:</strong> We are not able to offer urgent services to new clients except under extraordinary circumstances. If you have an urgent need, please contact an emergency clinic near you.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Application Form -->
-               <form class="space-y-6">
-                  <!-- Personal Information -->
-                  <div class="border-b border-gray-200 pb-6">
-                     <h2 class="text-xl font-bold text-[#485a61] mb-4">Personal Information</h2>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                           <label for="fullName" class="block text-sm font-medium text-[#485a61] mb-2">Full Name *</label>
-                           <input 
-                              type="text" 
-                              id="fullName" 
-                              name="fullName" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              placeholder="John Doe"
-                              >
-                        </div>
-                        <div>
-                           <label for="email" class="block text-sm font-medium text-[#485a61] mb-2">Email Address *</label>
-                           <input 
-                              type="email" 
-                              id="email" 
-                              name="email" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              placeholder="john@example.com"
-                              >
-                        </div>
-                        <div>
-                           <label for="phone" class="block text-sm font-medium text-[#485a61] mb-2">Phone Number *</label>
-                           <input 
-                              type="tel" 
-                              id="phone" 
-                              name="phone" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              placeholder="(587) 123-4567"
-                              >
-                        </div>
-                        <div>
-                           <label for="dob" class="block text-sm font-medium text-[#485a61] mb-2">Date of Birth *</label>
-                           <input 
-                              type="date" 
-                              id="dob" 
-                              name="dob" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              >
-                        </div>
-                     </div>
-                     <div>
-                        <label for="address" class="block text-sm font-medium text-[#485a61] mb-2">Full Address *</label>
-                        <input 
-                           type="text" 
-                           id="address" 
-                           name="address" 
-                           required
-                           class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                           placeholder="123 Main Street, Edmonton, AB T5X 0A1"
-                           >
-                     </div>
-                  </div>
-                  <!-- Household Information -->
-                  <div class="border-b border-gray-200 pb-6">
-                     <h2 class="text-xl font-bold text-[#485a61] mb-4">Household Information</h2>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                           <label for="householdSize" class="block text-sm font-medium text-[#485a61] mb-2">Number of People in Household *</label>
-                           <select 
-                              id="householdSize" 
-                              name="householdSize" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              >
-                              <option value="">Select household size</option>
-                              <option value="1">1 person</option>
-                              <option value="2">2 people</option>
-                              <option value="3">3 people</option>
-                              <option value="4">4 people</option>
-                              <option value="5">5 people</option>
-                              <option value="6">6+ people</option>
-                           </select>
-                        </div>
-                        <div>
-                           <label for="annualIncome" class="block text-sm font-medium text-[#485a61] mb-2">Annual Household Income *</label>
-                           <input 
-                              type="number" 
-                              id="annualIncome" 
-                              name="annualIncome" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              placeholder="30000"
-                              >
-                           <p class="text-xs text-gray-600 mt-1">
-                              Income cut-offs (2025): 1 person - $30,523; 2 people - $38,002; 3 people - $46,720; 4 people - $56,724
-                           </p>
-                        </div>
-                        <div>
-                           <label for="incomeSource" class="block text-sm font-medium text-[#485a61] mb-2">Primary Source of Income *</label>
-                           <select 
-                              id="incomeSource" 
-                              name="incomeSource" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              >
-                              <option value="">Select income source</option>
-                              <option value="employment">Employment</option>
-                              <option value="aish">AISH</option>
-                              <option value="income-support">Income Support</option>
-                              <option value="seniors-benefits">Seniors Benefits</option>
-                              <option value="employment-insurance">Employment Insurance</option>
-                              <option value="other">Other</option>
-                           </select>
-                        </div>
-                        <div>
-                           <label for="housingType" class="block text-sm font-medium text-[#485a61] mb-2">Housing Situation *</label>
-                           <select 
-                              id="housingType" 
-                              name="housingType" 
-                              required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                              >
-                              <option value="">Select housing type</option>
-                              <option value="rent">Renting</option>
-                              <option value="own">Own home</option>
-                              <option value="social-housing">Social housing</option>
-                              <option value="shelter">Shelter</option>
-                              <option value="transitional">Transitional housing</option>
-                              <option value="other">Other</option>
-                           </select>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- Pet Information -->
-                  <div class="border-b border-gray-200 pb-6">
-                     <h2 class="text-xl font-bold text-[#485a61] mb-4">Pet Information</h2>
-                     <div id="petsContainer" class="space-y-6">
-                        <div class="pet-entry border border-gray-200 rounded-md p-4">
-                           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                              <div>
-                                 <label class="block text-sm font-medium text-[#485a61] mb-2">Pet Name *</label>
-                                 <input 
-                                    type="text" 
-                                    name="petName[]" 
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                                    placeholder="Pet's name"
-                                    >
-                              </div>
-                              <div>
-                                 <label class="block text-sm font-medium text-[#485a61] mb-2">Pet Type *</label>
-                                 <select 
-                                    name="petType[]" 
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                                    >
-                                    <option value="">Select pet type</option>
-                                    <option value="dog">Dog</option>
-                                    <option value="cat">Cat</option>
-                                    <option value="other">Other</option>
-                                 </select>
-                              </div>
-                              <div>
-                                 <label class="block text-sm font-medium text-[#485a61] mb-2">Breed/Species *</label>
-                                 <input 
-                                    type="text" 
-                                    name="petBreed[]" 
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                                    placeholder="Breed or species"
-                                    >
-                              </div>
-                              <div>
-                                 <label class="block text-sm font-medium text-[#485a61] mb-2">Age *</label>
-                                 <input 
-                                    type="text" 
-                                    name="petAge[]" 
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                                    placeholder="e.g., 3 years, 6 months"
-                                    >
-                              </div>
-                              <div>
-                                 <label class="block text-sm font-medium text-[#485a61] mb-2">Sex *</label>
-                                 <select 
-                                    name="petSex[]" 
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                                    >
-                                    <option value="">Select sex</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                 </select>
-                              </div>
-                              <div>
-                                 <label class="block text-sm font-medium text-[#485a61] mb-2">Spayed/Neutered? *</label>
-                                 <select 
-                                    name="petFixed[]" 
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                                    >
-                                    <option value="">Select status</option>
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
-                                 </select>
-                              </div>
-                           </div>
-                           <div class="mt-4">
-                              <label class="block text-sm font-medium text-[#485a61] mb-2">Reason for Visit *</label>
-                              <textarea 
-                                 name="reasonForVisit[]" 
-                                 rows="3" 
-                                 required
-                                 class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors resize-none"
-                                 placeholder="Please describe what veterinary care your pet needs..."
-                                 ></textarea>
-                           </div>
-                        </div>
-                     </div>
-                     <button 
-                        type="button" 
-                        id="addPetBtn"
-                        class="mt-4 bg-[#19b8d7] hover:bg-[#1596af] text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
-                        >
-                     + Add Another Pet
-                     </button>
-                  </div>
-                  <!-- Services Agreement -->
-                  <div class="border-b border-gray-200 pb-6">
-                     <h2 class="text-xl font-bold text-[#485a61] mb-4">Service Agreement</h2>
-                     <div class="space-y-4">
-                        <div class="flex items-start">
-                           <input 
-                              type="checkbox" 
-                              id="spayNeuter" 
-                              name="spayNeuter" 
-                              required
-                              class="mt-1 mr-3 h-4 w-4 text-[#19b8d7] focus:ring-[#19b8d7] border-gray-300 rounded"
-                              >
-                           <label for="spayNeuter" class="text-sm text-[#485a61]">
-                           I understand that AHAS policy requires all patients to be spayed/neutered as long as they are healthy. I agree to have my pet(s) spayed or neutered if they are not already.
-                           </label>
-                        </div>
-                        <div class="flex items-start">
-                           <input 
-                              type="checkbox" 
-                              id="qualify" 
-                              name="qualify" 
-                              required
-                              class="mt-1 mr-3 h-4 w-4 text-[#19b8d7] focus:ring-[#19b8d7] border-gray-300 rounded"
-                              >
-                           <label for="qualify" class="text-sm text-[#485a61]">
-                           I confirm that my household income falls below the low-income cut-off limits listed above and that I meet the eligibility requirements for AHAS services.
-                           </label>
-                        </div>
-                        <div class="flex items-start">
-                           <input 
-                              type="checkbox" 
-                              id="truthful" 
-                              name="truthful" 
-                              required
-                              class="mt-1 mr-3 h-4 w-4 text-[#19b8d7] focus:ring-[#19b8d7] border-gray-300 rounded"
-                              >
-                           <label for="truthful" class="text-sm text-[#485a61]">
-                           I certify that all information provided in this application is true and accurate. I understand that providing false information may result in denial of services.
-                           </label>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- Additional Comments -->
-                  <div>
-                     <label for="comments" class="block text-sm font-medium text-[#485a61] mb-2">Additional Comments</label>
-                     <textarea 
-                        id="comments" 
-                        name="comments" 
-                        rows="4"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors resize-none"
-                        placeholder="Any additional information you'd like to share..."
-                        ></textarea>
-                  </div>
-                  <!-- Submit Button -->
-                  <div class="text-center">
-                     <button 
-                        type="submit" 
-                        class="bg-[#e25002] hover:bg-[#c44301] text-white px-8 lg:px-10 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
-                        >
-                     Submit Application
-                     </button>
-                  </div>
-               </form>
+            <div class="bg-red-50 border-l-4 border-red-400 p-4">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="h-5 w-5 text-red-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <p class="text-sm text-red-700">
+                    <strong>Emergency Services:</strong> We are not able to offer
+                    urgent services to new clients except under extraordinary circumstances.
+                    If you have an urgent need, please contact an emergency clinic
+                    near you.
+                  </p>
+                </div>
+              </div>
             </div>
-         </div>
-      </section>
-      <!-- What Happens Next Section -->
-      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-8 lg:mb-12">
-               <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6">What Happens Next?</h2>
-               <p class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed">
-                  Understanding our application process and what to expect after you submit your application.
-               </p>
+          </div>
+          <!-- Application Form -->
+          <form class="space-y-6">
+            <!-- Personal Information -->
+            <div class="border-b border-gray-200 pb-6">
+              <h2 class="text-xl font-bold text-[#485a61] mb-4">
+                Personal Information
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="fullName"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Full Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Phone Number *</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                    placeholder="(587) 123-4567"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="dob"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Date of Birth *</label
+                  >
+                  <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="address"
+                  class="block text-sm font-medium text-[#485a61] mb-2"
+                  >Full Address *</label
+                >
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                  placeholder="123 Main Street, Edmonton, AB T5X 0A1"
+                />
+              </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-               <div class="text-center">
-                  <div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-                     <span class="text-2xl font-bold text-white">1</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Submit Application</h3>
-                  <p class="text-[#485a61] opacity-80 text-sm">Complete and submit the online application form with all required information.</p>
-               </div>
-               <div class="text-center">
-                  <div class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-                     <span class="text-2xl font-bold text-white">2</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Email Verification</h3>
-                  <p class="text-[#485a61] opacity-80 text-sm">You'll receive an email requesting additional documentation to verify eligibility.</p>
-               </div>
-               <div class="text-center">
-                  <div class="w-16 h-16 bg-[#fdb52b] bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                     <span class="text-2xl font-bold text-white">3</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Application Review</h3>
-                  <p class="text-[#485a61] opacity-80 text-sm">Our team reviews your application and documents. This may take several days.</p>
-               </div>
-               <div class="text-center">
-                  <div class="w-16 h-16 bg-[#485a61] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-                     <span class="text-2xl font-bold text-white">4</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Appointment Booking</h3>
-                  <p class="text-[#485a61] opacity-80 text-sm">If approved, you'll be contacted to schedule your pet's veterinary appointment.</p>
-               </div>
+            <!-- Household Information -->
+            <div class="border-b border-gray-200 pb-6">
+              <h2 class="text-xl font-bold text-[#485a61] mb-4">
+                Household Information
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="householdSize"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Number of People in Household *</label
+                  >
+                  <select
+                    id="householdSize"
+                    name="householdSize"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                  >
+                    <option value="">Select household size</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                    <option value="5">5 people</option>
+                    <option value="6">6+ people</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="annualIncome"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Annual Household Income *</label
+                  >
+                  <input
+                    type="number"
+                    id="annualIncome"
+                    name="annualIncome"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                    placeholder="30000"
+                  />
+                  <p class="text-xs text-gray-600 mt-1">
+                    Income cut-offs (2025): 1 person - $30,523; 2 people -
+                    $38,002; 3 people - $46,720; 4 people - $56,724
+                  </p>
+                </div>
+                <div>
+                  <label
+                    for="incomeSource"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Primary Source of Income *</label
+                  >
+                  <select
+                    id="incomeSource"
+                    name="incomeSource"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                  >
+                    <option value="">Select income source</option>
+                    <option value="employment">Employment</option>
+                    <option value="aish">AISH</option>
+                    <option value="income-support">Income Support</option>
+                    <option value="seniors-benefits">Seniors Benefits</option>
+                    <option value="employment-insurance"
+                      >Employment Insurance</option
+                    >
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="housingType"
+                    class="block text-sm font-medium text-[#485a61] mb-2"
+                    >Housing Situation *</label
+                  >
+                  <select
+                    id="housingType"
+                    name="housingType"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                  >
+                    <option value="">Select housing type</option>
+                    <option value="rent">Renting</option>
+                    <option value="own">Own home</option>
+                    <option value="social-housing">Social housing</option>
+                    <option value="shelter">Shelter</option>
+                    <option value="transitional">Transitional housing</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
             </div>
-         </div>
-      </section>
-   </main>
+            <!-- Pet Information -->
+            <div class="border-b border-gray-200 pb-6">
+              <h2 class="text-xl font-bold text-[#485a61] mb-4">
+                Pet Information
+              </h2>
+              <div id="petsContainer" class="space-y-6">
+                <div class="pet-entry border border-gray-200 rounded-md p-4">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-[#485a61] mb-2"
+                        >Pet Name *</label
+                      >
+                      <input
+                        type="text"
+                        name="petName[]"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                        placeholder="Pet's name"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-[#485a61] mb-2"
+                        >Pet Type *</label
+                      >
+                      <select
+                        name="petType[]"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                      >
+                        <option value="">Select pet type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-[#485a61] mb-2"
+                        >Breed/Species *</label
+                      >
+                      <input
+                        type="text"
+                        name="petBreed[]"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                        placeholder="Breed or species"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-[#485a61] mb-2"
+                        >Age *</label
+                      >
+                      <input
+                        type="text"
+                        name="petAge[]"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                        placeholder="e.g., 3 years, 6 months"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-[#485a61] mb-2"
+                        >Sex *</label
+                      >
+                      <select
+                        name="petSex[]"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                      >
+                        <option value="">Select sex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-[#485a61] mb-2"
+                        >Spayed/Neutered? *</label
+                      >
+                      <select
+                        name="petFixed[]"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
+                      >
+                        <option value="">Select status</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <label class="block text-sm font-medium text-[#485a61] mb-2"
+                      >Reason for Visit *</label
+                    >
+                    <textarea
+                      name="reasonForVisit[]"
+                      rows="3"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors resize-none"
+                      placeholder="Please describe what veterinary care your pet needs..."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                id="addPetBtn"
+                class="mt-4 bg-[#19b8d7] hover:bg-[#1596af] text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
+              >
+                + Add Another Pet
+              </button>
+            </div>
+            <!-- Services Agreement -->
+            <div class="border-b border-gray-200 pb-6">
+              <h2 class="text-xl font-bold text-[#485a61] mb-4">
+                Service Agreement
+              </h2>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="spayNeuter"
+                    name="spayNeuter"
+                    required
+                    class="mt-1 mr-3 h-4 w-4 text-[#19b8d7] focus:ring-[#19b8d7] border-gray-300 rounded"
+                  />
+                  <label for="spayNeuter" class="text-sm text-[#485a61]">
+                    I understand that AHAS policy requires all patients to be
+                    spayed/neutered as long as they are healthy. I agree to have
+                    my pet(s) spayed or neutered if they are not already.
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="qualify"
+                    name="qualify"
+                    required
+                    class="mt-1 mr-3 h-4 w-4 text-[#19b8d7] focus:ring-[#19b8d7] border-gray-300 rounded"
+                  />
+                  <label for="qualify" class="text-sm text-[#485a61]">
+                    I confirm that my household income falls below the
+                    low-income cut-off limits listed above and that I meet the
+                    eligibility requirements for AHAS services.
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="truthful"
+                    name="truthful"
+                    required
+                    class="mt-1 mr-3 h-4 w-4 text-[#19b8d7] focus:ring-[#19b8d7] border-gray-300 rounded"
+                  />
+                  <label for="truthful" class="text-sm text-[#485a61]">
+                    I certify that all information provided in this application
+                    is true and accurate. I understand that providing false
+                    information may result in denial of services.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Additional Comments -->
+            <div>
+              <label
+                for="comments"
+                class="block text-sm font-medium text-[#485a61] mb-2"
+                >Additional Comments</label
+              >
+              <textarea
+                id="comments"
+                name="comments"
+                rows="4"
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors resize-none"
+                placeholder="Any additional information you'd like to share..."
+              ></textarea>
+            </div>
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-[#e25002] hover:bg-[#c44301] text-white px-8 lg:px-10 py-3 lg:py-4 rounded-md text-base lg:text-lg font-semibold transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+              >
+                Submit Application
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- What Happens Next Section -->
+    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8 lg:mb-12">
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-4 lg:mb-6"
+          >
+            What Happens Next?
+          </h2>
+          <p
+            class="text-lg lg:text-xl text-[#485a61] opacity-80 max-w-4xl mx-auto leading-relaxed"
+          >
+            Understanding our application process and what to expect after you
+            submit your application.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-white">1</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#485a61] mb-2">
+              Submit Application
+            </h3>
+            <p class="text-[#485a61] opacity-80 text-sm">
+              Complete and submit the online application form with all required
+              information.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-[#e25002] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-white">2</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#485a61] mb-2">
+              Email Verification
+            </h3>
+            <p class="text-[#485a61] opacity-80 text-sm">
+              You'll receive an email requesting additional documentation to
+              verify eligibility.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-[#fdb52b] bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-white">3</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#485a61] mb-2">
+              Application Review
+            </h3>
+            <p class="text-[#485a61] opacity-80 text-sm">
+              Our team reviews your application and documents. This may take
+              several days.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-[#485a61] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-white">4</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#485a61] mb-2">
+              Appointment Booking
+            </h3>
+            <p class="text-[#485a61] opacity-80 text-sm">
+              If approved, you'll be contacted to schedule your pet's veterinary
+              appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
