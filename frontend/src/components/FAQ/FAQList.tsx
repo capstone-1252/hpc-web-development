@@ -75,6 +75,7 @@ export function FAQList({ limit = null }: FAQListProps) {
           <FAQItem key={i} faq={faq} index={i} />
         ))}
       </Accordion>
+			<a className="text-slate-500 underline text-sm" href="/faq">See All FAQs</a>
     </section>
   );
 }
