@@ -1,94 +1,107 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import applyForServicesHeroImage from "@/assets/applyforservices-hero.avif";
+import Layout from "@/layouts/Layout.astro"
+import { Image } from "astro:assets"
+import { AlertTriangle, XCircle, ExternalLink } from "@lucide/astro"
+import applyForServicesHeroImage from "@/assets/applyforservices-hero.avif"
 ---
 
 <Layout title="Apply for Services - Alberta Helping Animals Society">
-  <main class="bg-white">
-    <!-- Hero Section -->
-    <section
-      class="relative bg-(--muted-blue) py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
-    >
-      <div class="max-w-7xl mx-auto">
-        <div
-          class="flex flex-col lg:flex-row items-center justify-between gap-10"
-        >
-          <div class="max-w-2xl">
-            <h1 class="text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">
-              Apply for Services
-            </h1>
-            <p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-8">
-              Complete our application form to access no-cost veterinary
-              services for qualifying low-income pet owners in Edmonton.
-            </p>
-          </div>
-          <!-- Banner Image -->
-          <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
-            <Image
-              src={applyForServicesHeroImage}
-              alt="Hero Banner for Apply for Services Page"
-              class="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[500px] h-auto"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Application Form Section -->
-    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="bg-white p-6 lg:p-8 rounded-md shadow-lg border border-gray-200"
-        >
-          <!-- Important Notices -->
-          <div class="space-y-4 mb-8">
-            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="h-5 w-5 text-yellow-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div class="ml-3">
-                  <p class="text-sm text-yellow-700">
-                    <strong>Please Note:</strong> It may take a few days to get back
-                    to you. You will receive an email asking to send in qualifying
-                    information. Please do not call or email us to check on your application
-                    status as it slows down our volunteers.
+   <main class="bg-white">
+      <!-- Hero Section -->
+      <section class="relative bg-(--primary) py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+         <div class="lg:max-w-7xl md:max-w-5xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10 md:pl-3">
+               <div class="lg:max-w-2xl">
+                  <h1 class="text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">
+                     Apply for Services
+                  </h1>
+                  <p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-8">
+                     Complete our application form to access no-cost veterinary services for qualifying low-income pet owners in Edmonton.
                   </p>
-                </div>
-              </div>
+               </div>
+               <!-- Banner Image -->
+               <div class="flex lg:justify-end w-full lg:w-1/2">
+                  <Image 
+                     src={applyForServicesHeroImage} 
+                     alt="Hero Banner for Apply for Services Page"
+                     class="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[500px] h-auto"
+                     />
+               </div>
             </div>
-            <div class="bg-red-50 border-l-4 border-red-400 p-4">
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="h-5 w-5 text-red-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div class="ml-3">
-                  <p class="text-sm text-red-700">
-                    <strong>Emergency Services:</strong> We are not able to offer
-                    urgent services to new clients except under extraordinary circumstances.
-                    If you have an urgent need, please contact an emergency clinic
-                    near you.
+         </div>
+      </section>
+      <!-- Application Information Section -->
+      <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+         <div class="max-w-4xl mx-auto">
+            <div class="bg-white p-6 lg:p-8 rounded-md shadow-lg border border-gray-200">
+               <!-- Important Notices -->
+               <div class="space-y-4 mb-8">
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                     <div class="flex">
+                        <div class="flex-shrink-0">
+                           <AlertTriangle class="h-5 w-5 text-yellow-400" />
+                        </div>
+                        <div class="ml-3">
+                           <p class="text-sm text-yellow-700">
+                              <strong>Please Note:</strong> It may take a few days to get back to you. You will receive an email asking to send in qualifying information. Please do not call or email us to check on your application status as it slows down our volunteers.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bg-red-50 border-l-4 border-red-400 p-4">
+                     <div class="flex">
+                        <div class="flex-shrink-0">
+                           <XCircle class="h-5 w-5 text-red-400" />
+                        </div>
+                        <div class="ml-3">
+                           <p class="text-sm text-red-700">
+                              <strong>Emergency Services:</strong> We are not able to offer urgent services to new clients except under extraordinary circumstances. If you have an urgent need, please contact an emergency clinic near you.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Google Form Link Section -->
+               <div class="bg-gray-50 border border-gray-200 rounded-md p-6 mb-8">
+                  <h2 class="text-xl font-bold text-[#485a61] mb-4">How to Apply</h2>
+                  <p class="text-[#485a61] opacity-80 mb-4">
+                     Please click the button below to access our application form. You will be redirected to a Google Form where you can complete and submit your application.
                   </p>
+                  <p class="text-[#485a61] opacity-80 mb-6">
+                     <strong>Important:</strong> AHAS Home Veterinary Services provides basic veterinary care to people living with a very low income in Edmonton. Our policy is to ensure all patients are spayed/neutered as long as they are healthy; we will not see your pets if you will not spay/neuter them.
+                  </p>
+                  <p class="text-[#485a61] opacity-80 mb-6">
+                     If you need spay/neuter services for a young, healthy dog, please apply to the PALS program at the Edmonton Humane Society: <a href="https://www.edmontonhumanesociety.com/services/pals-spay-and-neuter-program/" target="_blank" rel="noopener noreferrer" class="text-[#19b8d7] hover:underline">https://www.edmontonhumanesociety.com/services/pals-spay-and-neuter-program/</a>
+                  </p>
+                  <div class="flex flex-col sm:flex-row items-center gap-4">
+                     <a 
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeVSiWKxkxSF6AGuuAH1a76CgDdWwl-JAMCLap3Mw8_24Y3VQ/viewform" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="bg-[#e25002] hover:bg-[#c44301] text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors shadow-lg hover:shadow-xl flex items-center gap-3 whitespace-nowrap"
+                     >
+                        <ExternalLink class="w-5 h-5" />
+                        Open Google Form Application
+                     </a>
+                     <span class="text-sm text-[#485a61] opacity-70">
+                        (Opens in a new tab)
+                     </span>
+                  </div>
+               </div>
+               <!-- Eligibility Information -->
+               <div class="border-t border-gray-200 pt-8">
+                  <h2 class="text-xl font-bold text-[#485a61] mb-4">Eligibility Requirements</h2>
+                  <div class="space-y-4">
+                     <div>
+                        <h3 class="text-lg font-semibold text-[#485a61] mb-2">Income Guidelines by Household Size (2025)</h3>
+                        <ul class="list-disc list-inside text-[#485a61] opacity-80 space-y-1">
+                           <li>1 person: $30,523 or less</li>
+                           <li>2 people: $38,002 or less</li>
+                           <li>3 people: $46,720 or less</li>
+                           <li>4 people: $56,724 or less</li>
+                        </ul>
+                     </div>
                 </div>
-              </div>
             </div>
           </div>
           <!-- Application Form -->
@@ -175,97 +188,28 @@ import applyForServicesHeroImage from "@/assets/applyforservices-hero.avif";
                 />
               </div>
             </div>
-            <!-- Household Information -->
-            <div class="border-b border-gray-200 pb-6">
-              <h2 class="text-xl font-bold text-[#485a61] mb-4">
-                Household Information
-              </h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="householdSize"
-                    class="block text-sm font-medium text-[#485a61] mb-2"
-                    >Number of People in Household *</label
-                  >
-                  <select
-                    id="householdSize"
-                    name="householdSize"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                  >
-                    <option value="">Select household size</option>
-                    <option value="1">1 person</option>
-                    <option value="2">2 people</option>
-                    <option value="3">3 people</option>
-                    <option value="4">4 people</option>
-                    <option value="5">5 people</option>
-                    <option value="6">6+ people</option>
-                  </select>
-                </div>
-                <div>
-                  <label
-                    for="annualIncome"
-                    class="block text-sm font-medium text-[#485a61] mb-2"
-                    >Annual Household Income *</label
-                  >
-                  <input
-                    type="number"
-                    id="annualIncome"
-                    name="annualIncome"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                    placeholder="30000"
-                  />
-                  <p class="text-xs text-gray-600 mt-1">
-                    Income cut-offs (2025): 1 person - $30,523; 2 people -
-                    $38,002; 3 people - $46,720; 4 people - $56,724
-                  </p>
-                </div>
-                <div>
-                  <label
-                    for="incomeSource"
-                    class="block text-sm font-medium text-[#485a61] mb-2"
-                    >Primary Source of Income *</label
-                  >
-                  <select
-                    id="incomeSource"
-                    name="incomeSource"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                  >
-                    <option value="">Select income source</option>
-                    <option value="employment">Employment</option>
-                    <option value="aish">AISH</option>
-                    <option value="income-support">Income Support</option>
-                    <option value="seniors-benefits">Seniors Benefits</option>
-                    <option value="employment-insurance"
-                      >Employment Insurance</option
-                    >
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label
-                    for="housingType"
-                    class="block text-sm font-medium text-[#485a61] mb-2"
-                    >Housing Situation *</label
-                  >
-                  <select
-                    id="housingType"
-                    name="housingType"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#19b8d7] focus:border-[#19b8d7] outline-none transition-colors"
-                  >
-                    <option value="">Select housing type</option>
-                    <option value="rent">Renting</option>
-                    <option value="own">Own home</option>
-                    <option value="social-housing">Social housing</option>
-                    <option value="shelter">Shelter</option>
-                    <option value="transitional">Transitional housing</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+               <div class="text-center">
+                  <div class="w-16 h-16 bg-[#19b8d7] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <span class="text-2xl font-bold text-white">1</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Submit Application</h3>
+                  <p class="text-[#485a61] opacity-80 text-sm">Complete and submit the online application form with all required information.</p>
+               </div>
+               <div class="text-center">
+                  <div class="w-16 h-16 bg-[#fdb52b] bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <span class="text-2xl font-bold text-white">2</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Application Review</h3>
+                  <p class="text-[#485a61] opacity-80 text-sm">Our team reviews your application and documents. This may take several days.</p>
+               </div>
+               <div class="text-center">
+                  <div class="w-16 h-16 bg-[#485a61] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <span class="text-2xl font-bold text-white">3</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-[#485a61] mb-2">Appointment Booking</h3>
+                  <p class="text-[#485a61] opacity-80 text-sm">If approved, you'll be contacted to schedule your pet's veterinary appointment.</p>
+               </div>
             </div>
             <!-- Pet Information -->
             <div class="border-b border-gray-200 pb-6">

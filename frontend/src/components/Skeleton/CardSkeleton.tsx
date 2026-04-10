@@ -6,6 +6,7 @@ interface CardSkeletonProps {
   showAvatar?: boolean;
   showImage?: boolean;
   height?: string;
+  width?: string;
 }
 
 export const CardSkeleton: React.FC<CardSkeletonProps> = ({
@@ -14,10 +15,11 @@ export const CardSkeleton: React.FC<CardSkeletonProps> = ({
   showAvatar = false,
   showImage = false,
   height = "h-24",
+  width = "w-full",
 }) => {
   return (
     <div
-      className={`animate-pulse rounded-md border border-gray-200 p-4 ${className}`}
+      className={`animate-pulse rounded-md border border-gray-200 p-4 ${width} ${className}`}
     >
       {showAvatar && (
         <div className="flex items-center space-x-4 mb-4">

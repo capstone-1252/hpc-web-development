@@ -1,20 +1,19 @@
-import { loadHomeGallery } from "@/loaders/loadHomeGallery";
-import type { HomeGallery } from "@/loaders/loadHomeGallery";
+import { loadHomeGallery, type HomeGallery } from "@/loaders/loadHomeGallery";
 import { useEffect, useState } from "react";
 import { PhotoGallery } from "./PhotoGallery";
 
 export const HomeGallerySection = () => {
-  const [gallery, setGallery] = useState<HomeGallery>();
+  const [gallery, setGallery] = useState<HomeGallery[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await loadHomeGallery();
-      setGallery(data);
+      setGallery(data || []);
       setLoading(false);
     };
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return (
@@ -42,7 +41,7 @@ export const HomeGallerySection = () => {
           Photo Gallery
         </h2>
         <PhotoGallery
-          images={gallery?.photos || []}
+          images={gallery || []}
           altPrefix="Home Gallery | "
           width={1200}
           height={1200}
