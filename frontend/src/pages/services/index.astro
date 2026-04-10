@@ -10,10 +10,10 @@ import ourServicesHeroImage from "@/assets/ourservices-hero.avif"
    <main class="bg-white">
       <!-- Hero Section -->
       <section class="relative bg-(--primary) py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
-         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
-               <div class="max-w-2xl">
-                  <h1 class="text-4xl font-bold text-[#485a61] mb-6 lg:mb-8">
+         <div class="lg:max-w-7xl md:max-w-5xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10 md:pl-3">
+               <div class="lg:max-w-2xl md:max-w-5xl">
+                  <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold text-[#485a61] mb-3 mt-3 lg:mb-8">
                      Our Services
                   </h1>
                   <p class="text-lg text-[#485a61] opacity-80 leading-relaxed mb-8">
@@ -26,8 +26,8 @@ import ourServicesHeroImage from "@/assets/ourservices-hero.avif"
                   Apply for Services
                   </a>
                </div>
-               <!-- Banner Image -->
-               <div class="flex justify-center lg:justify-end w-full lg:w-1/2 ">
+
+               <div class="flex lg:justify-end w-full lg:w-1/2 ">
                   <Image 
                      src={ourServicesHeroImage} 
                      alt="Hero Banner for Our Services Page"
@@ -37,9 +37,10 @@ import ourServicesHeroImage from "@/assets/ourservices-hero.avif"
             </div>
          </div>
       </section>
+
       <!-- Services Overview -->
       <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-         <div class="mb-8 lg:mb-12">
+         <div class="mb-4 lg:mb-12">
             <h2 class="text-3xl sm:text-2xl lg:text-3xl font-bold text-[#485a61] mb-4 lg:mb-6">Veterinary and Other Care</h2>
             <p class="text-base lg:text-lg text-[#2B2F3BCC] opacity-80 mx-auto leading-relaxed">
                AHAS Home Veterinary Services provides basic veterinary care to people living with a very low income in Edmonton.  Our policy is to ensure all patients are spayed/neutered as long as they are healthy; we will not see your pets if you will not spay/neuter them..
@@ -84,7 +85,7 @@ import ourServicesHeroImage from "@/assets/ourservices-hero.avif"
                      >
                      <div class="flex items-center gap-3">
                         <ExternalLinkIcon />
-                        <h4 class="text-xl font-bold text-[#485a61]">Moodle Learning Modules</h4>
+                        <h4 class="text-xl font-bold text-[#485a61]">Learning Resources</h4>
                      </div>
                      <p class="text-black opacity-80 text-sm pl-3">Guides and information for pet owners</p>
                   </a>

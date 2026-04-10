@@ -8,26 +8,26 @@ import volunteerHeroImage from "@/assets/volunteer-hero.avif"
 	<main class="bg-white">
     <!-- Hero Banner -->
     	<section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
-        <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
-            <div class="max-w-2xl">
-              <h1 class="text-3xl sm:text-4xl lg:text-4xl font-bold text-(--dark-blue) mb-6 leading-tight" style="font-family: 'Ubuntu', sans-serif;">
-                Volunteer With Us
-              </h1>
-              <p class="text-lg text-[#485a61] leading-relaxed">
-                Our volunteers are what make the Alberta Helping Animals Society possible.
-              </p>
+        <div class="max-w-2xl md:max-w-5xl lg:max-w-7xl mx-auto">
+         <div class="flex flex-col lg:flex-row items-center gap-8 md:pl-3">
+            <!-- Content -->
+            <div class="w-full lg:w-1/2">
+               <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 mt-3 lg:mb-6 leading-tight break-words">
+                  Volunteer With Us
+               </h1>
+               <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">Our volunteers are what make the Alberta Helping Animals Society possible.
+               </p>
             </div>
-            <!-- Banner Image -->
-            <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
-              <Image 
-                src={volunteerHeroImage} 
-                alt="Hero Banner for Volunteer Page"
-                class="w-[260px] sm:w-[300px] md:w-[340px] lg:w-[400px] h-auto"
-              />
+			<!-- Banner Image -->
+            <div class="w-full lg:w-1/2 flex lg:justify-end">
+               <Image 
+                  src={volunteerHeroImage} 
+                  alt="Hero Banner for Volunteer Page"
+                  class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+                  />
             </div>
-          </div>
-        </div>
+         </div>
+      </div>
       </section>
 
     <!-- Volunteer Opportunities section -->

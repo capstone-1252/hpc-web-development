@@ -31,7 +31,7 @@ export function WeeklyHoursList() {
   ];
 
   const sortedHours = [...hours].sort(
-    (a, b) => dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day)
+    (a, b) => dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day),
   );
 
   const formatTime = (time: string) => {

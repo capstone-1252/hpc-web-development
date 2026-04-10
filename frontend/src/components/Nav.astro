@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets"
+import { ChevronDown, Menu } from "@lucide/astro"
 import Logo from "@/assets/logo.png"
 
 type NavItem = {
@@ -77,10 +78,13 @@ const menuItems: NavItem[] = [
 
 /* Mobile accordion */
 .accordion-content {
-	display: none;
+  display: none;
 }
 .accordion-content.open {
-	display: block;
+  display: block;
+}
+.accordion-trigger .chevron.open {
+  transform: rotate(180deg);
 }
 
 </style>
@@ -109,9 +113,7 @@ const menuItems: NavItem[] = [
 									{item.label}
 								</a>
 								<span class="text-gray-400 py-2 pr-2 -ml-1">
-									<svg class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-									</svg>
+									<ChevronDown class="w-4 h-4 mt-0.5" />
 								</span>
 							</div>
 							<div class="dropdown-menu">
@@ -137,7 +139,7 @@ const menuItems: NavItem[] = [
 
 				<a
 					href="/get-involved"
-					class="ml-4 bg-[#e25002] hover:bg-[#c44301] text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors shadow-md"
+					class="ml-4 bg-[#FF5600] hover:bg-[#c44301] text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors shadow-md"
 				>
 					Donate Now
 				</a>
@@ -153,9 +155,7 @@ const menuItems: NavItem[] = [
 					aria-expanded="false"
 				>
 					<span class="sr-only">Open main menu</span>
-					<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-					</svg>
+					<Menu class="h-6 w-6" />
 				</button>
 			</div>
 		</div>
@@ -166,24 +166,15 @@ const menuItems: NavItem[] = [
 				{menuItems.map((item, i) =>
 					item.children ? (
 						<div>
-							<div class="flex items-center justify-between">
-								<a
-									href={item.href}
-									class="text-gray-600 hover:text-gray-900 px-3 py-2 text-base font-medium transition-colors"
-								>
-									{item.label}
-								</a>
-								<button
-									data-accordion={`accordion-${i}`}
-									class="accordion-trigger p-2 text-gray-600 hover:text-gray-900 transition-colors"
-									aria-expanded="false"
-									aria-label={`Toggle ${item.label} submenu`}
-								>
-									<svg class="chevron w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-									</svg>
-								</button>
-							</div>
+							<button
+								data-accordion={`accordion-${i}`}
+								class="accordion-trigger w-full flex items-center justify-between px-3 py-2 text-left text-gray-600 hover:text-gray-900 text-base font-medium transition-colors"
+								aria-expanded="false"
+								aria-label={`Toggle ${item.label} submenu`}
+							>
+								<span>{item.label}</span>
+								<ChevronDown class="chevron w-4 h-4 transition-transform" />
+							</button>
 							<div id={`accordion-${i}`} class="accordion-content pl-4 space-y-1">
 								{item.children.map((child) => (
 									<a
@@ -207,7 +198,7 @@ const menuItems: NavItem[] = [
 
 				<a
 					href="/donate"
-					class="bg-[#e25002] hover:bg-[#c44301] text-white block px-3 py-2 text-base font-semibold transition-colors rounded-md text-center mt-3"
+					class="bg-[#FF5600] hover:bg-[#c44301] text-white block px-3 py-2 text-base font-semibold transition-colors rounded-md text-center mt-3"
 				>
 					Donate Now
 				</a>
@@ -237,7 +228,7 @@ document.querySelectorAll('.accordion-trigger').forEach((btn) => {
 
 		btn.setAttribute('aria-expanded', String(!expanded));
 		content?.classList.toggle('open');
-		chevron?.classList.toggle('rotated');
+		chevron?.classList.toggle('open');
 	});
 });
 </script>

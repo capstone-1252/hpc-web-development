@@ -31,7 +31,7 @@ class CockpitAPI {
   constructor() {
     const baseURL = import.meta.env.PUBLIC_COCKPIT_API;
     if (!baseURL) {
-      console.error("No base URL");
+      throw new Error("No base URL");
     }
 
     this.client = axios.create({
@@ -79,15 +79,17 @@ class CockpitAPI {
       }
     });
 
-    return this.request<T[]>(`/content/items/${collection}`, { params });
+    return this.request<T[]>(`/content/items/${collection}?populate=1`, {
+      params,
+    });
   }
 
   async getItem<T = any>(collection: string, id: string): Promise<T> {
-    return this.request<T>(`/content/item/${collection}/${id}`);
+    return this.request<T>(`/content/item/${collection}/${id}?populate=1`);
   }
 
   async getSingleton<T = any>(singleton: string): Promise<T> {
-    return this.request<T>(`/content/item/${singleton}`);
+    return this.request<T>(`/content/item/${singleton}?populate=1`);
   }
 
   async getAssetUrl(

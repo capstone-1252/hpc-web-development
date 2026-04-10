@@ -4,34 +4,38 @@ import { BoardList } from "@/components/Board/BoardList"
 import { VolunteerList } from "@/components/Volunteer/VolunteerList"
 import { ClinicTour } from "@/components/Tour/ClinicTour"
 import { Image } from "astro:assets"
+import { FAQList } from "@/components/FAQ/FAQList"
+import { Check, Heart, Stethoscope } from "@lucide/astro"
 import aboutUsBanner from "@/assets/aboutus-hero.avif"
 import ourMissionImage from "@/assets/our-mission.jpg"
 import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
+import Faq from "./faq.astro"
 ---
 <Layout title="About Us - Alberta Helping Animals Society">
 	<main class="bg-white">
 		<!-- Hero Section -->
-		<section class="bg-(--primary) py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
-			<div class="max-w-7xl mx-auto">
-				<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-					<div class="flex-1 lg:text-left">
-						<h1 class="text-xl sm:text-2xl lg:text-4xl font-bold text-(--dark-blue) mb-6 leading-tight" style="font-family: 'Ubuntu', sans-serif;">
-							About Alberta Helping Animals Society
-						</h1>
-						<p class="text-lg sm:text-xl text-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-							Dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
-						</p>
-					</div>
-					<div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-						<Image 
-							src={aboutUsBanner} 
-							alt="Hero Banner for About Us Page"
-							class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
+		<section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+      <div class="max-w-2xl md:max-w-5xl lg:max-w-7xl mx-auto">
+         <div class="flex flex-col lg:flex-row items-center gap-8 md:pl-3">
+            <!-- Content -->
+            <div class="w-full lg:w-1/2">
+               <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 mt-3 lg:mb-6 leading-tight break-words">
+                  About Alberta Helping Animals Society
+               </h1>
+               <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">Dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
+               </p>
+            </div>
+			<!-- Banner Image -->
+            <div class="w-full lg:w-1/2 flex lg:justify-end">
+               <Image 
+                  src={aboutUsBanner} 
+                  alt="Hero Banner for About Us Page"
+                  class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+                  />
+            </div>
+         </div>
+      </div>
+   </section>
 		<!-- Our Mission & What We Do Section -->
 		<section class="py-10 sm:py-12 lg:py-14 px-6 sm:px-8 lg:px-10 bg-gradient-to-b from-white to-muted-blue/20">
 			<div class="max-w-6xl mx-auto">
@@ -69,7 +73,7 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 							</p>
 							<!-- Banner Image -->
 						</div>
-						<Image src={ourMissionImage} alt="" class="rounded-md shadow-md hover:shadow-lg transition-shadow" format="avif" />
+						<Image src={ourMissionImage} alt="Connie and Local Veterinarians" class="rounded-md shadow-md hover:shadow-lg transition-shadow" format="avif" />
 					</div>
 				</div>
 			</div>
@@ -84,7 +88,7 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 				</h2>
 				<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
 					<div class="w-full lg:w-1/2 h-[350px] lg:h-[450px] rounded-2xl overflow-hidden relative shadow-2xl flex-shrink-0">
-						<Image src={whyWeExistImage} alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" format="avif" />
+						<Image src={whyWeExistImage} alt="Connie and AHAS Volunteers infront of AHAS Clinic" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" format="avif" />
 					</div>
 					<div class="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700 flex-1">
 						<div class="space-y-4 pt-2">
@@ -93,21 +97,15 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 							</p>
 							<ul class="space-y-3 text-white/80 pt-2">
 								<li class="flex items-start gap-3">
-									<svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-									</svg>
+									<Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
 									<span class="text-base">Making veterinary care accessible to all</span>
 								</li>
 								<li class="flex items-start gap-3">
-									<svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-									</svg>
+									<Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
 									<span class="text-base">Supporting the human-animal bond</span>
 								</li>
 								<li class="flex items-start gap-3">
-									<svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-									</svg>
+									<Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
 									<span class="text-base">Building a compassionate community</span>
 								</li>
 							</ul>
@@ -119,7 +117,6 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 		<!-- Who and How We Serve Section -->
 		<section class="py-8 sm:py-10 lg:py-12 px-6 sm:px-8 lg:px-10 bg-muted-blue/10">
 			<div class="max-w-5xl mx-auto">
-				<!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Community</span> -->
 				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-6" style="font-family: 'Ubuntu', sans-serif;">
 					Who & How We Serve
 				</h2>
@@ -133,10 +130,8 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 					<div class="bg-white rounded-2xl shadow-md p-8 border border-border/50">
 						<div class="flex items-center gap-3 mb-4">
-							<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-								</svg>
+							<div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: color-mix(in srgb, var(--dark-blue) 10%, transparent)">
+								<Heart class="w-6 h-6" style="color: var(--dark-blue)" />
 							</div>
 							<h3 class="text-2xl sm:text-2xl font-normal text-[#0C5E6E]" style="font-family: 'Ubuntu', sans-serif;">
 								Community Support
@@ -149,10 +144,8 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 					<!-- Veterinary Services Card -->
 					<div class="bg-white rounded-2xl shadow-md p-8 border border-border/50">
 						<div class="flex items-center gap-3 mb-4">
-							<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-								</svg>
+							<div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: color-mix(in srgb, var(--dark-blue) 10%, transparent)">
+								<Stethoscope class="w-6 h-6" style="color: var(--dark-blue)" />
 							</div>
 							<h3 class="text-2xl sm:text-2xl font-normal text-[#0C5E6E]" style="font-family: 'Ubuntu', sans-serif;">
 								Veterinary Services
@@ -170,9 +163,10 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 			<div class="max-w-5xl mx-auto">
 				<div class="mb-12">
 					<!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Team</span> -->
-					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E]" style="font-family: 'Ubuntu', sans-serif;">
+					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-2" style="font-family: 'Ubuntu', sans-serif;">
 						Our Volunteers
 					</h2>
+					<p class="text-lg text-foreground leading-relaxed mx-auto mb-12 ">AHAS would not exist without the vital support of our volunteers. Our volunteer veterinarians and technicians provide their time and skills to ensure the health and well-being of the animals. Our volunteers are passionate, driven, and dedicated to achieving the AHAS vision. We are extremely grateful for them, our most valuable asset!</p>
 				</div>
 				<VolunteerList client:load />
 			</div>
@@ -192,24 +186,12 @@ import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
 				<BoardList client:load />
 			</div>
 		</section>
-		<!-- Call to Action -->
-		<section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-10 bg-gradient-to-br from-primary/10 to-primary/5">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-6">
-					Join Us in Making a Difference
-				</h2>
-				<p class="text-lg text-foreground leading-relaxed mb-10 mx-auto">
-					Whether you choose to donate, volunteer, or simply spread the word, every action helps us provide critical care to the animals and families who need it most.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-4 justify-left">
-					<a href="/donate" class="w-fit bg-[#FF5600] hover:bg-[#c44301] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap">
-						Donate Now
-					</a>
-					<a href="/get-involved" class="w-fit bg-white hover:bg-gray-50 text-(--dark-blue) border-2 border-(--dark-blue) px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold transition-all hover:-translate-y-0.5 whitespace-nowrap">
-						Get Involved
-					</a>
-				</div>
+		
+		<section class="max-w-6xl mx-auto pb-5">
+			<div>
+				<FAQList limit={10} client:load />
 			</div>
 		</section>
+		
 	</main>
 </Layout>
