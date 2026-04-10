@@ -25,7 +25,7 @@ export const SocialLinks = () => {
           className="text-gray-400 hover:text-white transition-colors"
           aria-label={link.name}
         >
-          <img src={getImageUrl(link.logo, 48, 48)} alt={link.name + " Link"} />
+          <img src={getImageUrl(link.logo, 68, 68)} alt={link.name + " Link"} />
         </a>
       ))}
     </div>
