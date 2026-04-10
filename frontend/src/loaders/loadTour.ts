@@ -4,7 +4,7 @@ import type { AssetImage } from "./utils";
 export interface TourPhotos extends CockpitItemData {
   image: AssetImage;
   description: string;
-	order: number;
+  order: number;
 }
 
 export const loadTour = async (): Promise<TourPhotos[]> => {
