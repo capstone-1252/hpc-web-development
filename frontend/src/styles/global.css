@@ -82,11 +82,11 @@
   --blue-button: #0c5e6e;
   /* Applying to a specific class */
   .comic-text {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
   }
   /* Applying to the entire website */
   body {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
   }
 }
 
