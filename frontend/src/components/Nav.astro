@@ -1,234 +1,245 @@
 ---
-import { Image } from "astro:assets"
-import { ChevronDown, Menu } from "@lucide/astro"
-import Logo from "@/assets/logo.png"
+import { Image } from "astro:assets";
+import { ChevronDown, Menu } from "@lucide/astro";
+import Logo from "@/assets/logo.png";
 
 type NavItem = {
-	href: string;
-	label: string;
-	children?: NavItem[];
-}
+  href: string;
+  label: string;
+  children?: NavItem[];
+};
 
 const menuItems: NavItem[] = [
-	{ href: '/about-us', label: 'About Us' },
-	{
-		label: 'Our Services',
-		href: '/services',
-		children: [
-			{ href: '/services', label: 'See all Services' },
-			{ href: '/services/apply', label: 'Apply for Services' },
-		],
-	},
-	{ href: '/events', label: 'Events' },
-	{ href: '/resources', label: 'Animal Care Resources' },
-	{
-		label: 'Get Involved',
-		href: '/get-involved',
-		children: [
-			{ href: '/get-involved', label: 'Make a Difference' },
-			{ href: '/volunteer-with-us', label: 'Volunteer With Us' },
-		],
-	},
-	{ href: '/contact', label: 'Contact' },
+  { href: "/about-us", label: "About Us" },
+  {
+    label: "Our Services",
+    href: "/services",
+    children: [
+      { href: "/services", label: "See all Services" },
+      { href: "/services/apply", label: "Apply for Services" },
+    ],
+  },
+  { href: "/events", label: "Events" },
+  { href: "/resources", label: "Animal Care Resources" },
+  {
+    label: "Get Involved",
+    href: "/get-involved",
+    children: [
+      { href: "/get-involved", label: "Make a Difference" },
+      { href: "/volunteer-with-us", label: "Volunteer With Us" },
+    ],
+  },
+  { href: "/contact", label: "Contact" },
 ];
 ---
 
 <style>
-.nav-underline {
-	position: relative;
-}
-.nav-underline::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -4px;
-	width: 100%;
-	height: 2px;
-	background-color: #fdb52b;
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.25s ease;
-}
-.nav-underline:hover::after {
-	transform: scaleX(1);
-}
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #fdb52b;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-underline:hover::after {
+    transform: scaleX(1);
+  }
 
-/* Desktop dropdown */
-.dropdown { position: relative; }
-.dropdown-menu {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	min-width: 11rem;
-	background: white;
-	border: 1px solid #f1f5f9;
-	border-radius: 0.75rem;
-	box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-	overflow: hidden;
-	z-index: 100;
-	/* Invisible bridge so hover doesn't break when moving from trigger to menu */
-	margin-top: 0;
-	padding-top: 2px;
-}
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-	display: block;
-}
+  /* Desktop dropdown */
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #f1f5f9;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+    /* Invisible bridge so hover doesn't break when moving from trigger to menu */
+    margin-top: 0;
+    padding-top: 2px;
+  }
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
 
-/* Mobile accordion */
-.accordion-content {
-  display: none;
-}
-.accordion-content.open {
-  display: block;
-}
-.accordion-trigger .chevron.open {
-  transform: rotate(180deg);
-}
-
+  /* Mobile accordion */
+  .accordion-content {
+    display: none;
+  }
+  .accordion-content.open {
+    display: block;
+  }
+  .accordion-trigger .chevron.open {
+    transform: rotate(180deg);
+  }
 </style>
 
 <header class="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
-	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
-		<div class="flex justify-between items-center h-16">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center">
+          <Image
+            src={Logo}
+            alt="Alberta Helping Animals Society Logo"
+            class="h-16 w-fit"
+            format="avif"
+          />
+        </a>
+      </div>
 
-			<!-- Logo -->
-			<div class="flex-shrink-0">
-				<a href="/" class="flex items-center">
-					<Image src={Logo} alt="Alberta Helping Animals Society Logo" class="h-16 w-fit" format="avif" />
-				</a>
-			</div>
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex lg:items-center lg:space-x-5">
+        {
+          menuItems.map((item) =>
+            item.children ? (
+              <div class="dropdown pl-2">
+                <div class="flex items-center">
+                  <a
+                    href={item.href}
+                    class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                  <span class="text-gray-400 py-2 pr-2 -ml-1">
+                    <ChevronDown class="w-4 h-4 mt-0.5" />
+                  </span>
+                </div>
+                <div class="dropdown-menu">
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-5.5 py-3 text-sm text-gray-600 hover:text-gray-900 hover:bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] transition-colors"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                href={item.href}
+                class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                {item.label}
+              </a>
+            ),
+          )
+        }
 
-			<!-- Desktop Menu -->
-			<div class="hidden lg:flex lg:items-center lg:space-x-5">
-				{menuItems.map((item) =>
-					item.children ? (
-						<div class="dropdown pl-2">
-							<div class="flex items-center">
-								<a
-									href={item.href}
-									class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-								>
-									{item.label}
-								</a>
-								<span class="text-gray-400 py-2 pr-2 -ml-1">
-									<ChevronDown class="w-4 h-4 mt-0.5" />
-								</span>
-							</div>
-							<div class="dropdown-menu">
-								{item.children.map((child) => (
-									<a
-										href={child.href}
-										class="block px-5.5 py-3 text-sm text-gray-600 hover:text-gray-900 hover:bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] transition-colors"
-									>
-										{child.label}
-									</a>
-								))}
-							</div>
-						</div>
-					) : (
-						<a
-							href={item.href}
-							class="nav-underline text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-						>
-							{item.label}
-						</a>
-					)
-				)}
+        <a
+          href="/get-involved"
+          class="ml-4 bg-[#FF5600] hover:bg-[#c44301] text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors shadow-md"
+        >
+          Donate Now
+        </a>
+      </div>
 
-				<a
-					href="/get-involved"
-					class="ml-4 bg-[#FF5600] hover:bg-[#c44301] text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors shadow-md"
-				>
-					Donate Now
-				</a>
-			</div>
+      <!-- Mobile menu button -->
+      <div class="lg:hidden">
+        <button
+          type="button"
+          id="mobile-menu-button"
+          class="text-gray-600 hover:text-gray-900 p-2 rounded-md"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <Menu class="h-6 w-6" />
+        </button>
+      </div>
+    </div>
 
-			<!-- Mobile menu button -->
-			<div class="lg:hidden">
-				<button
-					type="button"
-					id="mobile-menu-button"
-					class="text-gray-600 hover:text-gray-900 p-2 rounded-md"
-					aria-controls="mobile-menu"
-					aria-expanded="false"
-				>
-					<span class="sr-only">Open main menu</span>
-					<Menu class="h-6 w-6" />
-				</button>
-			</div>
-		</div>
+    <!-- Mobile Menu -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+        {
+          menuItems.map((item, i) =>
+            item.children ? (
+              <div>
+                <button
+                  data-accordion={`accordion-${i}`}
+                  class="accordion-trigger w-full flex items-center justify-between px-3 py-2 text-left text-gray-600 hover:text-gray-900 text-base font-medium transition-colors"
+                  aria-expanded="false"
+                  aria-label={`Toggle ${item.label} submenu`}
+                >
+                  <span>{item.label}</span>
+                  <ChevronDown class="chevron w-4 h-4 transition-transform" />
+                </button>
+                <div
+                  id={`accordion-${i}`}
+                  class="accordion-content pl-4 space-y-1"
+                >
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-3 py-2 text-sm text-gray-500 hover:text-gray-900 hover:bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] rounded-md transition-colors"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                href={item.href}
+                class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                {item.label}
+              </a>
+            ),
+          )
+        }
 
-		<!-- Mobile Menu -->
-		<div class="lg:hidden hidden" id="mobile-menu">
-			<div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-				{menuItems.map((item, i) =>
-					item.children ? (
-						<div>
-							<button
-								data-accordion={`accordion-${i}`}
-								class="accordion-trigger w-full flex items-center justify-between px-3 py-2 text-left text-gray-600 hover:text-gray-900 text-base font-medium transition-colors"
-								aria-expanded="false"
-								aria-label={`Toggle ${item.label} submenu`}
-							>
-								<span>{item.label}</span>
-								<ChevronDown class="chevron w-4 h-4 transition-transform" />
-							</button>
-							<div id={`accordion-${i}`} class="accordion-content pl-4 space-y-1">
-								{item.children.map((child) => (
-									<a
-										href={child.href}
-										class="block px-3 py-2 text-sm text-gray-500 hover:text-gray-900 hover:bg-gradient-to-br from-[#e8f4f7] to-[#d1e9ee] rounded-md transition-colors"
-									>
-										{child.label}
-									</a>
-								))}
-							</div>
-						</div>
-					) : (
-						<a
-							href={item.href}
-							class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 transition-colors"
-						>
-							{item.label}
-						</a>
-					)
-				)}
-
-				<a
-					href="/donate"
-					class="bg-[#FF5600] hover:bg-[#c44301] text-white block px-3 py-2 text-base font-semibold transition-colors rounded-md text-center mt-3"
-				>
-					Donate Now
-				</a>
-			</div>
-		</div>
-	</nav>
+        <a
+          href="/donate"
+          class="bg-[#FF5600] hover:bg-[#c44301] text-white block px-3 py-2 text-base font-semibold transition-colors rounded-md text-center mt-3"
+        >
+          Donate Now
+        </a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <script>
-// Mobile hamburger
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
+  // Mobile hamburger
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-mobileMenuButton?.addEventListener('click', () => {
-	const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-	mobileMenuButton.setAttribute('aria-expanded', String(!expanded));
-	mobileMenu?.classList.toggle('hidden');
-});
+  mobileMenuButton?.addEventListener("click", () => {
+    const expanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+    mobileMenuButton.setAttribute("aria-expanded", String(!expanded));
+    mobileMenu?.classList.toggle("hidden");
+  });
 
-// Mobile accordions
-document.querySelectorAll('.accordion-trigger').forEach((btn) => {
-	btn.addEventListener('click', () => {
-		const targetId = btn.getAttribute('data-accordion');
-		const content = document.getElementById(targetId);
-		const chevron = btn.querySelector('.chevron');
-		const expanded = btn.getAttribute('aria-expanded') === 'true';
+  // Mobile accordions
+  document.querySelectorAll(".accordion-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-accordion");
+      const content = document.getElementById(targetId);
+      const chevron = btn.querySelector(".chevron");
+      const expanded = btn.getAttribute("aria-expanded") === "true";
 
-		btn.setAttribute('aria-expanded', String(!expanded));
-		content?.classList.toggle('open');
-		chevron?.classList.toggle('open');
-	});
-});
+      btn.setAttribute("aria-expanded", String(!expanded));
+      content?.classList.toggle("open");
+      chevron?.classList.toggle("open");
+    });
+  });
 </script>
