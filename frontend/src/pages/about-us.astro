@@ -1,197 +1,295 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import { BoardList } from "@/components/Board/BoardList"
-import { VolunteerList } from "@/components/Volunteer/VolunteerList"
-import { ClinicTour } from "@/components/Tour/ClinicTour"
-import { Image } from "astro:assets"
-import { FAQList } from "@/components/FAQ/FAQList"
-import { Check, Heart, Stethoscope } from "@lucide/astro"
-import aboutUsBanner from "@/assets/aboutus-hero.avif"
-import ourMissionImage from "@/assets/our-mission.jpg"
-import whyWeExistImage from "@/assets/why-we-exist-750.jpg"
-import Faq from "./faq.astro"
+import Layout from "@/layouts/Layout.astro";
+import { BoardList } from "@/components/Board/BoardList";
+import { VolunteerList } from "@/components/Volunteer/VolunteerList";
+import { ClinicTour } from "@/components/Tour/ClinicTour";
+import { Image } from "astro:assets";
+import { FAQList } from "@/components/FAQ/FAQList";
+import { Check, Heart, Stethoscope } from "@lucide/astro";
+import aboutUsBanner from "@/assets/aboutus-hero.avif";
+import ourMissionImage from "@/assets/our-mission.jpg";
+import whyWeExistImage from "@/assets/why-we-exist-750.jpg";
+import Faq from "./faq.astro";
 ---
+
 <Layout title="About Us - Alberta Helping Animals Society">
-	<main class="bg-white">
-		<!-- Hero Section -->
-		<section class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden">
+  <main class="bg-white">
+    <!-- Hero Section -->
+    <section
+      class="bg-[#D1E9EE] py-2 sm:py-2 lg:py-5 px-4 sm:px-2 lg:px-4 overflow-x-hidden"
+    >
       <div class="max-w-2xl md:max-w-5xl lg:max-w-7xl mx-auto">
-         <div class="flex flex-col lg:flex-row items-center gap-8 md:pl-3">
-            <!-- Content -->
-            <div class="w-full lg:w-1/2">
-               <h1 class="text-3xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 mt-3 lg:mb-6 leading-tight break-words">
-                  About Alberta Helping Animals Society
-               </h1>
-               <p class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0">Dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
-               </p>
-            </div>
-			<!-- Banner Image -->
-            <div class="w-full lg:w-1/2 flex lg:justify-end">
-               <Image 
-                  src={aboutUsBanner} 
-                  alt="Hero Banner for About Us Page"
-                  class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
-                  />
-            </div>
-         </div>
+        <div class="flex flex-col lg:flex-row items-center gap-8 md:pl-3">
+          <!-- Content -->
+          <div class="w-full lg:w-1/2">
+            <h1
+              class="text-3xl sm:text-3xl lg:text-4xl font-bold text-(--dark-blue) mb-4 mt-3 lg:mb-6 leading-tight break-words"
+            >
+              About Alberta Helping Animals Society
+            </h1>
+            <p
+              class="text-lg sm:text-xl text-[var(--muted-foreground)] mb-6 lg:mb-8 leading-relaxed max-w-2xl lg:mx-0"
+            >
+              Dedicated to creating opportunities for vulnerable people to
+              access veterinary care and other services for their companion
+              animals.
+            </p>
+          </div>
+          <!-- Banner Image -->
+          <div class="w-full lg:w-1/2 flex lg:justify-end">
+            <Image
+              src={aboutUsBanner}
+              alt="Hero Banner for About Us Page"
+              class="w-[420px] sm:w-[400px] md:w-[350px] lg:w-[500px] max-w-none"
+            />
+          </div>
+        </div>
       </div>
-   </section>
-		<!-- Our Mission & What We Do Section -->
-		<section class="py-10 sm:py-12 lg:py-14 px-6 sm:px-8 lg:px-10 bg-gradient-to-b from-white to-muted-blue/20">
-			<div class="max-w-6xl mx-auto">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-					<!-- Left Column: Our Mission + Vision -->
-					<div class="space-y-4 lg:space-y-6">
-						<div class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 hover:shadow-lg transition-shadow">
-							<!-- <span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Mission</span> -->
-							<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-[#0C5E6E] mb-4" style="font-family: 'Ubuntu', sans-serif;">
-								Our Mission
-							</h2>
-							<p class="text-lg text-foreground leading-relaxed">
-								Our mission is to create opportunities for vulnerable individuals to access veterinary care and essential services for their companion animals.
-							</p>
-						</div>
-						<div class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 hover:shadow-lg transition-shadow">
-							<!-- <span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Vision</span> -->
-							<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-[#0C5E6E] mb-4" style="font-family: 'Ubuntu', sans-serif;">
-								Our Vision
-							</h2>
-							<p class="text-lg text-foreground leading-relaxed">
-								Our vision is a community where all companion animals of vulnerable people have access to veterinary care, supporting both animal health and the well-being of the people who love them.
-							</p>
-						</div>
-					</div>
-					<!-- Right Column: What We Do + Image -->
-					<div class="space-y-4 lg:space-y-6">
-						<div class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 lg:mt-10 lg:self-start hover:shadow-lg transition-shadow">
-							<!-- <span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Services</span> -->
-							<h2 class="text-3xl sm:text-3xl lg:text-3xl font-normal text-[#0C5E6E] mb-4" style="font-family: 'Ubuntu', sans-serif;">
-								What We Do
-							</h2>
-							<p class="text-lg text-foreground leading-relaxed">
-								The Alberta Helping Animals Society (AHAS) is a registered non-profit organization providing accessible veterinary care for companion animals in Edmonton, Alberta. Our work focuses on supporting vulnerable individuals who rely on their pets for companionship, emotional support, and stability.
-							</p>
-							<!-- Banner Image -->
-						</div>
-						<Image src={ourMissionImage} alt="Connie and Local Veterinarians" class="rounded-md shadow-md hover:shadow-lg transition-shadow" format="avif" />
-					</div>
-				</div>
-			</div>
-			<ClinicTour client:load />
-		</section>
-		<!-- Why We Exist Section -->
-		<section class="py-12 sm:py-14 lg:py-16 px-6 sm:px-8 lg:px-10 bg-slate-900">
-			<div class="max-w-6xl mx-auto">
-				<!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Story</span> -->
-				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold mb-6 text-white" style="font-family: 'Ubuntu', sans-serif;">
-					Why We Exist
-				</h2>
-				<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
-					<div class="w-full lg:w-1/2 h-[350px] lg:h-[450px] rounded-2xl overflow-hidden relative shadow-2xl flex-shrink-0">
-						<Image src={whyWeExistImage} alt="Connie and AHAS Volunteers infront of AHAS Clinic" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" format="avif" />
-					</div>
-					<div class="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700 flex-1">
-						<div class="space-y-4 pt-2">
-							<p class="text-lg leading-relaxed text-white/90">
-								The Alberta Helping Animals Society (AHAS) is a registered non-profit organization dedicated to creating opportunities for vulnerable people to access veterinary care and other services for their companion animals.
-							</p>
-							<ul class="space-y-3 text-white/80 pt-2">
-								<li class="flex items-start gap-3">
-									<Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-									<span class="text-base">Making veterinary care accessible to all</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-									<span class="text-base">Supporting the human-animal bond</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-									<span class="text-base">Building a compassionate community</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Who and How We Serve Section -->
-		<section class="py-8 sm:py-10 lg:py-12 px-6 sm:px-8 lg:px-10 bg-muted-blue/10">
-			<div class="max-w-5xl mx-auto">
-				<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-6" style="font-family: 'Ubuntu', sans-serif;">
-					Who & How We Serve
-				</h2>
-				<p class="text-lg text-foreground leading-relaxed mx-auto mb-10">
-					Alberta Helping Animals Society serves both animals and their humans. Vulnerable individuals are particularly bonded to and rely on their companion animals for social support, companionship, and unconditional love. Ensuring the health and well-being of these animals is vital to ensuring the health and well-being of the owners, and further strengthens this very special human-animal bond.
-				</p>
-			</div>
-		</section>
-		<section class="py-8 sm:py-10 lg:py-12 px-6 sm:px-8 lg:px-10 bg-muted-blue/20">
-			<div class="max-w-5xl mx-auto">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-					<div class="bg-white rounded-2xl shadow-md p-8 border border-border/50">
-						<div class="flex items-center gap-3 mb-4">
-							<div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: color-mix(in srgb, var(--dark-blue) 10%, transparent)">
-								<Heart class="w-6 h-6" style="color: var(--dark-blue)" />
-							</div>
-							<h3 class="text-2xl sm:text-2xl font-normal text-[#0C5E6E]" style="font-family: 'Ubuntu', sans-serif;">
-								Community Support
-							</h3>
-						</div>
-						<p class="text-lg text-foreground leading-relaxed mb-6">
-							Our services extend beyond veterinary care. We proudly support the Boyle Street Community Services Pet Food Bank with weekly donations of dog food, cat food, litter, and other pet supplies and provide food and supplies when we can from our own clinic.
-						</p>
-					</div>
-					<!-- Veterinary Services Card -->
-					<div class="bg-white rounded-2xl shadow-md p-8 border border-border/50">
-						<div class="flex items-center gap-3 mb-4">
-							<div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: color-mix(in srgb, var(--dark-blue) 10%, transparent)">
-								<Stethoscope class="w-6 h-6" style="color: var(--dark-blue)" />
-							</div>
-							<h3 class="text-2xl sm:text-2xl font-normal text-[#0C5E6E]" style="font-family: 'Ubuntu', sans-serif;">
-								Veterinary Services
-							</h3>
-						</div>
-						<p class="text-lg text-foreground leading-relaxed">
-							AHAS Home Veterinary Services provides no-cost veterinary and other services in Edmonton to vulnerable people who are unable to access regular veterinary care. We provide wellness exams, spay and neuter surgery, diagnosis and care for chronic illness, dentistry, palliative care, and end-of-life support.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Our Volunteers Section -->
-		<section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-10 bg-muted-blue/30">
-			<div class="max-w-5xl mx-auto">
-				<div class="mb-12">
-					<!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Team</span> -->
-					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-2" style="font-family: 'Ubuntu', sans-serif;">
-						Our Volunteers
-					</h2>
-					<p class="text-lg text-foreground leading-relaxed mx-auto mb-12 ">AHAS would not exist without the vital support of our volunteers. Our volunteer veterinarians and technicians provide their time and skills to ensure the health and well-being of the animals. Our volunteers are passionate, driven, and dedicated to achieving the AHAS vision. We are extremely grateful for them, our most valuable asset!</p>
-				</div>
-				<VolunteerList client:load />
-			</div>
-		</section>
-		<!-- Our Board of Directors Section -->
-		<section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-10">
-			<div class="max-w-5xl mx-auto">
-				<div class="mb-6">
-					<!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Leadership</span> -->
-					<h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-6" style="font-family: 'Ubuntu', sans-serif;">
-						Our Board of Directors
-					</h2>
-				</div>
-				<p class="text-lg text-foreground leading-relaxed mx-auto mb-12 ">
-					The Alberta Helping Animals Society (AHAS) Board of Directors consists of non-remunerated volunteers. The Board is responsible for the management of affairs and policies, and provides an overall strategic direction for AHAS to ensure its continuing success.
-				</p>
-				<BoardList client:load />
-			</div>
-		</section>
-		
-		<section class="max-w-6xl mx-auto pb-5">
-			<div>
-				<FAQList limit={10} client:load />
-			</div>
-		</section>
-		
-	</main>
+    </section>
+    <!-- Our Mission & What We Do Section -->
+    <section
+      class="py-10 sm:py-12 lg:py-14 px-6 sm:px-8 lg:px-10 bg-gradient-to-b from-white to-muted-blue/20"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          <!-- Left Column: Our Mission + Vision -->
+          <div class="space-y-4 lg:space-y-6">
+            <div
+              class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 hover:shadow-lg transition-shadow"
+            >
+              <!-- <span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Mission</span> -->
+              <h2
+                class="text-3xl sm:text-3xl lg:text-3xl font-normal text-[#0C5E6E] mb-4"
+              >
+                Our Mission
+              </h2>
+              <p class="text-lg text-foreground leading-relaxed">
+                Our mission is to create opportunities for vulnerable
+                individuals to access veterinary care and essential services for
+                their companion animals.
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 hover:shadow-lg transition-shadow"
+            >
+              <!-- <span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Vision</span> -->
+              <h2
+                class="text-3xl sm:text-3xl lg:text-3xl font-normal text-[#0C5E6E] mb-4"
+              >
+                Our Vision
+              </h2>
+              <p class="text-lg text-foreground leading-relaxed">
+                Our vision is a community where all companion animals of
+                vulnerable people have access to veterinary care, supporting
+                both animal health and the well-being of the people who love
+                them.
+              </p>
+            </div>
+          </div>
+          <!-- Right Column: What We Do + Image -->
+          <div class="space-y-4 lg:space-y-6">
+            <div
+              class="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/50 lg:mt-10 lg:self-start hover:shadow-lg transition-shadow"
+            >
+              <!-- <span class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 block">Services</span> -->
+              <h2
+                class="text-3xl sm:text-3xl lg:text-3xl font-normal text-[#0C5E6E] mb-4"
+              >
+                What We Do
+              </h2>
+              <p class="text-lg text-foreground leading-relaxed">
+                The Alberta Helping Animals Society (AHAS) is a registered
+                non-profit organization providing accessible veterinary care for
+                companion animals in Edmonton, Alberta. Our work focuses on
+                supporting vulnerable individuals who rely on their pets for
+                companionship, emotional support, and stability.
+              </p>
+              <!-- Banner Image -->
+            </div>
+            <Image
+              src={ourMissionImage}
+              alt="Connie and Local Veterinarians"
+              class="rounded-md shadow-md hover:shadow-lg transition-shadow"
+              format="avif"
+            />
+          </div>
+        </div>
+      </div>
+      <ClinicTour client:load />
+    </section>
+    <!-- Why We Exist Section -->
+    <section class="py-12 sm:py-14 lg:py-16 px-6 sm:px-8 lg:px-10 bg-slate-900">
+      <div class="max-w-6xl mx-auto">
+        <!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Story</span> -->
+        <h2 class="text-3xl sm:text-3xl lg:text-3xl font-bold mb-6 text-white">
+          Why We Exist
+        </h2>
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+          <div
+            class="w-full lg:w-1/2 h-[350px] lg:h-[450px] rounded-2xl overflow-hidden relative shadow-2xl flex-shrink-0"
+          >
+            <Image
+              src={whyWeExistImage}
+              alt="Connie and AHAS Volunteers infront of AHAS Clinic"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              format="avif"
+            />
+          </div>
+          <div
+            class="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-slate-700 flex-1"
+          >
+            <div class="space-y-4 pt-2">
+              <p class="text-lg leading-relaxed text-white/90">
+                The Alberta Helping Animals Society (AHAS) is a registered
+                non-profit organization dedicated to creating opportunities for
+                vulnerable people to access veterinary care and other services
+                for their companion animals.
+              </p>
+              <ul class="space-y-3 text-white/80 pt-2">
+                <li class="flex items-start gap-3">
+                  <Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span class="text-base"
+                    >Making veterinary care accessible to all</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span class="text-base">Supporting the human-animal bond</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <Check class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span class="text-base"
+                    >Building a compassionate community</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Who and How We Serve Section -->
+    <section
+      class="py-8 sm:py-10 lg:py-12 px-6 sm:px-8 lg:px-10 bg-muted-blue/10"
+    >
+      <div class="max-w-5xl mx-auto">
+        <h2
+          class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-6"
+        >
+          Who & How We Serve
+        </h2>
+        <p class="text-lg text-foreground leading-relaxed mx-auto mb-10">
+          Alberta Helping Animals Society serves both animals and their humans.
+          Vulnerable individuals are particularly bonded to and rely on their
+          companion animals for social support, companionship, and unconditional
+          love. Ensuring the health and well-being of these animals is vital to
+          ensuring the health and well-being of the owners, and further
+          strengthens this very special human-animal bond.
+        </p>
+      </div>
+    </section>
+    <section
+      class="py-8 sm:py-10 lg:py-12 px-6 sm:px-8 lg:px-10 bg-muted-blue/20"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div
+            class="bg-white rounded-2xl shadow-md p-8 border border-border/50"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center"
+                style="background-color: color-mix(in srgb, var(--dark-blue) 10%, transparent)"
+              >
+                <Heart class="w-6 h-6" style="color: var(--dark-blue)" />
+              </div>
+              <h3 class="text-2xl sm:text-2xl font-normal text-[#0C5E6E]">
+                Community Support
+              </h3>
+            </div>
+            <p class="text-lg text-foreground leading-relaxed mb-6">
+              Our services extend beyond veterinary care. We proudly support the
+              Boyle Street Community Services Pet Food Bank with weekly
+              donations of dog food, cat food, litter, and other pet supplies
+              and provide food and supplies when we can from our own clinic.
+            </p>
+          </div>
+          <!-- Veterinary Services Card -->
+          <div
+            class="bg-white rounded-2xl shadow-md p-8 border border-border/50"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center"
+                style="background-color: color-mix(in srgb, var(--dark-blue) 10%, transparent)"
+              >
+                <Stethoscope class="w-6 h-6" style="color: var(--dark-blue)" />
+              </div>
+              <h3 class="text-2xl sm:text-2xl font-normal text-[#0C5E6E]">
+                Veterinary Services
+              </h3>
+            </div>
+            <p class="text-lg text-foreground leading-relaxed">
+              AHAS Home Veterinary Services provides no-cost veterinary and
+              other services in Edmonton to vulnerable people who are unable to
+              access regular veterinary care. We provide wellness exams, spay
+              and neuter surgery, diagnosis and care for chronic illness,
+              dentistry, palliative care, and end-of-life support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Volunteers Section -->
+    <section
+      class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-10 bg-muted-blue/30"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12">
+          <!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Team</span> -->
+          <h2
+            class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-2"
+          >
+            Our Volunteers
+          </h2>
+          <p class="text-lg text-foreground leading-relaxed mx-auto mb-12">
+            AHAS would not exist without the vital support of our volunteers.
+            Our volunteer veterinarians and technicians provide their time and
+            skills to ensure the health and well-being of the animals. Our
+            volunteers are passionate, driven, and dedicated to achieving the
+            AHAS vision. We are extremely grateful for them, our most valuable
+            asset!
+          </p>
+        </div>
+        <VolunteerList client:load />
+      </div>
+    </section>
+    <!-- Our Board of Directors Section -->
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-10">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+          <!-- <span class="inline-block text-sm font-semibold text-primary uppercase tracking-wide mb-3">Leadership</span> -->
+          <h2
+            class="text-3xl sm:text-3xl lg:text-3xl font-bold text-[#0C5E6E] mb-6"
+          >
+            Our Board of Directors
+          </h2>
+        </div>
+        <p class="text-lg text-foreground leading-relaxed mx-auto mb-12">
+          The Alberta Helping Animals Society (AHAS) Board of Directors consists
+          of non-remunerated volunteers. The Board is responsible for the
+          management of affairs and policies, and provides an overall strategic
+          direction for AHAS to ensure its continuing success.
+        </p>
+        <BoardList client:load />
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto pb-5">
+      <div>
+        <FAQList limit={10} client:load />
+      </div>
+    </section>
+  </main>
 </Layout>
