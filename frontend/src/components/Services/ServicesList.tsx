@@ -13,7 +13,7 @@ function ServiceCard({ service }: ServiceCardProps) {
         {service.name}
       </h3>
       {service.description && (
-        <div className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-(--dark-blue) text-white text-sm rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none max-w-64">
+        <div className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-(--dark-blue) text-white text-sm rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none max-w-md">
           {service.description}
         </div>
       )}
