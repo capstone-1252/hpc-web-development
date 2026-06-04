@@ -30,6 +30,7 @@ export function WeeklyHoursList() {
     "Sunday",
   ];
 
+  //[...] Spread operator, Creates a shallow copy of the hours array
   const sortedHours = [...hours].sort(
     (a, b) => dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day),
   );

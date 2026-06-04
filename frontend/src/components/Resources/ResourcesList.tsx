@@ -7,6 +7,7 @@ export function ResourcesList() {
   const [resources, setResources] = useState<Resource[]>([]);
   const [loading, setLoading] = useState(true);
 
+  //Data Fetching
   useEffect(() => {
     const fetchData = async () => {
       const data = await loadResources();
@@ -25,8 +26,10 @@ export function ResourcesList() {
     return <p>No resources available.</p>;
   }
 
+  //extracts unique categories
   const categories = [...new Set(resources.map((r) => r.category))];
 
+  //groups resources by category
   const groupedResources = categories.reduce(
     (acc, category) => {
       acc[category] = resources.filter((r) => r.category === category);
@@ -35,6 +38,7 @@ export function ResourcesList() {
     {} as Record<string, Resource[]>,
   );
 
+  //Rendering
   return (
     <div className="space-y-0">
       {categories.map((category) => (
